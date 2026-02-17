@@ -272,45 +272,49 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 </div>
 
 <!-- ═══════════ SLIDE 5 — SISTEMA EB ═══════════ -->
-<div class="slide" style="padding:44px 50px 40px" data-notes="EXPLICAR CON CALMA: 'El gobierno de EE.UU. otorga 140,000 Green Cards por empleo al año, divididas en 5 categorías. Pero hay una restricción clave: NINGÚN país puede recibir más del 7% del total. Esto parece equitativo, pero crea una distorsión brutal: India, con millones de profesionistas de tech, tiene el mismo tope que Luxemburgo. El resultado: 1.8 millones de personas esperando, y la cola de India puede superar los 134 años. A la derecha ven el Visa Bulletin de febrero 2026: el documento oficial del Departamento de Estado que publica mensualmente qué fechas de prioridad están siendo procesadas.' — PREGUNTA: ¿De dónde sale el 7%? R: INA §202(a)(2): 7% del total combinado de visas familiares+empleo (~366K), resultando en ~25,620 por país.">
-  <h2 class="slide-title anim">El Sistema EB en 60 Segundos</h2>
-  <div class="slide-subtitle anim">Immigration and Nationality Act (INA), diseñado en 1990</div>
-  <div style="display:flex;gap:18px;flex:1;min-height:0;margin-top:-4px">
-    <!-- Left column: compact table + stats + problem box -->
-    <div class="anim" style="flex:0 0 46%;display:flex;flex-direction:column;gap:8px">
-      <table class="styled-table" style="font-size:.82rem"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>GC/año</th></tr></thead>
-        <tbody>
-          <tr><td><strong>EB-1</strong></td><td>Trabajadores prioritarios</td><td>28.6%</td><td>~40,040</td></tr>
-          <tr><td><strong>EB-2</strong></td><td>Grado avanzado</td><td>28.6%</td><td>~40,040</td></tr>
-          <tr><td><strong>EB-3</strong></td><td>Trabajadores calificados</td><td>28.6%</td><td>~40,040</td></tr>
-          <tr><td><strong>EB-4</strong></td><td>Inmigrantes especiales</td><td>7.1%</td><td>~9,940</td></tr>
-          <tr><td><strong>EB-5</strong></td><td>Inversionistas</td><td>7.1%</td><td>~9,940</td></tr>
-        </tbody></table>
-      <div style="display:flex;gap:12px">
-        <div class="stat"><div class="stat-number" style="font-size:1.8rem">140K</div><div class="stat-label">green cards/año</div></div>
-        <div class="stat"><div class="stat-number stat-number--red" style="font-size:1.8rem">7%</div><div class="stat-label">tope por país</div></div>
-        <div class="stat"><div class="stat-number stat-number--yellow" style="font-size:1.8rem">FIFO</div><div class="stat-label">orden de proceso</div></div>
+<div class="slide" style="padding:0;overflow:hidden" data-notes="EXPLICAR CON CALMA: 'El gobierno de EE.UU. otorga 140,000 Green Cards por empleo al año, divididas en 5 categorías. Pero hay una restricción clave: NINGÚN país puede recibir más del 7% del total. Esto parece equitativo, pero crea una distorsión brutal: India, con millones de profesionistas de tech, tiene el mismo tope que Luxemburgo. El resultado: 1.8 millones de personas esperando, y la cola de India puede superar los 134 años. A la derecha ven el Visa Bulletin de febrero 2026: el documento oficial del Departamento de Estado que publica mensualmente qué fechas de prioridad están siendo procesadas.' — PREGUNTA: ¿De dónde sale el 7%? R: INA §202(a)(2): 7% del total combinado de visas familiares+empleo (~366K), resultando en ~25,620 por país.">
+  <div style="display:flex;height:100%;width:100%">
+    <!-- Left: Content panel (58%) -->
+    <div style="flex:0 0 58%;display:flex;flex-direction:column;padding:38px 40px 32px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%)">
+      <h2 class="slide-title anim" style="margin-bottom:2px">El Sistema EB en 60 Segundos</h2>
+      <div class="slide-subtitle anim" style="margin-bottom:14px">Immigration and Nationality Act (INA), diseñado en 1990</div>
+      <!-- EB Table -->
+      <div class="anim">
+        <table class="styled-table" style="font-size:.8rem;width:100%"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>GC/año</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EB-1</strong></td><td>Trabajadores prioritarios</td><td>28.6%</td><td>~40,040</td></tr>
+            <tr><td><strong>EB-2</strong></td><td>Grado avanzado</td><td>28.6%</td><td>~40,040</td></tr>
+            <tr><td><strong>EB-3</strong></td><td>Trabajadores calificados</td><td>28.6%</td><td>~40,040</td></tr>
+            <tr><td><strong>EB-4</strong></td><td>Inmigrantes especiales</td><td>7.1%</td><td>~9,940</td></tr>
+            <tr><td><strong>EB-5</strong></td><td>Inversionistas</td><td>7.1%</td><td>~9,940</td></tr>
+          </tbody></table>
       </div>
-      <!-- PROBLEM SUMMARY BOX -->
-      <div style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 18px;color:white;flex:1;display:flex;flex-direction:column;justify-content:center">
+      <!-- Stats row -->
+      <div style="display:flex;gap:10px;margin:12px 0" class="anim">
+        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.7rem">140K</div><div class="stat-label">green cards/año</div></div>
+        <div class="stat" style="flex:1"><div class="stat-number stat-number--red" style="font-size:1.7rem">7%</div><div class="stat-label">tope por país</div></div>
+        <div class="stat" style="flex:1"><div class="stat-number stat-number--yellow" style="font-size:1.7rem">FIFO</div><div class="stat-label">orden de proceso</div></div>
+      </div>
+      <!-- Problem summary box -->
+      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:16px 20px;color:white;flex:1;display:flex;flex-direction:column;justify-content:center">
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">
           <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-bolt"/></svg>
           La problemática en una oración
         </div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.5;color:rgba(255,255,255,.92)">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.92)">
           <strong style="color:var(--yellow)">140,000 green cards anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong> para un ciudadano indio en EB-2 mientras otros países ni agotan su cuota.
         </div>
       </div>
+      <div class="slide-footer" style="position:relative;padding:8px 0 0;margin-top:auto"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
     </div>
-    <!-- Right: Visa Bulletin image - WIDER -->
-    <div class="anim" style="flex:1;display:flex;flex-direction:column;gap:4px;min-height:0">
-      <div style="flex:1;border-radius:10px;overflow:hidden;border:2px solid #dee2e6;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08)">
-        <img src="visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:40px;font-family:Source+Sans+3,sans-serif><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>visa_bulletin.png</div><div style=font-size:.75rem;color:#bbb>Coloca la imagen en la misma carpeta</div></div>'">
-      </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:var(--gray-light);text-align:center">Visa Bulletin, febrero 2026 — U.S. Department of State</div>
+    <!-- Right: Visa Bulletin full-height strip (42%) -->
+    <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5">
+      <img src="visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-family:Source+Sans+3,sans-serif><div><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>visa_bulletin.png</div></div></div>'">
+      <!-- Bottom gradient + caption -->
+      <div style="position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(transparent,rgba(0,0,0,.7))"></div>
+      <div style="position:absolute;bottom:12px;left:16px;right:16px;font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:rgba(255,255,255,.7);line-height:1.4;text-align:center">Visa Bulletin, febrero 2026 — U.S. Department of State</div>
     </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
 </div>
 
 <!-- ═══════════ SLIDE 6 — SPILLOVER (SVG) ═══════════ -->
