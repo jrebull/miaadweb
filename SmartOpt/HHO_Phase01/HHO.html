@@ -138,14 +138,28 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 </div>
 
 <!-- ═══════════ SLIDE 2 — FRASE IMPACTO ═══════════ -->
-<div class="slide slide--quote" data-notes="Leer la frase con tono serio. Pausa. 'Con esas palabras comenzó una era. 10 años después, 1.8 millones de personas siguen esperando. Este proyecto no es abstracto: es un problema que ambos vivimos.' — PREGUNTA: ¿Por qué mezclan política con optimización? R: Las políticas migratorias definen las RESTRICCIONES del modelo. El tope del 7%, el spillover, las categorías EB: todo es política convertida en constraints matemáticos.">
-  <div class="quote-text anim" style="max-width:800px">They're bringing drugs. They're bringing crime. They're rapists. And some, I assume, are good people.</div>
-  <div class="quote-attr anim">— Donald J. Trump, 16 de junio de 2015, anuncio de candidatura presidencial</div>
-  <div style="height:28px"></div>
-  <div style="display:flex;gap:40px;justify-content:center" class="anim">
-    <div class="stat"><div class="stat-number stat-number--red">1.8M</div><div class="stat-label">personas en espera</div></div>
-    <div class="stat"><div class="stat-number stat-number--red">134</div><div class="stat-label">años de espera teórica (India EB-2)</div></div>
-    <div class="stat"><div class="stat-number">10</div><div class="stat-label">años de políticas restrictivas</div></div>
+<div class="slide" style="background:#1a1a2e;padding:0;overflow:hidden" data-notes="Leer la frase con tono serio. Pausa. 'Con esas palabras comenzó una era. 10 años después, 1.8 millones de personas siguen esperando. Este proyecto no es abstracto: es un problema que ambos vivimos.' — PREGUNTA: ¿Por qué mezclan política con optimización? R: Las políticas migratorias definen las RESTRICCIONES del modelo. El tope del 7%, el spillover, las categorías EB: todo es política convertida en constraints matemáticos.">
+  <div style="display:flex;height:100%;width:100%">
+    <!-- Left: Trump image -->
+    <div style="flex:0 0 42%;position:relative;overflow:hidden;background:#111">
+      <img src="DonaldTrump.png" alt="Donald J. Trump" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(30%) contrast(1.1);opacity:.85">
+      <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,rgba(0,0,0,.85))"></div>
+      <div style="position:absolute;bottom:16px;left:20px;right:20px;font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5)">16 de junio de 2015 · Anuncio de candidatura presidencial</div>
+    </div>
+    <!-- Right: Quote + stats -->
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:50px 56px;background:linear-gradient(135deg,#1a1a2e 0%,#2C3E50 100%)">
+      <div style="position:relative;margin-bottom:28px">
+        <div style="font-size:5rem;color:var(--yellow);font-family:'Playfair Display',serif;line-height:1;position:absolute;top:-30px;left:-10px;opacity:.6">&ldquo;</div>
+        <p class="anim" style="font-family:'Playfair Display',serif;font-size:1.55rem;font-style:italic;color:rgba(255,255,255,.9);line-height:1.5;margin-left:30px;max-width:520px">They're bringing drugs. They're bringing crime. They're rapists. And some, I assume, are good people.</p>
+        <div class="anim" style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:var(--yellow);font-weight:600;margin-top:14px;margin-left:30px">— Donald J. Trump</div>
+      </div>
+      <div style="width:60px;height:3px;background:var(--yellow);margin:10px 0 24px 30px;border-radius:2px"></div>
+      <div style="display:flex;gap:32px;margin-left:30px" class="anim">
+        <div class="stat"><div class="stat-number" style="font-size:2.6rem;color:#FF6B6B">1.8M</div><div class="stat-label" style="color:rgba(255,255,255,.5)">personas en espera</div></div>
+        <div class="stat"><div class="stat-number" style="font-size:2.6rem;color:#FF6B6B">134</div><div class="stat-label" style="color:rgba(255,255,255,.5)">años de espera (India EB-2)</div></div>
+        <div class="stat"><div class="stat-number" style="font-size:2.6rem;color:rgba(255,255,255,.7)">10</div><div class="stat-label" style="color:rgba(255,255,255,.5)">años de restricciones</div></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -225,10 +239,8 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
     </div>
     <div class="col col--40 anim" style="gap:12px">
       <div class="alert-box" style="font-size:1rem"><strong>La disparidad:</strong> Un ciudadano indio en EB-2 podría esperar <strong>134 años</strong>. Un mexicano en la misma categoría: ~1 a 2 años.</div>
-      <div class="img-placeholder" style="flex:1;min-height:170px">
-        <svg width="28" height="28" style="color:var(--blue);margin-bottom:6px"><use href="#ico-clipboard"/></svg>
-        <div class="ph-name">visa_bulletin.png</div>
-        <div class="ph-desc">Captura del Visa Bulletin Feb 2026 (FOTO)</div>
+      <div style="flex:1;min-height:170px;border-radius:8px;overflow:hidden;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;background:var(--off-white)">
+        <img src="visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:20px;font-family:Source+Sans+3,sans-serif;font-size:.85rem;color:#999>visa_bulletin.png<br>Coloca la imagen en la misma carpeta</div>'">
       </div>
     </div>
   </div>
@@ -324,10 +336,8 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
   <div class="slide-subtitle anim">La cacería cooperativa del halcón de Harris (Parabuteo unicinctus)</div>
   <div class="cols">
     <div class="col col--40 anim">
-      <div class="img-placeholder" style="min-height:280px;flex:1">
-        <svg width="32" height="32" style="color:var(--blue);margin-bottom:6px"><use href="#ico-hawk"/></svg>
-        <div class="ph-name">harris_hawks.jpg</div>
-        <div class="ph-desc">Halcones en formación de caza (FOTO)</div>
+      <div style="min-height:280px;flex:1;border-radius:12px;overflow:hidden;background:#1a1a2e">
+        <img src="harris_hawks.jpg" alt="Halcones de Harris" style="width:100%;height:100%;object-fit:cover;border-radius:12px" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;padding:20px><svg width=48 height=48 style=color:#003CA6;opacity:.4><use href=#ico-hawk/></svg><div style=font-family:Source+Sans+3,sans-serif;font-size:.85rem;color:#999;margin-top:8px>harris_hawks.jpg</div></div>'">
       </div>
     </div>
     <div class="col col--60 anim">
@@ -360,10 +370,8 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
     </div>
     <div class="col col--40">
       <div class="note-box" style="font-size:1rem"><strong>Propiedad clave:</strong> Como $E_0$ es estocástico, HHO <strong>no sigue un esquema rígido</strong>. Oscila entre exploración y explotación, con explotación dominando progresivamente.</div>
-      <div class="img-placeholder" style="min-height:130px;margin-top:10px">
-        <svg width="24" height="24" style="color:var(--blue);margin-bottom:6px"><use href="#ico-chart"/></svg>
-        <div class="ph-name">hho_fases.png</div>
-        <div class="ph-desc">Fig. 3 del paper: fases según E, q, r (IMAGEN)</div>
+      <div style="min-height:130px;margin-top:10px;border-radius:8px;overflow:hidden;border:1px solid #ddd;background:var(--off-white)">
+        <img src="hho_fases.png" alt="Fases HHO" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:16px;font-family:Source+Sans+3,sans-serif;font-size:.85rem;color:#999>hho_fases.png<br>Fig. 3 del paper</div>'">
       </div>
     </div>
   </div>
