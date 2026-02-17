@@ -202,7 +202,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       <div style="background:#E3F0FF;border-radius:6px;padding:5px 8px;margin-top:10px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;text-align:center;color:#0d47a1"><strong>Trade-off:</strong> Soluciones muy buenas, no exactas</div>
     </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 3 — SECTION: METAHEURÍSTICA ═══════════ -->
@@ -255,7 +255,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
           <div style="display:flex;gap:8px;align-items:flex-start"><div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">4</div><div><strong style="color:var(--blue)">Extensión MOHHO:</strong> validada para optimización multi-objetivo con archivo Pareto externo.</div></div>
         </div>
       </div>
-      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:8px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
     </div>
     <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5;display:flex;align-items:center;justify-content:center;padding:24px">
       <img src="./articleimage.png" alt="Harris Hawks Optimization — Paper original" style="width:100%;height:100%;object-fit:contain;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.15)" onerror="this.parentElement.innerHTML='<div style=text-align:center;font-family:Source+Sans+3,sans-serif><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>articleimage.png</div></div>'">
@@ -295,7 +295,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       </ul>
     </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 6 — BIOLOGÍA ═══════════ -->
@@ -323,7 +323,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Surprise Pounce — La estrategia clave</div>
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;line-height:1.5;color:rgba(255,255,255,.9)">Los halcones de Harris son los <strong style="color:var(--yellow)">únicos rapaces que cazan en equipo</strong>. Rodean al conejo desde múltiples direcciones y atacan en oleadas sucesivas. Si la presa escapa de un halcón, otro toma el relevo. HHO modela exactamente este comportamiento: cada halcón (solución) adapta su estrategia según la <strong style="color:var(--yellow)">energía de escape</strong> de la presa, alternando entre búsqueda amplia (exploración) y cerco agresivo (explotación).</div>
       </div>
-      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:8px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
     </div>
   </div>
 </div>
@@ -355,7 +355,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
   <div class="anim" style="background:linear-gradient(135deg,#E3F0FF,#DBEAFE);border:1.5px solid #BBDEFB;border-radius:10px;padding:9px 16px;margin-top:6px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:#333">
     <strong style="color:var(--blue)">Para explicar:</strong> La energía E es el corazón de HHO. Controla <em>cuándo</em> los halcones buscan ampliamente (|E| alto → exploración global) y <em>cuándo</em> cierran el cerco (|E| bajo → explotación local). La aleatoriedad de E₀ evita que el algoritmo quede atrapado en óptimos locales, a diferencia de esquemas con decaimiento fijo.
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 8 — DIAGRAMA HHO COMPLETO (REDISEÑADO) ═══════════ -->
@@ -494,7 +494,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
   <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 28px;font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Lectura del diagrama:</strong> Cada halcón calcula la energía E en cada iteración. Si |E|≥1 la presa aún tiene energía, así que el halcón <strong style="color:var(--yellow)">explora</strong> globalmente con los Operadores 1-2 (búsqueda amplia). Si |E|&lt;1 la presa está agotada, entonces <strong style="color:var(--yellow)">explota</strong> localmente: usa Ops 3-4 (cerco directo) si la presa no escapa, o Ops 5-6 con <strong style="color:var(--yellow)">vuelos de Lévy</strong> (saltos largos) si logra escapar. El ciclo se repite T veces hasta convergencia.
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 <div class="slide slide--section"><div class="section-number anim">02</div><div class="section-label anim">Los 6 Operadores</div><div class="section-sub anim">2 de exploración + 4 de explotación</div></div>
 
@@ -510,7 +510,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
   <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;margin-top:4px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Explicación:</strong> Cuando la presa tiene mucha energía (|E|≥1), los halcones buscan ampliamente. El Op 1 salta hacia un halcón aleatorio del grupo (diversificación pura). El Op 2 combina la dirección hacia la presa con la posición media del enjambre, explorando de forma más dirigida pero aún global.
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 11 — OPS 3 y 4 ═══════════ -->
@@ -525,7 +525,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
   <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;margin-top:4px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Explicación:</strong> Cuando la presa está debilitada (|E|&lt;1) y no logra escapar (r≥0.5), los halcones cierran el cerco. El Op 3 (asedio suave, |E|≥0.5) hace movimientos amplios pero dirigidos — la presa aún tiene algo de energía. El Op 4 (asedio duro, |E|&lt;0.5) es un cierre agresivo directo — la presa está exhausta.
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 12 — OPS 5 y 6 ═══════════ -->
@@ -546,7 +546,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
   <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 28px;margin-top:4px;font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Explicación:</strong> Cuando la presa escapa (r&lt;0.5), los halcones ejecutan inmersiones de largo alcance usando <strong>vuelos de Lévy</strong> — una distribución con colas pesadas que genera muchos pasos cortos y ocasionalmente saltos enormes. Esto permite escapar de óptimos locales. Se prueban dos soluciones (Y, Z) con <em>selección greedy</em>: se conserva la mejor.
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 <div class="slide">
   <h2 class="slide-title anim">Mapa Completo de Operadores</h2>
@@ -566,7 +566,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
   <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;margin-top:4px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Resumen:</strong> HHO usa un árbol de decisión con 3 variables aleatorias (E, q, r) para seleccionar entre 6 operadores. Esto genera un balance automático exploración/explotación sin que el usuario necesite configurar parámetros adicionales — una ventaja significativa respecto a otros algoritmos que requieren ajuste manual de tasas de mutación, inercia, etc.
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 14 — SECTION: EL PROBLEMA ═══════════ -->
@@ -644,7 +644,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
             <tr><td><strong>EB-5</strong></td><td>Inversionistas</td><td>7.1%</td><td>~9,940</td></tr>
           </tbody></table>
       </div>
-      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:auto"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
     </div>
     <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5">
       <img src="./visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-family:Source+Sans+3,sans-serif><div><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>visa_bulletin.png</div></div></div>'">
@@ -742,7 +742,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
     <strong style="color:var(--yellow)">Resultado:</strong> Las green cards por categoría son <strong>variables dependientes</strong> con <strong style="color:var(--red)">restricciones condicionales no lineales</strong>. Las visas de una categoría dependen del consumo de otras, haciendo imposible modelar el sistema con programación lineal.
   </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 18 — NP-DIFÍCIL ═══════════ -->
@@ -870,7 +870,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 21 — MOHHO ═══════════ -->
@@ -937,7 +937,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       </div>
     </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 22 — MAPEO HHO → GREEN CARDS ═══════════ -->
@@ -991,7 +991,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
     <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Síntesis del mapeo</div>
     <div style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">Cada halcón es una <strong style="color:var(--yellow)">propuesta completa</strong> de cómo repartir 140,000 visas entre países y categorías. La "cacería" es el proceso iterativo de optimización. Los <strong style="color:var(--yellow)">vuelos de Lévy</strong> saltan las discontinuidades del tope del 7%, y la <strong style="color:var(--yellow)">dominancia de Pareto</strong> reemplaza al fitness simple.</div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 <!-- ═══════════ SLIDE 23 — CONCLUSIONES ═══════════ -->
@@ -1101,7 +1101,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       <div style="padding:7px 0"><span style="font-weight:600;color:var(--blue-dark)">Zhang, L., Li, Y. & Wang, X.</span> (2023). Improved HHO with bi-goal evolution. <em>Ingénierie des Systèmes d'Information, 28</em>(5).</div>
     </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+
 </div>
 
 </div><!-- end deck -->
