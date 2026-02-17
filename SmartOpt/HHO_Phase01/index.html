@@ -243,7 +243,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
           <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:#555;margin-top:2px;font-weight:600">Citaciones</div>
         </div>
       </div>
-      <div class="anim" style="background:linear-gradient(135deg,#E3F0FF 0%,#f0f4ff 100%);border:1.5px solid #BBDEFB;border-radius:10px;padding:12px 14px;flex:1;display:flex;flex-direction:column">
+      <div class="anim" style="background:linear-gradient(135deg,#E3F0FF 0%,#f0f4ff 100%);border:1.5px solid #BBDEFB;border-radius:10px;padding:10px 14px;display:flex;flex-direction:column">
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">
           <svg width="13" height="13" style="color:var(--blue);vertical-align:middle;margin-right:3px"><use href="#ico-hawk"/></svg>
           ¿Por qué es relevante este algoritmo?
@@ -267,8 +267,8 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 <div class="slide">
   <h2 class="slide-title anim">¿Por qué Harris Hawks Optimization?</h2>
   <div class="slide-subtitle anim">Selección y originalidad de la metaheurística</div>
-  <div class="anim" style="height:260px;border-radius:12px;overflow:hidden;margin-bottom:6px;position:relative">
-    <img src="./harris_hawks_trio.png" alt="Halcones de Harris en grupo" style="width:100%;height:100%;object-fit:cover;object-position:center 25%" onerror="this.parentElement.style.display='none'">
+  <div class="anim" style="height:230px;border-radius:12px;overflow:hidden;margin-bottom:6px;position:relative">
+    <img src="./harris_hawks_trio.png" alt="Halcones de Harris en grupo" style="width:100%;height:100%;object-fit:cover;object-position:center 20%" onerror="this.parentElement.style.display='none'">
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,60,166,.6) 0%,transparent 40%,transparent 60%,rgba(0,60,166,.6) 100%)"></div>
     <div style="position:absolute;bottom:8px;left:14px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:rgba(255,255,255,.5)">Parabuteo unicinctus — caza cooperativa en grupo</div>
   </div>
@@ -301,15 +301,15 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 <!-- ═══════════ SLIDE 6 — BIOLOGÍA ═══════════ -->
 <div class="slide" style="padding:0;overflow:hidden">
   <div style="display:flex;height:100%;width:100%">
-    <div style="flex:0 0 35%;position:relative;overflow:hidden;background:#0a1628">
+    <div style="flex:0 0 30%;position:relative;overflow:hidden;background:#0a1628">
       <img src="./harris_hawks.jpg" alt="Halcones de Harris cazando" style="width:100%;height:100%;object-fit:cover;object-position:left center" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:#1a1a2e><svg width=60 height=60 style=color:#003CA6;opacity:.3><use href=#ico-hawk/></svg></div>'">
       <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(transparent,rgba(0,0,0,.8))"></div>
       <div style="position:absolute;bottom:10px;left:12px;right:12px;font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:rgba(255,255,255,.5);text-align:center">Parabuteo unicinctus</div>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;padding:28px 32px 20px;overflow:hidden">
+    <div style="flex:1;display:flex;flex-direction:column;padding:28px 32px 20px;overflow:hidden;justify-content:center">
       <h2 class="slide-title anim" style="margin-bottom:2px">Inspiración Biológica</h2>
-      <div class="slide-subtitle anim" style="margin-bottom:10px">La cacería cooperativa del halcón de Harris</div>
-      <div class="anim" style="flex:1;min-height:0">
+      <div class="slide-subtitle anim" style="margin-bottom:8px">La cacería cooperativa del halcón de Harris</div>
+      <div class="anim" style="min-height:0">
         <table class="styled-table" style="font-size:.88rem"><thead><tr><th>En la naturaleza</th><th>En la optimización</th></tr></thead>
           <tbody>
             <tr><td><svg width="16" height="16" style="color:var(--blue);vertical-align:middle;margin-right:4px"><use href="#ico-hawk"/></svg> Cada halcón del grupo</td><td>Una solución candidata</td></tr>
@@ -319,7 +319,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
             <tr><td><svg width="16" height="16" style="color:var(--green);vertical-align:middle;margin-right:4px"><use href="#ico-check"/></svg> Captura exitosa</td><td>Mejora del valor de fitness</td></tr>
           </tbody></table>
       </div>
-      <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:12px 16px;margin-top:10px;color:white">
+      <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:12px 16px;margin-top:8px;color:white">
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Surprise Pounce — La estrategia clave</div>
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;line-height:1.5;color:rgba(255,255,255,.9)">Los halcones de Harris son los <strong style="color:var(--yellow)">únicos rapaces que cazan en equipo</strong>. Rodean al conejo desde múltiples direcciones y atacan en oleadas sucesivas. Si la presa escapa de un halcón, otro toma el relevo. HHO modela exactamente este comportamiento: cada halcón (solución) adapta su estrategia según la <strong style="color:var(--yellow)">energía de escape</strong> de la presa, alternando entre búsqueda amplia (exploración) y cerco agresivo (explotación).</div>
       </div>
@@ -327,16 +327,12 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
     </div>
   </div>
 </div>
-      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:8px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════ SLIDE 7 — ENERGÍA ═══════════ -->
-<div class="slide" style="padding:32px 44px 24px">
+<div class="slide" style="padding:24px 44px 20px">
   <h2 class="slide-title anim">El Motor: Energía de Escape</h2>
-  <div class="slide-subtitle anim" style="margin-bottom:8px">Transición adaptativa entre exploración y explotación</div>
-  <div style="display:flex;gap:20px;flex:1;min-height:0">
+  <div class="slide-subtitle anim" style="margin-bottom:6px">Transición adaptativa entre exploración y explotación</div>
+  <div style="display:flex;gap:18px;flex:1;min-height:0;align-items:center">
     <div style="flex:1;display:flex;flex-direction:column;gap:8px" class="anim">
       <div class="formula-box" style="font-size:1.2rem;margin:0;padding:10px 16px">$$E = 2E_0 \left(1 - \frac{t}{T}\right)$$</div>
       <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.5;color:#555;padding:0 4px">$E_0 \in [-1,1]$: aleatorio · $t$: iteración · $T$: máx. iteraciones</div>
@@ -363,10 +359,10 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 8 — DIAGRAMA HHO COMPLETO (REDISEÑADO) ═══════════ -->
-<div class="slide" style="padding:32px 44px 28px">
+<div class="slide" style="padding:24px 44px 22px">
   <h2 class="slide-title anim" style="font-size:1.9rem;margin-bottom:2px">Diagrama General del Algoritmo HHO</h2>
-  <div class="slide-subtitle anim" style="margin-bottom:6px">Flujo completo: inicialización → energía → exploración / explotación → convergencia</div>
-  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;margin-bottom:4px">
+  <div class="slide-subtitle anim" style="margin-bottom:4px">Flujo completo: inicialización → energía → exploración / explotación → convergencia</div>
+  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;margin-bottom:2px">
     <svg viewBox="0 0 1160 520" style="width:100%;max-height:480px" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2C3E50"/></marker>
@@ -495,7 +491,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       <ellipse cx="1140" cy="275" rx="16" ry="16" fill="#FDE8E8" stroke="#B41E1E" stroke-width="2"/>
     </svg>
   </div>
-  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">
+  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 28px;font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Lectura del diagrama:</strong> Cada halcón calcula la energía E en cada iteración. Si |E|≥1 la presa aún tiene energía, así que el halcón <strong style="color:var(--yellow)">explora</strong> globalmente con los Operadores 1-2 (búsqueda amplia). Si |E|&lt;1 la presa está agotada, entonces <strong style="color:var(--yellow)">explota</strong> localmente: usa Ops 3-4 (cerco directo) si la presa no escapa, o Ops 5-6 con <strong style="color:var(--yellow)">vuelos de Lévy</strong> (saltos largos) si logra escapar. El ciclo se repite T veces hasta convergencia.
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
@@ -547,7 +543,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       <div class="note-box" style="margin-top:8px;font-size:.95rem"><strong>Selección greedy:</strong> Probar Y primero. Si no mejora, probar Z. Si ninguno mejora, conservar posición actual.</div>
     </div>
   </div>
-  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">
+  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 28px;margin-top:4px;font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Explicación:</strong> Cuando la presa escapa (r&lt;0.5), los halcones ejecutan inmersiones de largo alcance usando <strong>vuelos de Lévy</strong> — una distribución con colas pesadas que genera muchos pasos cortos y ocasionalmente saltos enormes. Esto permite escapar de óptimos locales. Se prueban dos soluciones (Y, Z) con <em>selección greedy</em>: se conserva la mejor.
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
@@ -659,11 +655,11 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 17 — SPILLOVER (REDISEÑADO) ═══════════ -->
-<div class="slide" style="padding:28px 44px 24px">
+<div class="slide" style="padding:22px 44px 20px">
   <h2 class="slide-title anim" style="margin-bottom:2px">Reglas de Spillover</h2>
-  <div class="slide-subtitle anim" style="margin-bottom:6px">Las green cards no utilizadas se redistribuyen de forma condicional</div>
+  <div class="slide-subtitle anim" style="margin-bottom:4px">Las green cards no utilizadas se redistribuyen de forma condicional</div>
   <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0">
-    <svg viewBox="0 0 1000 380" style="width:100%;max-height:360px" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1000 380" style="width:100%;max-height:400px" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <marker id="spD" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#003CA6"/></marker>
         <marker id="spU" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#27AE60"/></marker>
@@ -742,7 +738,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       <text x="825" y="311" font-family="Source Sans 3,sans-serif" font-size="10" fill="#B41E1E">   lineales</text>
     </svg>
   </div>
-  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">
+  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 28px;font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">
     <strong style="color:var(--yellow)">Resultado:</strong> Las green cards por categoría son <strong>variables dependientes</strong> con <strong style="color:var(--red)">restricciones condicionales no lineales</strong>. Las visas de una categoría dependen del consumo de otras, haciendo imposible modelar el sistema con programación lineal.
   </div>
   </div>
@@ -752,7 +748,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 <!-- ═══════════ SLIDE 18 — NP-DIFÍCIL ═══════════ -->
 <div class="slide" style="padding:0;overflow:hidden">
   <div style="display:flex;height:100%;width:100%">
-    <div style="flex:0 0 26%;background:linear-gradient(160deg,#0a0e1a 0%,#1a1a2e 50%,#0d1b3e 100%);display:flex;flex-direction:column;justify-content:center;padding:30px 22px;position:relative;overflow:hidden">
+    <div style="flex:0 0 28%;background:linear-gradient(160deg,#0a0e1a 0%,#1a1a2e 50%,#0d1b3e 100%);display:flex;flex-direction:column;justify-content:center;padding:30px 24px;position:relative;overflow:hidden">
       <div style="position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:24px 24px"></div>
       <div style="position:relative;z-index:1">
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px">
@@ -774,9 +770,9 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       </div>
       <div style="position:absolute;bottom:8px;left:22px;right:12px;font-family:'Source Sans 3',sans-serif;font-size:.55rem;color:rgba(255,255,255,.25)">Garey & Johnson (1979)</div>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;padding:24px 30px 18px;background:var(--white);overflow:hidden">
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px" class="anim">Equivalencia con problemas clásicos</div>
-      <div style="display:flex;gap:8px;margin-bottom:8px" class="anim">
+    <div style="flex:1;display:flex;flex-direction:column;padding:20px 28px 16px;background:var(--white);overflow:hidden;justify-content:center">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px" class="anim">Equivalencia con problemas clásicos</div>
+      <div style="display:flex;gap:8px;margin-bottom:6px" class="anim">
         <div style="flex:1;border-radius:10px;padding:10px 12px;background:linear-gradient(135deg,#EDE7F6,#F3E5F5);border-left:4px solid #7E57C2">
           <div style="font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:#4A148C;margin-bottom:2px">Asignación Generalizada</div>
           <div style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:var(--gray);line-height:1.35">Asignar solicitantes a slots con capacidades heterogéneas por país y categoría.</div>
@@ -790,8 +786,8 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
           <div style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:var(--gray);line-height:1.35">Ordenar colas FIFO con recursos limitados, precedencias temporales y dependencias cruzadas.</div>
         </div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px" class="anim">Los tres obstáculos matemáticos</div>
-      <div style="display:flex;gap:8px;margin-bottom:8px" class="anim">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px" class="anim">Los tres obstáculos matemáticos</div>
+      <div style="display:flex;gap:8px;margin-bottom:6px" class="anim">
         <div style="flex:1;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:10px 12px;border-top:3px solid #FF6B6B">
           <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">A · Integralidad</div>
           <div style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.35">No se puede asignar <strong style="color:white">0.3 visas</strong>. Cada green card es <strong style="color:var(--yellow)">indivisible</strong>.</div>
@@ -818,55 +814,59 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 <div class="slide slide--section"><div class="section-number anim">04</div><div class="section-label anim">HHO × Green Cards</div><div class="section-sub anim">Tres objetivos en conflicto y adaptación multiobjetivo</div></div>
 
 <!-- ═══════════ SLIDE 20 — TRES OBJETIVOS ═══════════ -->
-<div class="slide" style="padding:28px 44px 24px">
+<div class="slide" style="padding:22px 40px 20px">
   <h2 class="slide-title anim" style="margin-bottom:2px">Tres Objetivos en Conflicto</h2>
-  <div class="slide-subtitle anim" style="margin-bottom:8px">No existe una solución que optimice los tres simultáneamente</div>
-  <div style="display:flex;gap:20px;flex:1;min-height:0">
-    <div style="flex:0 0 38%;display:flex;align-items:center;justify-content:center" class="anim">
-      <svg viewBox="0 0 340 320" style="width:100%;max-height:320px" xmlns="http://www.w3.org/2000/svg">
+  <div class="slide-subtitle anim" style="margin-bottom:6px">No existe una solución que optimice los tres simultáneamente — por eso es multi-objetivo</div>
+  <div style="display:flex;gap:16px;flex:1;min-height:0">
+    <div style="flex:0 0 42%;display:flex;flex-direction:column;align-items:center;justify-content:center" class="anim">
+      <svg viewBox="0 0 380 360" style="width:100%;max-height:350px" xmlns="http://www.w3.org/2000/svg">
         <defs><filter id="glow"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".1"/></filter></defs>
         <!-- Triangle with gradient fill -->
-        <polygon points="170,30 30,280 310,280" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
+        <polygon points="190,28 20,310 360,310" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1.5"/>
         <!-- Center label -->
-        <text x="170" y="175" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" font-weight="700" fill="#2C3E50">Frente de</text>
-        <text x="170" y="193" text-anchor="middle" font-family="Playfair Display,serif" font-size="13" font-weight="700" fill="#2C3E50">Pareto</text>
-        <!-- Conflict labels on edges -->
-        <text x="83" y="148" text-anchor="middle" transform="rotate(-56,83,148)" font-family="Source Sans 3,sans-serif" font-size="10" fill="#B41E1E" font-weight="700">⚡ CONFLICTO</text>
-        <text x="257" y="148" text-anchor="middle" transform="rotate(56,257,148)" font-family="Source Sans 3,sans-serif" font-size="10" fill="#B41E1E" font-weight="700">⚡ CONFLICTO</text>
-        <text x="170" y="303" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#B41E1E" font-weight="700">⚡ CONFLICTO</text>
-        <!-- Objective nodes -->
-        <circle cx="170" cy="30" r="28" fill="#E3F0FF" stroke="#003CA6" stroke-width="2.5" filter="url(#glow)"/>
-        <text x="170" y="26" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" font-weight="700" fill="#003CA6">f₁</text>
-        <text x="170" y="42" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="8.5" font-weight="600" fill="#003CA6">Espera</text>
-        <circle cx="30" cy="280" r="28" fill="#D1FAE5" stroke="#27AE60" stroke-width="2.5" filter="url(#glow)"/>
-        <text x="30" y="276" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" font-weight="700" fill="#065F46">f₂</text>
-        <text x="30" y="292" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="8.5" font-weight="600" fill="#065F46">Equidad</text>
-        <circle cx="310" cy="280" r="28" fill="#FDE8E8" stroke="#B41E1E" stroke-width="2.5" filter="url(#glow)"/>
-        <text x="310" y="276" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" font-weight="700" fill="#B41E1E">f₃</text>
-        <text x="310" y="292" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="8.5" font-weight="600" fill="#B41E1E">Utilización</text>
+        <text x="190" y="185" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" font-weight="700" fill="#2C3E50">Frente de</text>
+        <text x="190" y="205" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" font-weight="700" fill="#2C3E50">Pareto</text>
+        <text x="190" y="225" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" fill="#999">Trade-offs inevitables</text>
+        <!-- Conflict labels on edges with descriptions -->
+        <text x="88" y="162" text-anchor="middle" transform="rotate(-56,88,162)" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B41E1E" font-weight="700">⚡ CONFLICTO</text>
+        <text x="292" y="162" text-anchor="middle" transform="rotate(56,292,162)" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B41E1E" font-weight="700">⚡ CONFLICTO</text>
+        <text x="190" y="336" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B41E1E" font-weight="700">⚡ CONFLICTO</text>
+        <!-- Objective nodes - bigger -->
+        <circle cx="190" cy="28" r="32" fill="#E3F0FF" stroke="#003CA6" stroke-width="2.5" filter="url(#glow)"/>
+        <text x="190" y="24" text-anchor="middle" font-family="Playfair Display,serif" font-size="17" font-weight="700" fill="#003CA6">f₁</text>
+        <text x="190" y="42" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="600" fill="#003CA6">Espera</text>
+        <circle cx="20" cy="310" r="32" fill="#D1FAE5" stroke="#27AE60" stroke-width="2.5" filter="url(#glow)"/>
+        <text x="20" y="306" text-anchor="middle" font-family="Playfair Display,serif" font-size="17" font-weight="700" fill="#065F46">f₂</text>
+        <text x="20" y="324" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="600" fill="#065F46">Equidad</text>
+        <circle cx="360" cy="310" r="32" fill="#FDE8E8" stroke="#B41E1E" stroke-width="2.5" filter="url(#glow)"/>
+        <text x="360" y="306" text-anchor="middle" font-family="Playfair Display,serif" font-size="17" font-weight="700" fill="#B41E1E">f₃</text>
+        <text x="360" y="324" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="600" fill="#B41E1E">Utilización</text>
+        <!-- Edge conflict descriptions -->
+        <text x="60" y="348" font-family="Source Sans 3,sans-serif" font-size="9" fill="#888">Dar más a India ≠ equidad</text>
+        <text x="210" y="348" font-family="Source Sans 3,sans-serif" font-size="9" fill="#888">7% estricto = desperdicio</text>
       </svg>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;gap:8px" class="anim">
-      <div style="background:#E3F0FF;border-radius:10px;padding:12px 16px;border-left:4px solid var(--blue)">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Objetivo f₁ — Minimizar tiempo de espera</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#333;line-height:1.45">Reducir el promedio de años que cada solicitante espera su green card. Hoy India EB-2 espera <strong>134 años</strong>.</div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:6px;justify-content:center" class="anim">
+      <div style="background:#E3F0FF;border-radius:10px;padding:10px 14px;border-left:4px solid var(--blue)">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px">f₁ — Minimizar tiempo de espera promedio</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#333;line-height:1.4">Reducir los años que cada persona espera. India EB-2 espera <strong>134 años</strong>. Cada punto de mejora aquí son <strong style="color:var(--blue)">miles de familias reunidas antes</strong>.</div>
       </div>
-      <div style="background:#D1FAE5;border-radius:10px;padding:12px 16px;border-left:4px solid var(--green)">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:#065F46;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Objetivo f₂ — Maximizar equidad entre países</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#333;line-height:1.45">Minimizar la disparidad en tiempos de espera entre nacionalidades. El tope del 7% busca equidad pero genera distorsiones extremas.</div>
+      <div style="background:#D1FAE5;border-radius:10px;padding:10px 14px;border-left:4px solid var(--green)">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#065F46;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px">f₂ — Maximizar equidad entre países</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#333;line-height:1.4">Minimizar disparidad de tiempos entre nacionalidades. El tope del 7% <strong style="color:#065F46">busca equidad pero genera distorsiones extremas</strong> entre países grandes y pequeños.</div>
       </div>
-      <div style="background:#FDE8E8;border-radius:10px;padding:12px 16px;border-left:4px solid var(--red)">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Objetivo f₃ — Maximizar utilización de visas</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#333;line-height:1.45">Minimizar visas desperdiciadas cada año. Países pequeños no llenan sus cuotas mientras otros tienen colas enormes.</div>
+      <div style="background:#FDE8E8;border-radius:10px;padding:10px 14px;border-left:4px solid var(--red)">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px">f₃ — Maximizar utilización de visas</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:#333;line-height:1.4">Evitar visas desperdiciadas. Países pequeños no llenan cuotas mientras otros tienen colas enormes. <strong style="color:var(--red)">Cada visa perdida = una persona más esperando</strong>.</div>
       </div>
       <div style="display:flex;gap:6px;margin-top:2px">
-        <div class="alert-box" style="flex:1;font-size:.78rem;margin:0;padding:8px 10px"><strong>f₁ vs f₂:</strong> Dar más a India/China reduce espera pero viola equidad del 7%.</div>
-        <div class="alert-box" style="flex:1;font-size:.78rem;margin:0;padding:8px 10px"><strong>f₂ vs f₃:</strong> Aplicar 7% estricto genera desperdicio en países pequeños.</div>
-        <div class="alert-box" style="flex:1;font-size:.78rem;margin:0;padding:8px 10px"><strong>f₁ vs f₃:</strong> Maximizar uso favorece colas cortas, posterga las largas.</div>
+        <div class="alert-box" style="flex:1;font-size:.78rem;margin:0;padding:7px 10px"><strong>f₁ vs f₂:</strong> Dar más a India/China reduce espera pero viola equidad.</div>
+        <div class="alert-box" style="flex:1;font-size:.78rem;margin:0;padding:7px 10px"><strong>f₂ vs f₃:</strong> 7% estricto genera desperdicio en países pequeños.</div>
+        <div class="alert-box" style="flex:1;font-size:.78rem;margin:0;padding:7px 10px"><strong>f₁ vs f₃:</strong> Maximizar uso favorece colas cortas, posterga las largas.</div>
       </div>
-      <div style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;margin-top:6px;color:white">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">¿Por qué tres objetivos?</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">Estos tres objetivos capturan las <strong style="color:var(--yellow)">prioridades reales</strong> del sistema de inmigración. No se pueden satisfacer simultáneamente porque son <strong style="color:var(--yellow)">inherentemente contradictorios</strong>: mejorar uno empeora otro. Por eso necesitamos optimización <em>multi-objetivo</em> — el resultado no es una solución única, sino un <strong style="color:var(--yellow)">frente de Pareto</strong>: un conjunto de soluciones donde el tomador de decisiones elige el balance que prefiera.</div>
+      <div style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 16px;margin-top:2px;color:white">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Impacto social: ¿por qué importa?</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.45;color:rgba(255,255,255,.9)"><strong style="color:var(--yellow)">1.8 millones de personas</strong> esperan una Green Card. Cada variable de nuestro modelo representa a una familia real. Este problema es <strong style="color:var(--yellow)">inherentemente multi-objetivo</strong>: rapidez, justicia y eficiencia son metas sociales legítimas pero contradictorias. No buscamos <em>una</em> solución — buscamos un <strong style="color:var(--yellow)">frente de Pareto</strong> que le dé al gobierno opciones informadas para decidir el balance.</div>
       </div>
     </div>
   </div>
@@ -874,60 +874,66 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 21 — MOHHO ═══════════ -->
-<div class="slide" style="padding:24px 40px 20px">
+<div class="slide" style="padding:20px 40px 18px">
   <h2 class="slide-title anim" style="margin-bottom:2px">Adaptación Multiobjetivo: MOHHO</h2>
-  <div class="slide-subtitle anim" style="margin-bottom:8px">Tres mecanismos adicionales al HHO estándar para manejar múltiples objetivos</div>
-  <div style="display:flex;gap:16px;flex:1;min-height:0">
-    <div style="flex:1;display:flex;flex-direction:column;gap:6px" class="anim">
-      <div style="background:linear-gradient(135deg,#EDE7F6,#F3E5F5);border-radius:10px;padding:12px 16px;border-left:4px solid #7E57C2">
-        <div style="font-size:.9rem;margin-bottom:3px"><strong style="color:#5E35B1">1. Archivo Externo de Pareto</strong></div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333">Se reemplaza la presa única por un <strong>archivo de soluciones no dominadas</strong>. Una solución <strong>a</strong> domina a <strong>b</strong> si es mejor o igual en <em>todos</em> los objetivos y estrictamente mejor en al menos uno.</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#E8F5E9,#D1FAE5);border-radius:10px;padding:12px 16px;border-left:4px solid var(--green)">
-        <div style="font-size:.9rem;margin-bottom:3px"><strong style="color:var(--green)">2. Selección por Crowding Distance</strong></div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333">Soluciones en regiones <strong>menos pobladas</strong> del frente tienen mayor probabilidad de ser elegidas como líder, promoviendo diversidad en las soluciones.</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);border-radius:10px;padding:12px 16px;border-left:4px solid var(--orange)">
-        <div style="font-size:.9rem;margin-bottom:3px"><strong style="color:var(--orange)">3. Decodificador Greedy</strong></div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333">Verifica restricciones legales (C1-C6). Si una asignación viola alguna, difiere el grupo. <strong>Garantiza factibilidad inherente.</strong></div>
-      </div>
+  <div class="slide-subtitle anim" style="margin-bottom:6px">Tres mecanismos adicionales al HHO estándar para manejar múltiples objetivos</div>
+  <div style="display:flex;gap:12px;margin-bottom:8px" class="anim">
+    <div style="flex:1;background:linear-gradient(135deg,#EDE7F6,#F3E5F5);border-radius:10px;padding:10px 14px;border-top:4px solid #7E57C2">
+      <div style="font-size:.88rem;margin-bottom:3px"><strong style="color:#5E35B1">1. Archivo Externo de Pareto</strong></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;line-height:1.4;color:#333">Se reemplaza la presa única por un <strong>archivo de soluciones no dominadas</strong>. Solución <strong>a</strong> domina a <strong>b</strong> si es mejor o igual en <em>todos</em> los objetivos y estrictamente mejor en al menos uno.</div>
     </div>
-    <div style="flex:0 0 42%;display:flex;flex-direction:column;gap:6px" class="anim">
-      <svg viewBox="0 0 320 230" style="width:100%;flex:1" xmlns="http://www.w3.org/2000/svg">
+    <div style="flex:1;background:linear-gradient(135deg,#E8F5E9,#D1FAE5);border-radius:10px;padding:10px 14px;border-top:4px solid var(--green)">
+      <div style="font-size:.88rem;margin-bottom:3px"><strong style="color:var(--green)">2. Selección por Crowding Distance</strong></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;line-height:1.4;color:#333">Soluciones en regiones <strong>menos pobladas</strong> del frente tienen mayor probabilidad de ser elegidas como líder, promoviendo diversidad.</div>
+    </div>
+    <div style="flex:1;background:linear-gradient(135deg,#FFF3E0,#FFE0B2);border-radius:10px;padding:10px 14px;border-top:4px solid var(--orange)">
+      <div style="font-size:.88rem;margin-bottom:3px"><strong style="color:var(--orange)">3. Decodificador Greedy</strong></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;line-height:1.4;color:#333">Verifica restricciones legales (C1-C6). Si una asignación viola alguna, difiere el grupo. <strong>Garantiza factibilidad inherente.</strong></div>
+    </div>
+  </div>
+  <div style="display:flex;gap:14px;flex:1;min-height:0" class="anim">
+    <div style="flex:0 0 52%;display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 360 250" style="width:100%;max-height:250px" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <marker id="ax" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2C3E50"/></marker>
           <filter id="ptg"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity=".15"/></filter>
         </defs>
-        <rect x="0" y="0" width="320" height="230" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+        <rect x="0" y="0" width="360" height="250" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
         <!-- Axes -->
-        <line x1="50" y1="195" x2="290" y2="195" stroke="#2C3E50" stroke-width="2" marker-end="url(#ax)"/>
-        <line x1="50" y1="195" x2="50" y2="20" stroke="#2C3E50" stroke-width="2" marker-end="url(#ax)"/>
-        <text x="170" y="218" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" fill="#003CA6" font-weight="600">f₁ (espera) →</text>
-        <text x="22" y="110" text-anchor="middle" transform="rotate(-90,22,110)" font-family="Source Sans 3,sans-serif" font-size="11" fill="#27AE60" font-weight="600">f₂ (equidad) →</text>
+        <line x1="50" y1="210" x2="330" y2="210" stroke="#2C3E50" stroke-width="2" marker-end="url(#ax)"/>
+        <line x1="50" y1="210" x2="50" y2="20" stroke="#2C3E50" stroke-width="2" marker-end="url(#ax)"/>
+        <text x="190" y="238" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#003CA6" font-weight="600">f₁ (espera) →</text>
+        <text x="22" y="120" text-anchor="middle" transform="rotate(-90,22,120)" font-family="Source Sans 3,sans-serif" font-size="12" fill="#27AE60" font-weight="600">f₂ (equidad) →</text>
         <!-- Shaded area behind front -->
-        <path d="M75,45 Q130,55 155,90 Q185,130 250,170 L280,195 L50,195 L50,45 Z" fill="#003CA6" opacity=".04"/>
+        <path d="M80,45 Q140,55 170,95 Q200,140 275,185 L310,210 L50,210 L50,45 Z" fill="#003CA6" opacity=".04"/>
         <!-- Pareto front curve -->
-        <path d="M75,45 Q130,55 155,90 Q185,130 250,170" fill="none" stroke="#FFD600" stroke-width="4" stroke-linecap="round"/>
-        <text x="260" y="155" font-family="Source Sans 3,sans-serif" font-size="9" fill="#7c6a00" font-weight="700" transform="rotate(35,260,155)">Frente Pareto</text>
+        <path d="M80,45 Q140,55 170,95 Q200,140 275,185" fill="none" stroke="#FFD600" stroke-width="4.5" stroke-linecap="round"/>
+        <text x="290" y="170" font-family="Source Sans 3,sans-serif" font-size="10" fill="#7c6a00" font-weight="700" transform="rotate(35,290,170)">Frente Pareto</text>
         <!-- Non-dominated points -->
-        <circle cx="75" cy="45" r="8" fill="#003CA6" filter="url(#ptg)"/>
-        <circle cx="100" cy="58" r="8" fill="#003CA6" filter="url(#ptg)"/>
-        <circle cx="128" cy="75" r="8" fill="#003CA6" filter="url(#ptg)"/>
-        <circle cx="155" cy="93" r="8" fill="#003CA6" filter="url(#ptg)"/>
-        <circle cx="180" cy="115" r="8" fill="#003CA6" filter="url(#ptg)"/>
-        <circle cx="210" cy="140" r="8" fill="#003CA6" filter="url(#ptg)"/>
-        <circle cx="250" cy="170" r="8" fill="#003CA6" filter="url(#ptg)"/>
+        <circle cx="80" cy="45" r="9" fill="#003CA6" filter="url(#ptg)"/>
+        <circle cx="108" cy="60" r="9" fill="#003CA6" filter="url(#ptg)"/>
+        <circle cx="140" cy="80" r="9" fill="#003CA6" filter="url(#ptg)"/>
+        <circle cx="170" cy="100" r="9" fill="#003CA6" filter="url(#ptg)"/>
+        <circle cx="200" cy="125" r="9" fill="#003CA6" filter="url(#ptg)"/>
+        <circle cx="235" cy="155" r="9" fill="#003CA6" filter="url(#ptg)"/>
+        <circle cx="275" cy="185" r="9" fill="#003CA6" filter="url(#ptg)"/>
         <!-- Dominated points -->
-        <circle cx="150" cy="55" r="5" fill="#ccc" opacity=".5"/><circle cx="200" cy="80" r="5" fill="#ccc" opacity=".5"/>
-        <circle cx="130" cy="145" r="5" fill="#ccc" opacity=".5"/><circle cx="185" cy="95" r="5" fill="#ccc" opacity=".5"/>
-        <circle cx="240" cy="110" r="5" fill="#ccc" opacity=".5"/><circle cx="170" cy="160" r="5" fill="#ccc" opacity=".5"/>
+        <circle cx="160" cy="55" r="5" fill="#ccc" opacity=".5"/><circle cx="215" cy="85" r="5" fill="#ccc" opacity=".5"/>
+        <circle cx="140" cy="155" r="5" fill="#ccc" opacity=".5"/><circle cx="200" cy="100" r="5" fill="#ccc" opacity=".5"/>
+        <circle cx="260" cy="120" r="5" fill="#ccc" opacity=".5"/><circle cx="185" cy="175" r="5" fill="#ccc" opacity=".5"/>
         <!-- Legend -->
-        <circle cx="75" cy="200" r="5" fill="#003CA6"/><text x="87" y="204" font-family="Source Sans 3,sans-serif" font-size="9" fill="#555">No dominadas (Pareto)</text>
-        <circle cx="195" cy="200" r="4" fill="#ccc" opacity=".6"/><text x="205" y="204" font-family="Source Sans 3,sans-serif" font-size="9" fill="#999">Dominadas</text>
+        <circle cx="80" cy="218" r="5" fill="#003CA6"/><text x="92" y="222" font-family="Source Sans 3,sans-serif" font-size="10" fill="#555">No dominadas (Pareto)</text>
+        <circle cx="215" cy="218" r="4" fill="#ccc" opacity=".6"/><text x="225" y="222" font-family="Source Sans 3,sans-serif" font-size="10" fill="#999">Dominadas</text>
       </svg>
-      <div style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 14px;color:white">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">¿Qué es el Frente de Pareto?</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">Es el conjunto de soluciones donde <strong style="color:var(--yellow)">ninguna puede mejorar en un objetivo sin empeorar otro</strong>. Cada punto azul representa una asignación diferente de visas: unas priorizan rapidez, otras equidad, otras utilización. <strong style="color:rgba(255,255,255,.95)">No hay una "mejor"</strong> — el tomador de decisiones (el gobierno) elige según sus prioridades políticas. Los puntos grises son soluciones inferiores que algún punto azul supera en todo.</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px">
+      <div style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:12px 16px;color:white">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">¿Qué es el Frente de Pareto?</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">Es el conjunto de soluciones donde <strong style="color:var(--yellow)">ninguna puede mejorar en un objetivo sin empeorar otro</strong>. Cada punto azul representa una asignación diferente de visas: unas priorizan rapidez, otras equidad, otras utilización. <strong style="color:rgba(255,255,255,.95)">No hay una "mejor"</strong> — el gobierno elige según sus prioridades políticas.</div>
+      </div>
+      <div style="background:linear-gradient(135deg,#E3F0FF,#DBEAFE);border:1.5px solid #BBDEFB;border-radius:10px;padding:10px 14px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Ventaja de MOHHO</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333">Los <strong style="color:var(--blue)">6 operadores</strong> de HHO generan diversidad natural en el frente. Los <strong style="color:var(--blue)">vuelos de Lévy</strong> saltan discontinuidades del tope del 7%. El archivo Pareto preserva las mejores soluciones no dominadas a lo largo de la búsqueda.</div>
       </div>
     </div>
   </div>
@@ -935,44 +941,55 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 22 — MAPEO HHO → GREEN CARDS ═══════════ -->
-<div class="slide" style="padding:28px 44px 24px">
+<div class="slide" style="padding:22px 40px 20px">
   <h2 class="slide-title anim" style="font-size:1.8rem;margin-bottom:2px">Mapeo: HHO → Green Cards</h2>
   <div class="slide-subtitle anim" style="margin-bottom:8px">Cada componente del algoritmo se traduce en una acción sobre la distribución de 140,000 visas</div>
-  <div class="anim" style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:0">
-    <div style="display:flex;gap:10px;align-items:center">
-      <div style="flex:0 0 280px;background:#E3F0FF;border:2px solid var(--blue);border-radius:10px;padding:10px 14px;text-align:center"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:var(--blue)">Halcón individual</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#777">Solución candidata Xᵢ</div></div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.2rem;color:var(--blue);font-weight:700;flex:0 0 30px;text-align:center">→</div>
-      <div style="flex:1;background:#D1FAE5;border:2px solid #A5D6A7;border-radius:10px;padding:10px 14px"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:#065F46">Distribución completa de 140,000 visas</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#555">Permutación del orden de procesamiento de cohortes</div></div>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <div style="flex:0 0 280px;background:#E3F0FF;border:2px solid var(--blue);border-radius:10px;padding:10px 14px;text-align:center"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:var(--blue)">Presa (conejo)</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#777">Mejor solución / líder Pareto</div></div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.2rem;color:var(--blue);font-weight:700;flex:0 0 30px;text-align:center">→</div>
-      <div style="flex:1;background:#D1FAE5;border:2px solid #A5D6A7;border-radius:10px;padding:10px 14px"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:#065F46">Asignación no dominada del archivo Pareto</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#555">Mejor compromiso entre f₁, f₂, f₃</div></div>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <div style="flex:0 0 280px;background:#FFF3E0;border:2px solid #FFE0B2;border-radius:10px;padding:10px 14px;text-align:center"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:#E65100">Energía de escape E</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#777">E = 2E₀(1 - t/T)</div></div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.2rem;color:var(--blue);font-weight:700;flex:0 0 30px;text-align:center">→</div>
-      <div style="flex:1;background:#FFF8D6;border:2px solid #FFD600;border-radius:10px;padding:10px 14px"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:#7c6a00">Fase de la optimización</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#555">|E|≥1: distribuciones diferentes · |E|&lt;1: ajuste fino</div></div>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <div style="flex:0 0 280px;background:#E3F0FF;border:2px solid var(--blue);border-radius:10px;padding:10px 14px;text-align:center"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:var(--blue)">Exploración (Ops 1-2)</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#777">Búsqueda global amplia</div></div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.2rem;color:var(--blue);font-weight:700;flex:0 0 30px;text-align:center">→</div>
-      <div style="flex:1;background:#D1FAE5;border:2px solid #A5D6A7;border-radius:10px;padding:10px 14px"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:#065F46">Probar asignaciones radicalmente diversas</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#555">Redistribuir visas entre países/categorías de formas distintas</div></div>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <div style="flex:0 0 280px;background:#F3E5F5;border:2px solid #CE93D8;border-radius:10px;padding:10px 14px;text-align:center"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:#6A1B9A">Vuelos de Lévy (Ops 5-6)</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#777">Saltos de largo alcance</div></div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.2rem;color:var(--blue);font-weight:700;flex:0 0 30px;text-align:center">→</div>
-      <div style="flex:1;background:#EDE7F6;border:2px solid #CE93D8;border-radius:10px;padding:10px 14px"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:#6A1B9A">Saltar discontinuidades del tope del 7%</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:#555">País recibe 0 vs. 25,620 (máximo legal) — romper el acantilado</div></div>
-    </div>
-    <div style="display:flex;gap:10px;align-items:center">
-      <div style="flex:0 0 280px;background:#FDE8E8;border:2px solid #FECACA;border-radius:10px;padding:10px 14px;text-align:center"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:var(--red)">Fitness (captura exitosa)</div></div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.2rem;color:var(--blue);font-weight:700;flex:0 0 30px;text-align:center">→</div>
-      <div style="flex:1;background:#FDE8E8;border:2px solid #FECACA;border-radius:10px;padding:10px 14px"><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:700;color:var(--red)">Evaluación de f₁, f₂, f₃ + dominancia Pareto</div></div>
-    </div>
+  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0">
+    <table style="width:100%;border-collapse:separate;border-spacing:0 6px;font-family:'Source Sans 3',sans-serif">
+      <thead>
+        <tr>
+          <th style="width:38%;background:var(--blue);color:white;padding:10px 16px;font-size:.85rem;font-weight:700;border-radius:8px 0 0 8px;text-align:center">Componente HHO</th>
+          <th style="width:6%;background:#f0f0f0;padding:6px;text-align:center"></th>
+          <th style="width:56%;background:var(--green);color:white;padding:10px 16px;font-size:.85rem;font-weight:700;border-radius:0 8px 8px 0;text-align:center">En el Problema de Green Cards</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="background:#E3F0FF;border:2px solid #BBDEFB;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--blue);font-size:.92rem">Halcón individual</strong><br><span style="font-size:.75rem;color:#777">Solución candidata Xᵢ</span></td>
+          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
+          <td style="background:#D1FAE5;border:2px solid #A5D6A7;border-radius:8px;padding:10px 14px"><strong style="color:#065F46;font-size:.92rem">Distribución completa de 140,000 visas</strong><br><span style="font-size:.75rem;color:#555">Permutación del orden de procesamiento de cohortes</span></td>
+        </tr>
+        <tr>
+          <td style="background:#E3F0FF;border:2px solid #BBDEFB;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--blue);font-size:.92rem">Presa (conejo)</strong><br><span style="font-size:.75rem;color:#777">Mejor solución / líder Pareto</span></td>
+          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
+          <td style="background:#D1FAE5;border:2px solid #A5D6A7;border-radius:8px;padding:10px 14px"><strong style="color:#065F46;font-size:.92rem">Asignación no dominada del archivo Pareto</strong><br><span style="font-size:.75rem;color:#555">Mejor compromiso entre f₁, f₂, f₃</span></td>
+        </tr>
+        <tr>
+          <td style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:#E65100;font-size:.92rem">Energía de escape E</strong><br><span style="font-size:.75rem;color:#777">E = 2E₀(1 - t/T)</span></td>
+          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
+          <td style="background:#FFF8D6;border:2px solid #FFD600;border-radius:8px;padding:10px 14px"><strong style="color:#7c6a00;font-size:.92rem">Fase de la optimización</strong><br><span style="font-size:.75rem;color:#555">|E|≥1: distribuciones diferentes · |E|&lt;1: ajuste fino</span></td>
+        </tr>
+        <tr>
+          <td style="background:#E3F0FF;border:2px solid #BBDEFB;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--blue);font-size:.92rem">Exploración (Ops 1-2)</strong><br><span style="font-size:.75rem;color:#777">Búsqueda global amplia</span></td>
+          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
+          <td style="background:#D1FAE5;border:2px solid #A5D6A7;border-radius:8px;padding:10px 14px"><strong style="color:#065F46;font-size:.92rem">Probar asignaciones radicalmente diversas</strong><br><span style="font-size:.75rem;color:#555">Redistribuir visas entre países/categorías de formas distintas</span></td>
+        </tr>
+        <tr>
+          <td style="background:#F3E5F5;border:2px solid #CE93D8;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:#6A1B9A;font-size:.92rem">Vuelos de Lévy (Ops 5-6)</strong><br><span style="font-size:.75rem;color:#777">Saltos de largo alcance</span></td>
+          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
+          <td style="background:#EDE7F6;border:2px solid #CE93D8;border-radius:8px;padding:10px 14px"><strong style="color:#6A1B9A;font-size:.92rem">Saltar discontinuidades del tope del 7%</strong><br><span style="font-size:.75rem;color:#555">País recibe 0 vs. 25,620 (máximo legal) — romper el acantilado</span></td>
+        </tr>
+        <tr>
+          <td style="background:#FDE8E8;border:2px solid #FECACA;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--red);font-size:.92rem">Fitness (captura)</strong></td>
+          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
+          <td style="background:#FDE8E8;border:2px solid #FECACA;border-radius:8px;padding:10px 14px"><strong style="color:var(--red);font-size:.92rem">Evaluación de f₁, f₂, f₃ + dominancia Pareto</strong></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 18px;margin-top:6px;color:white">
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Síntesis del mapeo</div>
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.45;color:rgba(255,255,255,.9)">Cada halcón es una <strong style="color:var(--yellow)">propuesta completa</strong> de cómo repartir 140,000 visas entre países y categorías. La "cacería" es el proceso iterativo de optimización. Los <strong style="color:var(--yellow)">vuelos de Lévy</strong> permiten saltar las discontinuidades del tope del 7%, y la <strong style="color:var(--yellow)">dominancia de Pareto</strong> reemplaza al fitness simple para evaluar tres objetivos simultáneos.</div>
+  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 22px;margin-top:4px;color:white">
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Síntesis del mapeo</div>
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">Cada halcón es una <strong style="color:var(--yellow)">propuesta completa</strong> de cómo repartir 140,000 visas entre países y categorías. La "cacería" es el proceso iterativo de optimización. Los <strong style="color:var(--yellow)">vuelos de Lévy</strong> saltan las discontinuidades del tope del 7%, y la <strong style="color:var(--yellow)">dominancia de Pareto</strong> reemplaza al fitness simple.</div>
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
 </div>
@@ -990,8 +1007,8 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
         <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.55">Hallazgos principales y la ruta hacia la implementación completa del modelo MOHHO.</div>
       </div>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;padding:30px 36px 24px;background:var(--white);overflow:hidden">
-      <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:12px;padding:18px 22px;color:white;margin-bottom:12px">
+    <div style="flex:1;display:flex;flex-direction:column;padding:24px 32px 20px;background:var(--white);overflow:hidden;justify-content:center">
+      <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:12px;padding:16px 20px;color:white;margin-bottom:10px">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><svg width="16" height="16" style="color:var(--yellow)"><use href="#ico-check"/></svg><span style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em">Conclusiones de la Fase 01</span></div>
         <ul style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.55;color:rgba(255,255,255,.9);list-style:none;padding:0;margin:0">
           <li style="padding-left:18px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;top:8px;width:7px;height:7px;background:var(--yellow);border-radius:2px;transform:rotate(45deg)"></span>HHO es un candidato prometedor gracias a sus <strong style="color:var(--yellow)">6 operadores adaptativos</strong> y su transición estocástica entre exploración y explotación.</li>
@@ -1024,44 +1041,44 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 24 — REFLEXIONES ═══════════ -->
-<div class="slide slide--dark" style="padding:36px 44px 30px">
-  <h2 class="slide-title anim" style="margin-bottom:14px">Reflexiones Personales</h2>
-  <div style="display:flex;gap:20px;flex:1;min-height:0" class="anim">
-    <div style="flex:1;display:flex;flex-direction:column;gap:14px">
-      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:16px;padding:22px 24px;display:flex;gap:20px;align-items:center;border:1px solid rgba(255,255,255,.1)">
-        <div style="width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.35)">
+<div class="slide slide--dark" style="padding:28px 40px 24px">
+  <h2 class="slide-title anim" style="margin-bottom:10px">Reflexiones Personales</h2>
+  <div style="display:flex;gap:18px;flex:1;min-height:0;align-items:center" class="anim">
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px;justify-content:center">
+      <div style="background:rgba(255,255,255,.06);border-radius:14px;padding:18px 20px;display:flex;gap:18px;align-items:center;border:1px solid rgba(255,255,255,.1)">
+        <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.35)">
           <img src="./yazmin_photo.jpg" alt="Yazmín" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:rgba(255,255,255,.05)><svg width=50 height=50 style=color:#FFD600><use href=#ico-people/></svg></div>'">
         </div>
         <div style="flex:1">
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--yellow);margin-bottom:6px">Yazmín I. Flores Martínez</div>
-          <div style="font-family:'Source Sans 3',sans-serif;font-size:1.02rem;line-height:1.55;color:rgba(255,255,255,.85)">Llegué a EE.UU. en 2012. Años de incertidumbre migratoria. Obtuve mi Green Card, pero el alivio vino con una pregunta: <strong style="color:var(--yellow)">¿por qué tuvo que ser así?</strong> Cada variable $x_{i,t}$ en nuestro modelo representa a una persona real esperando.</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--yellow);margin-bottom:5px">Yazmín I. Flores Martínez</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.5;color:rgba(255,255,255,.85)">Llegué a EE.UU. en 2012. Años de incertidumbre migratoria. Obtuve mi Green Card, pero el alivio vino con una pregunta: <strong style="color:var(--yellow)">¿por qué tuvo que ser así?</strong> Cada variable $x_{i,t}$ en nuestro modelo representa a una persona real esperando.</div>
         </div>
       </div>
-      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:16px;padding:22px 24px;display:flex;gap:20px;align-items:center;border:1px solid rgba(255,255,255,.1)">
-        <div style="width:120px;height:120px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.35)">
+      <div style="background:rgba(255,255,255,.06);border-radius:14px;padding:18px 20px;display:flex;gap:18px;align-items:center;border:1px solid rgba(255,255,255,.1)">
+        <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 20px rgba(0,0,0,.35)">
           <img src="./javi_photo.jpg" alt="Javier" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:rgba(255,255,255,.05)><svg width=50 height=50 style=color:#FFD600><use href=#ico-people/></svg></div>'">
         </div>
         <div style="flex:1">
-          <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--yellow);margin-bottom:6px">Javier A. Rebull Saucedo</div>
-          <div style="font-family:'Source Sans 3',sans-serif;font-size:1.02rem;line-height:1.55;color:rgba(255,255,255,.85)">Vivo en Boston desde 2013. <strong style="color:var(--yellow)">Dos procesos de Green Card fallidos.</strong> 13 años con permiso temporal. Sigo esperando. Elegimos este problema porque es <em>nuestro problema</em>. La optimización es personal.</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--yellow);margin-bottom:5px">Javier A. Rebull Saucedo</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.5;color:rgba(255,255,255,.85)">Vivo en Boston desde 2013. <strong style="color:var(--yellow)">Dos procesos de Green Card fallidos.</strong> 13 años con permiso temporal. Sigo esperando. Elegimos este problema porque es <em>nuestro problema</em>. La optimización es personal.</div>
         </div>
       </div>
     </div>
-    <div style="flex:0 0 300px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px 14px">
-      <svg width="52" height="52" style="color:var(--yellow);margin-bottom:18px;opacity:.8"><use href="#ico-hawk"/></svg>
-      <blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.85);line-height:1.55;max-width:280px">Los halcones cazan en equipo porque un halcón solo no puede atrapar un conejo que zigzaguea.</blockquote>
-      <div style="width:50px;height:3px;background:var(--yellow);margin:16px 0;border-radius:2px;opacity:.5"></div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.05rem;color:var(--yellow);font-weight:600;margin-bottom:4px">Cooperación, adaptación y persistencia.</div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:rgba(255,255,255,.45);margin-top:14px">Gracias. Estamos listos para sus preguntas.</div>
+    <div style="flex:0 0 260px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8px 12px">
+      <svg width="46" height="46" style="color:var(--yellow);margin-bottom:14px;opacity:.8"><use href="#ico-hawk"/></svg>
+      <blockquote style="font-family:'Playfair Display',serif;font-size:1.05rem;font-style:italic;color:rgba(255,255,255,.85);line-height:1.5;max-width:250px">Los halcones cazan en equipo porque un halcón solo no puede atrapar un conejo que zigzaguea.</blockquote>
+      <div style="width:40px;height:3px;background:var(--yellow);margin:14px 0;border-radius:2px;opacity:.5"></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;color:var(--yellow);font-weight:600;margin-bottom:4px">Cooperación, adaptación y persistencia.</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:rgba(255,255,255,.45);margin-top:10px">Gracias. Estamos listos para sus preguntas.</div>
     </div>
   </div>
 </div>
 
 <!-- ═══════════ SLIDE 25 — REFERENCIAS ═══════════ -->
-<div class="slide" style="padding:44px 50px 36px">
-  <h2 class="slide-title anim">Referencias</h2>
-  <div class="slide-subtitle anim">Bibliografía en formato APA 7 · 16 fuentes consultadas</div>
-  <div style="flex:1;overflow-y:auto;display:flex;gap:20px;font-family:'Source Sans 3',sans-serif" class="anim">
+<div class="slide" style="padding:36px 50px 30px">
+  <h2 class="slide-title anim" style="text-align:center">Referencias</h2>
+  <div class="slide-subtitle anim" style="text-align:center">Bibliografía en formato APA 7 · 16 fuentes consultadas</div>
+  <div style="flex:1;overflow-y:auto;display:flex;gap:24px;font-family:'Source Sans 3',sans-serif;align-items:flex-start;justify-content:center" class="anim">
     <div style="flex:1;font-size:.78rem;line-height:1.55;color:var(--gray)">
       <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Alabool, H. M., et al.</span> (2021). Harris hawks optimization: A comprehensive review. <em>Neural Comp. & Applications, 33</em>(15).</div>
       <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Bansak, K. & Paulson, E.</span> (2024). Outcome-driven dynamic refugee assignment. <em>Operations Research, 72</em>(5).</div>
