@@ -405,20 +405,80 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 7 — NP-DIFÍCIL ═══════════ -->
-<div class="slide" data-notes="Equivalente a 3 problemas NP-difícil combinados. (a) Integralidad: visas indivisibles. (b) Explosión combinatoria: 10K+ dimensiones enteras. (c) No convexidad: tope 7% crea discontinuidades. — PREGUNTA: ¿Programación lineal entera? R: La escala hace el cómputo prohibitivo.">
-  <h2 class="slide-title anim">¿Por qué es NP-Difícil?</h2>
-  <div class="slide-subtitle anim">Equivalencia con tres problemas clásicos de complejidad computacional</div>
-  <div style="display:flex;gap:16px;margin-bottom:14px" class="anim">
-    <div style="flex:1;background:#EDE7F6;border:1px solid #D1C4E9;border-radius:12px;padding:16px 18px;text-align:center"><div style="font-size:1.1rem;font-weight:700;color:#5E35B1;margin-bottom:4px">Asignación Generalizada</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:var(--gray)">Asignar solicitantes a slots de visa con capacidades heterogéneas</div></div>
-    <div style="flex:1;background:#E8EAF6;border:1px solid #C5CAE9;border-radius:12px;padding:16px 18px;text-align:center"><div style="font-size:1.1rem;font-weight:700;color:#283593;margin-bottom:4px">Mochila Multidimensional</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:var(--gray)">Maximizar utilización con límites por país, categoría y año</div></div>
-    <div style="flex:1;background:var(--blue-light);border:1px solid #BBDEFB;border-radius:12px;padding:16px 18px;text-align:center"><div style="font-size:1.1rem;font-weight:700;color:var(--blue);margin-bottom:4px">Proyectos con Recursos</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:var(--gray)">Ordenar por FIFO con recursos (visas) limitados</div></div>
+<div class="slide" style="padding:0;overflow:hidden" data-notes="GUÍA: Esta lámina demuestra POR QUÉ necesitamos una metaheurística. Empezar diciendo: 'Nuestro problema no es difícil por capricho — es matemáticamente equivalente a tres problemas clásicos que la teoría de complejidad clasifica como NP-difícil.' Señalar cada tarjeta: Asignación Generalizada (asignar personas a slots con capacidades distintas), Mochila Multidimensional (maximizar utilización con múltiples restricciones), y Scheduling con Recursos (ordenar FIFO con recursos limitados). Después los 3 obstáculos rojos: integralidad (no puedes dar 0.3 visas), explosión combinatoria (10K+ dimensiones), y no convexidad (el tope del 7% crea acantilados). Cerrar con la conclusión: 'Por eso Simplex, gradiente y punto interior no sirven. Necesitamos búsqueda inteligente.' — PREGUNTA: ¿Por qué no usar programación lineal entera (ILP)? R: Técnicamente se podría formular como ILP, pero con 10,000+ variables enteras, restricciones condicionales de spillover y 3 funciones objetivo simultáneas, el tiempo de cómputo es prohibitivo. Además, ILP es mono-objetivo — necesitaríamos resolver múltiples ILPs para aproximar el frente de Pareto.">
+  <div style="display:flex;height:100%;width:100%">
+    <!-- LEFT: Dark impact panel -->
+    <div style="flex:0 0 35%;background:linear-gradient(160deg,#0a0e1a 0%,#1a1a2e 50%,#0d1b3e 100%);display:flex;flex-direction:column;justify-content:center;padding:44px 36px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:24px 24px"></div>
+      <div style="position:relative;z-index:1">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">
+          <svg width="12" height="12" style="vertical-align:middle;margin-right:4px;color:var(--red)"><use href="#ico-bolt"/></svg>
+          Complejidad Computacional
+        </div>
+        <h2 style="font-family:'Playfair Display',Palatino,Georgia,serif;font-size:2.1rem;font-weight:900;color:white;line-height:1.15;margin-bottom:14px">¿Por qué es<br><span style="color:var(--yellow)">NP-Difícil</span>?</h2>
+        <div style="width:50px;height:4px;background:var(--yellow);border-radius:2px;margin-bottom:18px"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:24px">Nuestro problema es equivalente a <strong style="color:white">tres problemas clásicos NP-difícil combinados</strong>, lo que hace imposible una solución exacta en tiempo razonable.</div>
+        <div style="display:flex;gap:14px">
+          <div style="flex:1;text-align:center;background:rgba(180,30,30,.12);border:1px solid rgba(180,30,30,.25);border-radius:10px;padding:12px 6px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:#FF6B6B;line-height:1">10K+</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px">dimensiones enteras</div>
+          </div>
+          <div style="flex:1;text-align:center;background:rgba(255,214,0,.06);border:1px solid rgba(255,214,0,.15);border-radius:10px;padding:12px 6px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--yellow);line-height:1">3</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px">objetivos simultáneos</div>
+          </div>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:12px;left:36px;right:20px;font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:rgba(255,255,255,.25)">Garey & Johnson (1979). <em>Computers and Intractability</em>.</div>
+    </div>
+    <!-- RIGHT: Content -->
+    <div style="flex:1;display:flex;flex-direction:column;padding:40px 40px 36px;background:var(--white);overflow:hidden">
+      <div style="display:flex;flex-direction:column;padding-top:4px" class="slide-content">
+        <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue) 0%,var(--blue) 60%,var(--yellow) 60%,var(--yellow) 100%)"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px" class="anim">Equivalencia con problemas clásicos</div>
+        <div style="display:flex;gap:12px;margin-bottom:16px" class="anim">
+          <div style="flex:1;border-radius:12px;padding:16px 16px 14px;background:linear-gradient(135deg,#EDE7F6,#F3E5F5);border-left:4px solid #7E57C2">
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:#7E57C2;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Problema 1</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#4A148C;margin-bottom:4px">Asignación Generalizada</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--gray);line-height:1.45">Asignar solicitantes a slots de visa con capacidades heterogéneas por país y categoría.</div>
+          </div>
+          <div style="flex:1;border-radius:12px;padding:16px 16px 14px;background:linear-gradient(135deg,#E8EAF6,#E3F2FD);border-left:4px solid #3F51B5">
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:#3F51B5;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Problema 2</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1A237E;margin-bottom:4px">Mochila Multidimensional</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--gray);line-height:1.45">Maximizar utilización sujeta a límites simultáneos por país, categoría y año fiscal.</div>
+          </div>
+          <div style="flex:1;border-radius:12px;padding:16px 16px 14px;background:linear-gradient(135deg,var(--blue-light),#BBDEFB);border-left:4px solid var(--blue)">
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Problema 3</div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#002670;margin-bottom:4px">Scheduling con Recursos</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--gray);line-height:1.45">Ordenar colas FIFO con recursos (visas) limitados y restricciones de precedencia.</div>
+          </div>
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px" class="anim">
+          <svg width="12" height="12" style="vertical-align:middle;margin-right:4px;color:var(--red)"><use href="#ico-bolt"/></svg>
+          Los tres obstáculos matemáticos
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:14px" class="anim">
+          <div style="flex:1;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 16px;border-top:3px solid #FF6B6B">
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">A · Integralidad</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.45">No se puede asignar <strong style="color:white">0.3 visas</strong>. Cada green card es <strong style="color:var(--yellow)">indivisible</strong>.</div>
+          </div>
+          <div style="flex:1;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 16px;border-top:3px solid #FF6B6B">
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">B · Explosión Combinatoria</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.45">1.8M × 200+ países × 5 categorías = <strong style="color:var(--yellow)">10,000+ variables enteras</strong>.</div>
+          </div>
+          <div style="flex:1;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 16px;border-top:3px solid #FF6B6B">
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">C · No Convexidad</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.45">25,619 visas = legal. 25,621 = <strong style="color:var(--yellow)">ilegal</strong>. Discontinuidades tipo acantilado.</div>
+          </div>
+        </div>
+        <div class="anim" style="background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:14px 20px">
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;line-height:1.55;color:var(--gray)"><strong style="color:var(--blue)">Conclusión:</strong> Simplex, punto interior y métodos basados en gradiente son inadecuados. La naturaleza del problema exige una <strong style="color:var(--blue)">metaheurística poblacional</strong> capaz de manejar variables enteras, restricciones no lineales y múltiples objetivos simultáneamente.</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#bbb;margin-top:auto;padding-top:8px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+    </div>
   </div>
-  <div style="display:flex;gap:14px" class="anim">
-    <div class="alert-box" style="flex:1;font-size:.95rem"><strong>(a) Integralidad:</strong> No se puede asignar 0.3 visas. Las visas son indivisibles.</div>
-    <div class="alert-box" style="flex:1;font-size:.95rem"><strong>(b) Explosión combinatoria:</strong> 1.8M solicitantes × 200+ países × 5 categorías = <strong>10,000+ dimensiones enteras</strong>.</div>
-    <div class="alert-box" style="flex:1;font-size:.95rem"><strong>(c) No convexidad:</strong> 25,619 visas es legal, 25,621 no. Discontinuidades tipo acantilado.</div>
-  </div>
-  <div class="note-box anim" style="margin-top:12px;font-size:1.05rem"><strong>Conclusión:</strong> Los métodos Simplex, de punto interior y basados en gradiente son inadecuados. Se requiere una <strong>metaheurística poblacional</strong>.</div>
+</div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
 </div>
 
