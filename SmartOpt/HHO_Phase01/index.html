@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HHO × Green Cards — Fase 01 | MIAAD UACJ</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML"></script>
+<script>MathJax.Hub.Config({tex2jax:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},"HTML-CSS":{scale:105,availableFonts:["TeX"]}});</script>
+<style>
+:root{--blue:#003CA6;--blue-dark:#002670;--blue-light:#E3F0FF;--yellow:#FFD600;--yellow-soft:#FFF8D6;--green:#27AE60;--green-bg:#F1F8E9;--gray:#2C3E50;--gray-light:#555559;--red:#B41E1E;--red-bg:#FDE8E8;--orange:#FF9800;--orange-bg:#FFF3E0;--white:#FFFFFF;--off-white:#FAFBFC}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;color:var(--gray);overflow:hidden;height:100vh;width:100vw;display:flex;align-items:center;justify-content:center}
+.deck{width:1280px;height:720px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 120px rgba(0,60,166,.08);border-radius:8px;overflow:hidden}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;padding:48px 60px 44px;opacity:0;pointer-events:none;transition:opacity .5s ease,transform .5s ease;transform:scale(.98);background:var(--white);overflow:hidden}
+.slide.active{opacity:1;pointer-events:auto;transform:scale(1)}
+.slide::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue) 0%,var(--blue) 60%,var(--yellow) 60%,var(--yellow) 100%);z-index:10}
+.slide-title{font-size:2.3rem;font-weight:900;color:var(--blue);margin-bottom:4px;line-height:1.15}
+.slide-subtitle{font-family:'Source Sans 3',sans-serif;font-size:1.1rem;font-weight:400;color:var(--gray-light);margin-bottom:24px}
+.body-text{font-family:'Source Sans 3',sans-serif;font-size:1.15rem;line-height:1.6;color:var(--gray)}
+/* Cover */
+.slide--cover{background:linear-gradient(145deg,#001845 0%,var(--blue) 60%,var(--blue-dark) 100%);color:var(--white);align-items:center;justify-content:center;text-align:center;padding:48px 80px;position:relative}
+.slide--cover::before{background:var(--yellow);height:5px}
+.slide--cover::after{content:'';position:absolute;inset:0;opacity:.03;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:40px 40px}
+.cover-inst{font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:4px}
+.cover-program{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-bottom:24px}
+.cover-title{font-size:2.3rem;font-weight:900;line-height:1.2;margin-bottom:8px}
+.cover-title em{color:var(--yellow);font-style:normal}
+.cover-phase{font-family:'Source Sans 3',sans-serif;display:inline-block;background:var(--yellow);color:var(--blue-dark);font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;padding:5px 18px;border-radius:20px;margin-bottom:22px}
+.cover-authors{font-family:'Source Sans 3',sans-serif;font-size:1.1rem;opacity:.9;margin-bottom:4px}
+.cover-meta{font-family:'Source Sans 3',sans-serif;font-size:.85rem;font-weight:300;opacity:.6}
+/* Section */
+.slide--section{background:var(--blue);color:var(--white);align-items:center;justify-content:center;text-align:center}
+.slide--section::before{background:var(--yellow);height:5px}
+.section-number{font-family:'Source Sans 3',sans-serif;font-size:4.5rem;font-weight:700;color:var(--yellow);line-height:1;margin-bottom:8px}
+.section-label{font-size:2.4rem;font-weight:900}
+.section-sub{font-family:'Source Sans 3',sans-serif;font-size:1.1rem;font-weight:300;opacity:.7;margin-top:10px}
+/* Dark */
+.slide--dark{background:var(--gray);color:var(--white)}
+.slide--dark .slide-title{color:var(--yellow)}
+.slide--dark .slide-subtitle{color:rgba(255,255,255,.6)}
+/* Components */
+.cols{display:flex;gap:32px;flex:1;min-height:0}
+.col{flex:1;display:flex;flex-direction:column;justify-content:center}
+.col--40{flex:0.7}.col--60{flex:1.3}
+.formula-box{background:var(--green-bg);border:1px solid #DCEDC8;border-radius:8px;padding:14px 20px;margin:8px 0;text-align:center;font-size:1.2rem}
+.note-box{background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:12px 18px;margin:8px 0;font-family:'Source Sans 3',sans-serif;font-size:1rem}
+.alert-box{background:var(--red-bg);border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:12px 18px;margin:8px 0;font-family:'Source Sans 3',sans-serif;font-size:.95rem}
+.callout-box{background:var(--yellow-soft);border-left:4px solid var(--yellow);border-radius:0 8px 8px 0;padding:12px 18px;margin:8px 0;font-family:'Source Sans 3',sans-serif;font-size:1rem}
+.restriction-box{background:var(--orange-bg);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:12px 18px;margin:8px 0;font-family:'Source Sans 3',sans-serif;font-size:.95rem}
+.styled-table{width:100%;border-collapse:collapse;font-family:'Source Sans 3',sans-serif;font-size:.92rem;margin:6px 0}
+.styled-table thead th{background:var(--gray);color:var(--white);padding:9px 14px;text-align:left;font-weight:600;font-size:.85rem}
+.styled-table thead th:first-child{border-radius:6px 0 0 0}.styled-table thead th:last-child{border-radius:0 6px 0 0}
+.styled-table tbody td{padding:8px 14px;border-bottom:1px solid #eee}
+.styled-table tbody tr:nth-child(even){background:#f8f9fa}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.75rem;font-weight:600}
+.badge--red{background:#FECACA;color:var(--red)}.badge--green{background:#D1FAE5;color:#065F46}.badge--blue{background:#DBEAFE;color:var(--blue)}
+.stat{display:flex;flex-direction:column;align-items:center;text-align:center}
+.stat-number{font-size:3rem;font-weight:900;color:var(--blue);line-height:1}
+.stat-label{font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:var(--gray-light);margin-top:4px}
+.bullet-list{list-style:none;font-family:'Source Sans 3',sans-serif;font-size:1.05rem;line-height:1.55}
+.bullet-list li{padding-left:24px;position:relative;margin-bottom:10px}
+.bullet-list li::before{content:'';position:absolute;left:0;top:10px;width:9px;height:9px;background:var(--yellow);border-radius:2px;transform:rotate(45deg)}
+.bullet-list li strong{color:var(--blue)}
+.tag{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:12px;margin-right:4px}
+.tag--blue{background:var(--blue-light);color:var(--blue)}.tag--yellow{background:var(--yellow-soft);color:#7c6a00}.tag--green{background:#D1FAE5;color:#065F46}.tag--red{background:#FECACA;color:var(--red)}
+.slide-footer{position:absolute;bottom:10px;left:60px;right:60px;display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#bbb}
+.person-card{display:flex;gap:16px;align-items:flex-start;background:var(--off-white);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+.ico{display:inline-block;vertical-align:middle;margin-right:4px}
+/* Nav */
+.nav-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.8);backdrop-filter:blur(16px);padding:8px 20px;border-radius:30px;z-index:100;transition:opacity .3s;border:1px solid rgba(255,255,255,.06)}
+.progress-wrap{flex:0 0 120px;height:4px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden}
+.progress-bar{height:100%;background:var(--yellow);border-radius:4px;transition:width .35s ease}
+:fullscreen .nav-bar,::backdrop{background:#000}
+:fullscreen .nav-bar{opacity:0;pointer-events:none;transition:opacity .3s}
+:fullscreen .nav-bar:hover{opacity:1;pointer-events:auto}
+:fullscreen body{background:#000}
+:fullscreen .deck{border-radius:0;box-shadow:none}
+:-webkit-full-screen .nav-bar{opacity:0;pointer-events:none}
+:-webkit-full-screen .nav-bar:hover{opacity:1;pointer-events:auto}
+:-webkit-full-screen body{background:#000}
+:-webkit-full-screen .deck{border-radius:0;box-shadow:none}
+.nav-btn{width:36px;height:36px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:white;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.nav-btn:hover{background:var(--yellow);color:var(--blue-dark)}
+.nav-counter{font-family:'Source Sans 3',sans-serif;color:rgba(255,255,255,.7);font-size:.85rem;min-width:60px;text-align:center}
+.nav-notes-btn{background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.7);font-family:'Source Sans 3',sans-serif;font-size:.75rem;padding:4px 12px;border-radius:14px;cursor:pointer;transition:all .2s}
+.nav-notes-btn:hover{background:var(--yellow);color:var(--blue-dark);border-color:var(--yellow)}
+.slide.active .anim{animation:fadeUp .6s cubic-bezier(.4,0,.2,1) both}
+.slide.active .anim:nth-child(2){animation-delay:.1s}.slide.active .anim:nth-child(3){animation-delay:.2s}.slide.active .anim:nth-child(4){animation-delay:.3s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+/* Sidebar */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:52px;background:rgba(8,12,22,.95);backdrop-filter:blur(20px);z-index:200;display:flex;flex-direction:column;transition:width .3s cubic-bezier(.4,0,.2,1);overflow:hidden;border-right:1px solid rgba(255,255,255,.06)}
+.sidebar:hover{width:240px}
+.sidebar-header{padding:12px 14px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;opacity:0;transition:opacity .2s;border-bottom:1px solid rgba(255,255,255,.08)}
+.sidebar:hover .sidebar-header{opacity:1}
+.sidebar-scroll{flex:1;overflow-y:auto;overflow-x:hidden;padding:4px 0}
+.sidebar-scroll::-webkit-scrollbar{width:3px}.sidebar-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:6px 14px;cursor:pointer;transition:background .15s;white-space:nowrap;border-left:3px solid transparent}
+.sb-item:hover{background:rgba(255,255,255,.08)}
+.sb-item.sb-active{border-left-color:var(--yellow);background:rgba(255,214,0,.08)}
+.sb-num{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);flex-shrink:0;transition:all .15s}
+.sb-item.sb-active .sb-num{background:var(--yellow);color:var(--blue-dark)}
+.sb-item.sb-section .sb-num{background:var(--blue);color:white;border-radius:4px}
+.sb-label{font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:rgba(255,255,255,.55);opacity:0;transition:opacity .2s;overflow:hidden;text-overflow:ellipsis}
+.sidebar:hover .sb-label{opacity:1}
+.sb-item.sb-active .sb-label{color:var(--yellow)}
+.sb-divider{height:1px;background:rgba(255,255,255,.06);margin:4px 14px}
+:fullscreen .sidebar{opacity:0;pointer-events:none;transition:opacity .3s,width .25s}
+:fullscreen .sidebar:hover{opacity:1;pointer-events:auto}
+:-webkit-full-screen .sidebar{opacity:0;pointer-events:none}
+:-webkit-full-screen .sidebar:hover{opacity:1;pointer-events:auto}
+</style>
+</head>
+<body>
+
+<!-- ═══ SVG ICON DEFS ═══ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <defs>
+    <symbol id="ico-hawk" viewBox="0 0 24 24"><path d="M22 3.5L13 2 8.5 5.5 10 8l-4 2-4.5 5L6 14l3-1 1.5 3 3-2 1-4.5L18 7z" fill="currentColor" opacity=".9"/><path d="M18 7l4-3.5" stroke="currentColor" stroke-width="1.5" fill="none"/></symbol>
+    <symbol id="ico-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="currentColor"/></symbol>
+    <symbol id="ico-bolt" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10" fill="currentColor"/></symbol>
+    <symbol id="ico-chart" viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="9" rx="1" fill="currentColor"/><rect x="10" y="6" width="4" height="15" rx="1" fill="currentColor"/><rect x="17" y="2" width="4" height="19" rx="1" fill="currentColor"/></symbol>
+    <symbol id="ico-check" viewBox="0 0 24 24"><polyline points="4 12 9 17 20 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ico-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32l2.12 2.12M1 12h3m16 0h3M4.22 19.78l2.12-2.12M18.66 5.34l2.12-2.12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ico-box" viewBox="0 0 24 24"><path d="M21 8V21H3V8" fill="none" stroke="currentColor" stroke-width="2"/><rect x="1" y="3" width="22" height="5" rx="1" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="2"/><line x1="12" y1="12" x2="12" y2="17" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="ico-ruler" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><line x1="7" y1="5" x2="7" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="11" y1="5" x2="11" y2="8" stroke="currentColor" stroke-width="1.5"/><line x1="15" y1="5" x2="15" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="19" y1="5" x2="19" y2="8" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="ico-clipboard" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="8" y="1" width="8" height="4" rx="1" fill="currentColor" opacity=".3" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="10" x2="15" y2="10" stroke="currentColor" stroke-width="1.5"/><line x1="9" y1="14" x2="15" y2="14" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="ico-people" viewBox="0 0 24 24"><circle cx="9" cy="7" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M1 21v-2a4 4 0 014-4h8a4 4 0 014 4v2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="7" r="3" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".5"/></symbol>
+    <symbol id="ico-scale" viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22" stroke="currentColor" stroke-width="2"/><polyline points="4 8 12 4 20 8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 8l-2 6h6L6 8M20 8l-2 6h6l-2-6" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="1.5"/></symbol>
+  </defs>
+</svg>
+
+<div class="deck" id="deck">
+
+<!-- ═══════════ SLIDE 1 — PORTADA ═══════════ -->
+<div class="slide slide--cover active">
+  <div style="width:180px;height:180px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.9);box-shadow:0 8px 32px rgba(0,0,0,.3);margin-bottom:20px;flex-shrink:0;position:relative;background:rgba(255,255,255,.08)">
+    <img src="./LogoSInFondoMIAAD2.png" alt="" style="position:absolute;width:75%;height:75%;object-fit:contain;top:50%;left:50%;transform:translate(-50%,-50%)" onerror="this.parentElement.style.display='none'">
+  </div>
+  <div class="cover-inst">Universidad Autónoma de Ciudad Juárez</div>
+  <div class="cover-program">Maestría en Inteligencia Artificial y Analítica de Datos</div>
+  <div style="height:8px"></div>
+  <div class="cover-phase">Proyecto Final · Fase 01</div>
+  <div style="height:6px"></div>
+  <div class="cover-title">Optimización Multiobjetivo de la Asignación de<br><em>Green Cards</em> en EE.UU. mediante<br>Harris Hawks Optimization</div>
+  <div style="height:28px"></div>
+  <div class="cover-authors">Yazmín I. Flores Martínez &nbsp;·&nbsp; Javier A. Rebull Saucedo</div>
+  <div style="height:6px"></div>
+  <div class="cover-meta">Optimización Inteligente · Mtro. Raúl Gibrán Porras Alaniz · 17 de febrero de 2026</div>
+</div>
+
+<!-- ═══════════ SLIDE 2 — METAHEURÍSTICAS ═══════════ -->
+<div class="slide" style="padding:28px 44px 24px;display:flex;flex-direction:column;gap:14px">
+  <div style="text-align:center">
+    <h2 class="slide-title anim" style="margin:0">¿Qué Son las Metaheurísticas?</h2>
+    <div class="slide-subtitle anim" style="margin-top:2px">De los métodos exactos a la búsqueda inteligente inspirada en la naturaleza</div>
+  </div>
+  <div class="anim" style="display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:12px 20px">
+    <div style="flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:rgba(255,214,0,.15);display:flex;align-items:center;justify-content:center">
+      <svg width="16" height="16" style="color:var(--yellow)"><use href="#ico-bolt"/></svg>
+    </div>
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;line-height:1.45;color:rgba(255,255,255,.92)">
+      <strong style="color:var(--yellow)">La clave:</strong> toda metaheurística balancea <strong style="color:var(--yellow)">exploración</strong> (diversificar la búsqueda) y <strong style="color:var(--yellow)">explotación</strong> (refinar zonas prometedoras). Nuestro problema tiene restricciones enteras, no convexas, con <strong style="color:var(--yellow)">+10,000 dimensiones</strong> — por eso necesitamos una metaheurística.
+    </div>
+  </div>
+  <div class="anim" style="display:flex;align-items:stretch;justify-content:center;gap:0;flex:1;min-height:0">
+    <div style="flex:1;max-width:320px;border-radius:14px;padding:20px;background:linear-gradient(180deg,#E8F5E9 0%,#fff 100%);border:2px solid #C8E6C9;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.06)">
+      <div style="text-align:center;margin-bottom:8px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#C8E6C9;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="22" height="22" style="color:var(--green)"><use href="#ico-scale"/></svg></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--green)">Optimización Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">Simplex · Interior Point</div>
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333;flex:1">Variables continuas, restricciones en línea recta.<br><span style="color:var(--green);font-weight:600">&#10003; Óptimo global garantizado</span><br><span style="color:var(--green);font-weight:600">&#10003; Rápido y eficiente</span></div>
+      <div style="background:#C8E6C9;border-radius:8px;padding:6px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center;color:#2e7d32"><strong>Límite:</strong> Solo si TODO es lineal</div>
+    </div>
+    <div style="flex:0 0 30px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    <div style="flex:1;max-width:320px;border-radius:14px;padding:20px;background:linear-gradient(180deg,var(--orange-bg) 0%,#fff 100%);border:2px solid #FFE0B2;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.06)">
+      <div style="text-align:center;margin-bottom:8px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#FFE0B2;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="22" height="22" style="color:var(--orange)"><use href="#ico-chart"/></svg></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--orange)">No Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">Gradiente · Newton · Lagrange</div>
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333;flex:1">Funciones curvas, buscan pendiente cero.<br><span style="color:var(--orange);font-weight:600">&#10003; Maneja funciones curvas</span><br><span style="color:var(--red);font-weight:600">&#10007; Óptimos locales</span><br><span style="color:var(--red);font-weight:600">&#10007; Requiere derivadas</span></div>
+      <div style="background:#FFE0B2;border-radius:8px;padding:6px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center;color:#e65100"><strong>Límite:</strong> No maneja enteros</div>
+    </div>
+    <div style="flex:0 0 30px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+    <div style="flex:1.15;max-width:340px;border-radius:14px;padding:20px;background:linear-gradient(180deg,var(--blue-light) 0%,#fff 100%);border:2px solid var(--blue);display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,60,166,.15)">
+      <div style="text-align:center;margin-bottom:8px">
+        <div style="width:42px;height:42px;border-radius:50%;background:#BBDEFB;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="22" height="22" style="color:var(--blue)"><use href="#ico-hawk"/></svg></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--blue)">Metaheurísticas</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">GA · PSO · ACO · <strong style="color:var(--blue)">HHO</strong></div>
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333;flex:1">Algoritmos inspirados en la naturaleza que encuentran soluciones cercanas al óptimo donde los métodos exactos fallan.<br><span style="color:var(--blue);font-weight:600">&#10003; Sin derivadas ni linealidad</span><br><span style="color:var(--blue);font-weight:600">&#10003; Escala a miles de variables</span><br><span style="color:var(--blue);font-weight:600">&#10003; Maneja enteros y discontinuidades</span></div>
+      <div style="background:#BBDEFB;border-radius:8px;padding:6px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center;color:#0d47a1"><strong>Trade-off:</strong> Soluciones muy buenas, no exactas</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 3 — SECTION: METAHEURÍSTICA ═══════════ -->
+<div class="slide slide--section">
+  <div class="section-number anim">01</div><div class="section-label anim">La Metaheurística</div>
+  <div class="section-sub anim">Harris Hawks Optimization (HHO) · Heidari et al., 2019</div>
+</div>
+
+<!-- ═══════════ SLIDE 4 — ALGORITMO SELECCIONADO ═══════════ -->
+<div class="slide" style="padding:0;overflow:hidden">
+  <div style="display:flex;height:100%;width:100%">
+    <div style="flex:0 0 48%;display:flex;flex-direction:column;padding:28px 32px 20px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%);overflow-y:auto">
+      <h2 class="slide-title anim" style="margin-bottom:2px;font-size:1.35rem">El Algoritmo Seleccionado</h2>
+      <div class="slide-subtitle anim" style="margin-bottom:10px;font-size:.82rem">Harris Hawks Optimization (HHO)</div>
+      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:12px 16px;color:white;margin-bottom:8px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">
+          <svg width="12" height="12" style="color:var(--yellow);vertical-align:middle;margin-right:3px"><use href="#ico-clipboard"/></svg>
+          Referencia del artículo
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.76rem;line-height:1.5;color:rgba(255,255,255,.88)">
+          Heidari, A. A., Mirjalili, S., Faris, H., Aljarah, I., Mafarja, M., &amp; Chen, H. (2019). <em style="color:var(--yellow)">Harris hawks optimization: Algorithm and applications.</em> <strong>Future Generation Computer Systems</strong>, 97, 849–872.
+        </div>
+        <div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,255,255,.12)">
+          <a href="https://doi.org/10.1016/j.future.2019.02.028" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--yellow);text-decoration:none;word-break:break-all">doi.org/10.1016/j.future.2019.02.028</a>
+        </div>
+      </div>
+      <div class="anim" style="display:flex;gap:8px;margin-bottom:10px">
+        <div style="flex:1;background:linear-gradient(135deg,#EAF2FF,#BBDEFB);border:1.5px solid var(--blue);border-radius:10px;padding:8px 6px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--blue);line-height:1">2019</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:#555;margin-top:2px;font-weight:600">Publicación</div>
+        </div>
+        <div style="flex:1;background:linear-gradient(135deg,#FFFDE7,#FFF8E1);border:1.5px solid #FFB300;border-radius:10px;padding:8px 6px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#E65100;line-height:1">Q1</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:#555;margin-top:2px;font-weight:600">FGCS · Elsevier</div>
+        </div>
+        <div style="flex:1;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border:1.5px solid var(--green);border-radius:10px;padding:8px 6px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--green);line-height:1">5K+</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:#555;margin-top:2px;font-weight:600">Citaciones</div>
+        </div>
+      </div>
+      <div class="anim" style="background:linear-gradient(135deg,#E8F5E9 0%,#f0faf1 100%);border:1.5px solid #A5D6A7;border-radius:10px;padding:12px 14px;flex:1;display:flex;flex-direction:column">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">
+          <svg width="13" height="13" style="color:var(--green);vertical-align:middle;margin-right:3px"><use href="#ico-hawk"/></svg>
+          ¿Por qué HHO para Green Cards?
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-family:'Source Sans 3',sans-serif;font-size:.76rem;line-height:1.4;color:#333">
+          <div style="display:flex;gap:8px;align-items:flex-start"><div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">1</div><div><strong style="color:var(--green)">Inspiración biológica:</strong> cacería cooperativa — estrategia <em>surprise pounce</em>.</div></div>
+          <div style="display:flex;gap:8px;align-items:flex-start"><div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">2</div><div><strong style="color:var(--green)">6 operadores:</strong> más que GA (2-3), con vuelos de Lévy para saltar discontinuidades del 7%.</div></div>
+          <div style="display:flex;gap:8px;align-items:flex-start"><div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">3</div><div><strong style="color:var(--green)">Solo 2 parámetros:</strong> N (población) y T (iteraciones). Sin tunning complejo.</div></div>
+          <div style="display:flex;gap:8px;align-items:flex-start"><div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">4</div><div><strong style="color:var(--green)">Extensión MOHHO:</strong> validada para multi-objetivo con archivo Pareto.</div></div>
+        </div>
+      </div>
+      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:8px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+    </div>
+    <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5;display:flex;align-items:center;justify-content:center;padding:24px">
+      <img src="./articleimage.png" alt="Harris Hawks Optimization — Paper original" style="width:100%;height:100%;object-fit:contain;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.15)" onerror="this.parentElement.innerHTML='<div style=text-align:center;font-family:Source+Sans+3,sans-serif><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>articleimage.png</div></div>'">
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 5 — ¿POR QUÉ HHO? ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">¿Por qué Harris Hawks Optimization?</h2>
+  <div class="slide-subtitle anim">Selección y originalidad de la metaheurística</div>
+  <div class="anim" style="height:210px;border-radius:12px;overflow:hidden;margin-bottom:6px;position:relative">
+    <img src="./harris_hawks_trio.png" alt="Halcones de Harris en grupo" style="width:110%;height:100%;object-fit:cover;object-position:center 50%;margin-left:-5%" onerror="this.parentElement.style.display='none'">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,60,166,.6) 0%,transparent 40%,transparent 60%,rgba(0,60,166,.6) 100%)"></div>
+    <div style="position:absolute;bottom:8px;left:14px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:rgba(255,255,255,.5)">Parabuteo unicinctus — caza cooperativa en grupo</div>
+  </div>
+  <div class="cols">
+    <div class="col col--40 anim">
+      <table class="styled-table" style="font-size:.88rem"><thead><tr><th>Metaheurística</th><th>Estatus</th></tr></thead>
+        <tbody>
+          <tr><td>Algoritmos Genéticos</td><td><span class="badge badge--red">&#10007; En clase</span></td></tr>
+          <tr><td>Enjambre de Partículas</td><td><span class="badge badge--red">&#10007; En clase</span></td></tr>
+          <tr><td>Colonias de Hormigas</td><td><span class="badge badge--red">&#10007; En clase</span></td></tr>
+          <tr><td>Colonias de Abejas</td><td><span class="badge badge--red">&#10007; En clase</span></td></tr>
+          <tr><td>Recocido Simulado / Tabú</td><td><span class="badge badge--red">&#10007; En clase</span></td></tr>
+          <tr><td>NSGA-II (multiobjetivo)</td><td><span class="badge badge--red">&#10007; En clase</span></td></tr>
+          <tr style="background:#E8F5E9"><td><strong>Harris Hawks (HHO)</strong></td><td><span class="badge badge--green">&#10003; Original</span></td></tr>
+        </tbody></table>
+    </div>
+    <div class="col col--60 anim">
+      <ul class="bullet-list" style="font-size:.95rem">
+        <li><strong>Inspiración única:</strong> caza cooperativa de halcones de Harris. No pertenece a ninguna familia del temario.</li>
+        <li><strong>Moderno y validado:</strong> publicado en 2019, revista Q1 de Elsevier, más de 5,000 citaciones.</li>
+        <li><strong>6 operadores distintos</strong> (otros algoritmos modernos tienen 2 o 3). Mayor riqueza de estrategias.</li>
+        <li><strong>Extensión multiobjetivo demostrada</strong> (MOHHO), validada contra algoritmos establecidos.</li>
+        <li><strong>Solo 2 parámetros:</strong> tamaño de población ($N$) y número de iteraciones ($T$).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 6 — BIOLOGÍA ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">Inspiración Biológica</h2>
+  <div class="slide-subtitle anim">La cacería cooperativa del halcón de Harris (Parabuteo unicinctus)</div>
+  <div class="anim" style="height:200px;border-radius:12px;overflow:hidden;margin-bottom:14px">
+    <img src="./harris_hawks.jpg" alt="Halcones de Harris cazando" style="width:100%;height:100%;object-fit:cover;object-position:center" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:#1a1a2e;border-radius:12px><svg width=60 height=60 style=color:#003CA6;opacity:.3><use href=#ico-hawk/></svg></div>'">
+  </div>
+  <div class="cols anim">
+    <div class="col">
+      <table class="styled-table" style="font-size:.92rem"><thead><tr><th>En la naturaleza</th><th>En la optimización</th></tr></thead>
+        <tbody>
+          <tr><td><svg width="16" height="16" style="color:var(--blue);vertical-align:middle;margin-right:4px"><use href="#ico-hawk"/></svg> Cada halcón del grupo</td><td>Una solución candidata</td></tr>
+          <tr><td><svg width="16" height="16" style="color:var(--red);vertical-align:middle;margin-right:4px"><use href="#ico-target"/></svg> La presa (conejo)</td><td>La mejor solución encontrada</td></tr>
+          <tr><td><svg width="16" height="16" style="color:var(--orange);vertical-align:middle;margin-right:4px"><use href="#ico-bolt"/></svg> Energía de escape</td><td>Parámetro $E$: exploración vs. explotación</td></tr>
+          <tr><td><svg width="16" height="16" style="color:var(--green);vertical-align:middle;margin-right:4px"><use href="#ico-gear"/></svg> Estrategias de caza (6)</td><td>Los 6 operadores de movimiento</td></tr>
+          <tr><td><svg width="16" height="16" style="color:var(--green);vertical-align:middle;margin-right:4px"><use href="#ico-check"/></svg> Captura exitosa</td><td>Mejora del valor de fitness</td></tr>
+        </tbody></table>
+    </div>
+    <div class="col col--40">
+      <div class="callout-box" style="font-size:1rem"><strong>Surprise Pounce:</strong> Los halcones rodean a la presa desde múltiples direcciones y atacan simultáneamente, adaptando su estrategia según la energía restante de escape.</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 7 — ENERGÍA ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">El Motor: Energía de Escape</h2>
+  <div class="slide-subtitle anim">Transición adaptativa entre exploración y explotación</div>
+  <div class="formula-box anim" style="font-size:1.35rem;margin:10px 0">$$E = 2E_0 \left(1 - \frac{t}{T}\right)$$</div>
+  <div style="display:flex;gap:18px;flex:1;min-height:0" class="anim">
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;line-height:1.6">$E_0 \in [-1,1]$: valor aleatorio (regenerado cada iteración) · $t$: iteración actual · $T$: iteraciones máximas</div>
+      <div style="display:flex;gap:12px">
+        <div style="flex:1;background:var(--blue-light);border-radius:12px;padding:14px 16px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--blue)">$|E| \geq 1$</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;margin-top:4px"><span class="tag tag--blue" style="font-size:.82rem">EXPLORACIÓN</span><br>Búsqueda global</div></div>
+        <div style="flex:1;background:var(--green-bg);border-radius:12px;padding:14px 16px;text-align:center"><div style="font-size:1.4rem;font-weight:900;color:var(--green)">$|E| < 1$</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;margin-top:4px"><span class="tag tag--green" style="font-size:.82rem">EXPLOTACIÓN</span><br>Refinamiento local</div></div>
+      </div>
+      <div style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:14px 16px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">Diferencia clave vs. Recocido Simulado</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;line-height:1.5;color:rgba(255,255,255,.85)">Como $E_0$ es <strong style="color:var(--yellow)">estocástico</strong>, HHO no sigue un esquema rígido. <strong style="color:rgba(255,255,255,.95)">Oscila</strong> entre exploración y explotación, con la explotación dominando progresivamente conforme $t \to T$.</div>
+      </div>
+    </div>
+    <div style="flex:0 0 44%;display:flex;flex-direction:column;gap:6px">
+      <div style="flex:1;border-radius:10px;overflow:hidden;border:2px solid #dee2e6;background:white;box-shadow:0 4px 16px rgba(0,0,0,.06)">
+        <img src="./hho_fases.png" alt="Fases HHO - Gráfica de Energía" style="width:100%;height:100%;object-fit:contain;padding:6px" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;font-family:Source+Sans+3,sans-serif;font-size:.85rem;color:#999>hho_fases.png — Fig. 3 del paper</div>'">
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:var(--gray-light);text-align:center">Fig. 3: Comportamiento de E a través de las iteraciones (Heidari et al., 2019)</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 8 — DIAGRAMA HHO COMPLETO (REDISEÑADO) ═══════════ -->
+<div class="slide" style="padding:32px 44px 28px">
+  <h2 class="slide-title anim" style="font-size:1.9rem;margin-bottom:2px">Diagrama General del Algoritmo HHO</h2>
+  <div class="slide-subtitle anim" style="margin-bottom:8px">Flujo completo: inicialización → energía → exploración / explotación → convergencia</div>
+  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0">
+    <svg viewBox="0 0 1160 520" style="width:100%;max-height:480px" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2C3E50"/></marker>
+        <marker id="a2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#003CA6"/></marker>
+        <marker id="a3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#27AE60"/></marker>
+        <marker id="a4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7B1FA2"/></marker>
+        <filter id="ds"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".08"/></filter>
+      </defs>
+
+      <!-- START -->
+      <ellipse cx="80" cy="48" rx="68" ry="26" fill="#E3F0FF" stroke="#003CA6" stroke-width="2.5" filter="url(#ds)"/>
+      <text x="80" y="53" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" font-weight="700" fill="#003CA6">INICIO</text>
+      <line x1="80" y1="74" x2="80" y2="108" stroke="#2C3E50" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Init -->
+      <rect x="10" y="112" width="140" height="48" rx="10" fill="#003CA6" filter="url(#ds)"/>
+      <text x="80" y="133" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" font-weight="600" fill="white">Inicializar N</text>
+      <text x="80" y="149" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#BBDEFB">halcones en [LB, UB]</text>
+      <line x1="80" y1="160" x2="80" y2="190" stroke="#2C3E50" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Evaluate -->
+      <rect x="10" y="194" width="140" height="48" rx="10" fill="#27AE60" filter="url(#ds)"/>
+      <text x="80" y="215" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" font-weight="600" fill="white">Evaluar fitness</text>
+      <text x="80" y="231" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#D1FAE5">Identificar X_rabbit</text>
+      <line x1="80" y1="242" x2="80" y2="272" stroke="#2C3E50" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Loop start -->
+      <rect x="10" y="276" width="140" height="40" rx="8" fill="#2C3E50" filter="url(#ds)"/>
+      <text x="80" y="300" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="600" fill="white">Para cada halcón i</text>
+      <line x1="150" y1="296" x2="195" y2="296" stroke="#2C3E50" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Calculate E -->
+      <rect x="200" y="274" width="160" height="44" rx="8" fill="#FFF3E0" stroke="#FF9800" stroke-width="2" filter="url(#ds)"/>
+      <text x="280" y="293" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="700" fill="#E65100">Calcular E</text>
+      <text x="280" y="308" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#666">E = 2E₀(1 - t/T)</text>
+      <line x1="360" y1="296" x2="420" y2="296" stroke="#2C3E50" stroke-width="2" marker-end="url(#a1)"/>
+
+      <!-- Diamond: |E| >= 1? -->
+      <polygon points="490,258 555,296 490,334 425,296" fill="#FFF8D6" stroke="#FFD600" stroke-width="2.5" filter="url(#ds)"/>
+      <text x="490" y="292" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#7c6a00">|E| ≥ 1?</text>
+      <text x="490" y="308" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="9" fill="#999">explorar?</text>
+
+      <!-- YES → EXPLORATION (up) -->
+      <line x1="490" y1="258" x2="490" y2="140" stroke="#003CA6" stroke-width="2.5" marker-end="url(#a2)"/>
+      <text x="502" y="200" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="700" fill="#003CA6">SÍ</text>
+      <rect x="405" y="80" width="170" height="55" rx="10" fill="#E3F0FF" stroke="#003CA6" stroke-width="2" filter="url(#ds)"/>
+      <text x="490" y="103" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#003CA6">EXPLORACIÓN</text>
+      <text x="490" y="121" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#003CA6">|E| ≥ 1</text>
+
+      <!-- q decision -->
+      <line x1="575" y1="107" x2="630" y2="107" stroke="#003CA6" stroke-width="2" marker-end="url(#a2)"/>
+      <polygon points="690,80 735,107 690,134 645,107" fill="#E3F0FF" stroke="#003CA6" stroke-width="1.5"/>
+      <text x="690" y="110" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="#003CA6">q≥0.5?</text>
+
+      <!-- Op 1 -->
+      <line x1="735" y1="96" x2="780" y2="72" stroke="#003CA6" stroke-width="2"/>
+      <rect x="780" y="48" width="185" height="40" rx="8" fill="#003CA6" filter="url(#ds)"/>
+      <text x="872" y="65" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="700" fill="white">Op 1: Perchado aleatorio</text>
+      <text x="872" y="80" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="9" fill="#BBDEFB">Vía halcón random</text>
+      <text x="750" y="80" font-family="Source Sans 3,sans-serif" font-size="9" fill="#003CA6" font-weight="600">SÍ</text>
+
+      <!-- Op 2 -->
+      <line x1="735" y1="118" x2="780" y2="132" stroke="#003CA6" stroke-width="2"/>
+      <rect x="780" y="108" width="185" height="40" rx="8" fill="#003CA6" filter="url(#ds)"/>
+      <text x="872" y="125" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="700" fill="white">Op 2: Perchado presa-media</text>
+      <text x="872" y="140" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="9" fill="#BBDEFB">Presa vs. media enjambre</text>
+      <text x="750" y="140" font-family="Source Sans 3,sans-serif" font-size="9" fill="#003CA6" font-weight="600">NO</text>
+
+      <!-- NO → EXPLOITATION (right) -->
+      <line x1="555" y1="296" x2="615" y2="296" stroke="#2C3E50" stroke-width="2.5" marker-end="url(#a1)"/>
+      <text x="580" y="289" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="700" fill="#2C3E50">NO</text>
+      <rect x="620" y="268" width="170" height="55" rx="10" fill="#27AE60" stroke="#1E8449" stroke-width="2" filter="url(#ds)"/>
+      <text x="705" y="291" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="white">EXPLOTACIÓN</text>
+      <text x="705" y="309" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#D1FAE5">|E| &lt; 1</text>
+
+      <!-- r decision -->
+      <line x1="705" y1="323" x2="705" y2="365" stroke="#2C3E50" stroke-width="2" marker-end="url(#a1)"/>
+      <polygon points="705,365 755,395 705,425 655,395" fill="#E8F5E9" stroke="#27AE60" stroke-width="2"/>
+      <text x="705" y="398" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="#065F46">r≥0.5?</text>
+
+      <!-- r YES → Ops 3/4 -->
+      <line x1="655" y1="395" x2="530" y2="395" stroke="#27AE60" stroke-width="2" marker-end="url(#a3)"/>
+      <text x="595" y="388" font-family="Source Sans 3,sans-serif" font-size="9" fill="#27AE60" font-weight="600">SÍ (no escapa)</text>
+
+      <!-- Op 3 -->
+      <rect x="345" y="370" width="180" height="22" rx="6" fill="#27AE60" filter="url(#ds)"/>
+      <text x="435" y="385" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="white">Op 3: Asedio suave (|E|≥0.5)</text>
+      <!-- Op 4 -->
+      <rect x="345" y="396" width="180" height="22" rx="6" fill="#1E8449" filter="url(#ds)"/>
+      <text x="435" y="411" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="white">Op 4: Asedio duro (|E|&lt;0.5)</text>
+
+      <!-- r NO → Ops 5/6 -->
+      <line x1="755" y1="395" x2="870" y2="395" stroke="#7B1FA2" stroke-width="2" marker-end="url(#a4)"/>
+      <text x="808" y="388" font-family="Source Sans 3,sans-serif" font-size="9" fill="#7B1FA2" font-weight="600">NO (escapa)</text>
+
+      <!-- Op 5 -->
+      <rect x="875" y="370" width="200" height="22" rx="6" fill="#7B1FA2" filter="url(#ds)"/>
+      <text x="975" y="385" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="white">Op 5: Suave + Lévy (|E|≥0.5)</text>
+      <!-- Op 6 -->
+      <rect x="875" y="396" width="200" height="22" rx="6" fill="#4A148C" filter="url(#ds)"/>
+      <text x="975" y="411" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="white">Op 6: Duro + Lévy (|E|&lt;0.5)</text>
+
+      <!-- All merge to Update -->
+      <line x1="965" y1="68" x2="1060" y2="210" stroke="#2C3E50" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <line x1="965" y1="128" x2="1060" y2="210" stroke="#2C3E50" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <line x1="525" y1="395" x2="560" y2="395" stroke="#2C3E50" stroke-width="1" stroke-dasharray="3,2"/>
+      <path d="M525,395 Q560,395 560,320 Q560,240 1060,230" fill="none" stroke="#2C3E50" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <path d="M1075,395 Q1100,395 1100,310 Q1100,240 1070,230" fill="none" stroke="#2C3E50" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+      <!-- Update -->
+      <rect x="1000" y="200" width="140" height="48" rx="10" fill="#2C3E50" filter="url(#ds)"/>
+      <text x="1070" y="221" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="700" fill="white">Actualizar</text>
+      <text x="1070" y="237" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#aaa">X_rabbit, t+1</text>
+
+      <!-- Loop back -->
+      <path d="M1070,248 L1070,480 L80,480 L80,320" fill="none" stroke="#2C3E50" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#a1)"/>
+      <text x="560" y="498" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#999">Iterar hasta t = T</text>
+
+      <!-- Convergence check -->
+      <polygon points="1070,248 1110,275 1070,302 1030,275" fill="#FDE8E8" stroke="#B41E1E" stroke-width="2"/>
+      <text x="1070" y="278" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="#B41E1E">t=T?</text>
+
+      <!-- END -->
+      <line x1="1110" y1="275" x2="1140" y2="275" stroke="#B41E1E" stroke-width="2"/>
+      <text x="1125" y="268" font-family="Source Sans 3,sans-serif" font-size="9" fill="#B41E1E" font-weight="600">SÍ</text>
+      <ellipse cx="1140" cy="275" rx="16" ry="16" fill="#FDE8E8" stroke="#B41E1E" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 9 — SECTION: OPERADORES ═══════════ -->
+<div class="slide slide--section"><div class="section-number anim">02</div><div class="section-label anim">Los 6 Operadores</div><div class="section-sub anim">2 de exploración + 4 de explotación</div></div>
+
+<!-- ═══════════ SLIDE 10 — OPS 1 y 2 ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">Fase de Exploración: Operadores 1 y 2</h2>
+  <div class="slide-subtitle anim">$|E| \geq 1$ — La presa tiene alta energía, los halcones buscan ampliamente</div>
+  <div class="cols" style="gap:20px">
+    <div class="col anim" style="background:#F5F7FF;border-radius:14px;padding:22px 24px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag tag--blue" style="font-size:.85rem">OPERADOR 1</span><strong style="font-family:'Source Sans 3',sans-serif;color:var(--blue);font-size:1.05rem">Perchado aleatorio</strong></div><div class="formula-box" style="font-size:1.05rem">$$\mathbf{X}_i(t\!+\!1) = \mathbf{X}_{\text{rand}} - r_1 |\mathbf{X}_{\text{rand}} - 2r_2 \mathbf{X}_i|$$</div><p class="body-text" style="font-size:.95rem;margin-top:10px">Movimiento respecto a un <strong>halcón aleatorio</strong>. Promueve diversidad: la dirección no depende de la presa.</p></div>
+    <div class="col anim" style="background:#F5F7FF;border-radius:14px;padding:22px 24px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag tag--blue" style="font-size:.85rem">OPERADOR 2</span><strong style="font-family:'Source Sans 3',sans-serif;color:var(--blue);font-size:1.05rem">Perchado presa-media</strong></div><div class="formula-box" style="font-size:1.05rem">$$\mathbf{X}_i(t\!+\!1) = (\mathbf{X}_{\text{rabbit}} - \mathbf{X}_m) - r_3(LB + r_4 \cdot \Delta)$$</div><p class="body-text" style="font-size:.95rem;margin-top:10px">Combina dirección hacia la <strong>presa</strong> con la posición <strong>media</strong> del enjambre, más componente aleatorio.</p></div>
+  </div>
+  <div class="note-box anim" style="margin-top:12px;font-size:1rem">$\mathbf{X}_m = \frac{1}{N}\sum \mathbf{X}_i$ (posición media) · $\mathbf{X}_{\text{rand}}$ = halcón aleatorio · $r_1, r_2, r_3, r_4 \in [0,1]$</div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 11 — OPS 3 y 4 ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">Fase de Explotación: Operadores 3 y 4</h2>
+  <div class="slide-subtitle anim">$|E| < 1$, $r \geq 0.5$ — La presa no logra escapar del cerco</div>
+  <div class="cols" style="gap:20px">
+    <div class="col anim" style="background:#F1F8E9;border-radius:14px;padding:22px 24px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag tag--green" style="font-size:.85rem">OPERADOR 3</span><strong style="font-family:'Source Sans 3',sans-serif;color:var(--green);font-size:1.05rem">Asedio suave</strong><span style="font-size:.85rem;color:var(--gray-light)">($|E| \geq 0.5$)</span></div><div class="formula-box" style="font-size:1.05rem">$$\mathbf{X}_i(t\!+\!1) = \Delta\mathbf{X} - E|J \cdot \mathbf{X}_{\text{rabbit}} - \mathbf{X}_i|$$</div><p class="body-text" style="font-size:.95rem;margin-top:10px">La presa conserva energía. Movimientos <strong>amplios pero dirigidos</strong>.</p></div>
+    <div class="col anim" style="background:#FFF8E1;border-radius:14px;padding:22px 24px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span class="tag tag--yellow" style="font-size:.85rem">OPERADOR 4</span><strong style="font-family:'Source Sans 3',sans-serif;color:#B8860B;font-size:1.05rem">Asedio duro</strong><span style="font-size:.85rem;color:var(--gray-light)">($|E| < 0.5$)</span></div><div class="formula-box" style="font-size:1.05rem">$$\mathbf{X}_i(t\!+\!1) = \mathbf{X}_{\text{rabbit}} - E|\Delta\mathbf{X}|$$</div><p class="body-text" style="font-size:.95rem;margin-top:10px">La presa está exhausta. <strong>Cierre agresivo</strong> hacia ella.</p></div>
+  </div>
+  <div class="note-box anim" style="margin-top:12px;font-size:1rem">$\Delta\mathbf{X} = \mathbf{X}_{\text{rabbit}} - \mathbf{X}_i$ (vector hacia la presa) · $J = 2(1 - r_5)$ (fuerza de salto de la presa)</div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 12 — OPS 5 y 6 ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">Explotación con Vuelos de Lévy: Ops 5 y 6</h2>
+  <div class="slide-subtitle anim">$r < 0.5$ — La presa escapa, los halcones ejecutan inmersiones de largo alcance</div>
+  <div class="cols" style="gap:20px">
+    <div class="col anim">
+      <div style="background:#F3E5F5;border-radius:14px;padding:18px 20px;margin-bottom:10px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="tag" style="background:#E1BEE7;color:#6A1B9A;font-size:.85rem">OP 5 — Suave + Lévy</span></div><div class="formula-box" style="font-size:1rem">$\mathbf{Y} = \mathbf{X}_{\text{rabbit}} - E|J \cdot \mathbf{X}_{\text{rabbit}} - \mathbf{X}_i|$ &nbsp; $\mathbf{Z} = \mathbf{Y} + \mathbf{S} \times LF(D)$</div></div>
+      <div style="background:#FCE4EC;border-radius:14px;padding:18px 20px"><div style="display:flex;align-items:center;gap:8px;margin-bottom:8px"><span class="tag tag--red" style="font-size:.85rem">OP 6 — Duro + Lévy</span></div><div class="formula-box" style="font-size:1rem">$\mathbf{Y} = \mathbf{X}_{\text{rabbit}} - E|J \cdot \mathbf{X}_{\text{rabbit}} - \mathbf{X}_m|$ &nbsp; $\mathbf{Z} = \mathbf{Y} + \mathbf{S} \times LF(D)$</div></div>
+    </div>
+    <div class="col anim">
+      <div class="formula-box" style="font-size:1rem;margin-bottom:10px">$$LF(x) = 0.01 \times \frac{u \cdot \sigma}{|v|^{1/\beta}}, \quad \beta = 1.5$$</div>
+      <div class="callout-box" style="font-size:1rem"><strong>Vuelo de Lévy:</strong> distribución con colas pesadas. Pasos cortos (refinamiento) con <strong>saltos largos ocasionales</strong> (escape de óptimos locales).</div>
+      <div class="note-box" style="margin-top:8px;font-size:.95rem"><strong>Selección greedy:</strong> Probar Y primero. Si no mejora, probar Z. Si ninguno mejora, conservar posición actual.</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 13 — TABLA OPERADORES ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">Mapa Completo de Operadores</h2>
+  <div class="slide-subtitle anim">Lógica de decisión del algoritmo HHO</div>
+  <div class="anim" style="flex:1;display:flex;align-items:center">
+    <table class="styled-table" style="font-size:1rem"><thead><tr><th>Condición</th><th>Estrategia</th><th>Tipo</th><th style="text-align:center">Op.</th></tr></thead>
+      <tbody>
+        <tr><td>$|E| \geq 1$, $q \geq 0.5$</td><td>Perchado aleatorio</td><td><span class="tag tag--blue">Exploración</span></td><td style="text-align:center;font-weight:700;font-size:1.2rem">1</td></tr>
+        <tr><td>$|E| \geq 1$, $q < 0.5$</td><td>Perchado presa-media</td><td><span class="tag tag--blue">Exploración</span></td><td style="text-align:center;font-weight:700;font-size:1.2rem">2</td></tr>
+        <tr><td>$|E| < 1$, $r \geq 0.5$, $|E| \geq 0.5$</td><td>Asedio suave</td><td><span class="tag tag--green">Explotación</span></td><td style="text-align:center;font-weight:700;font-size:1.2rem">3</td></tr>
+        <tr><td>$|E| < 1$, $r \geq 0.5$, $|E| < 0.5$</td><td>Asedio duro</td><td><span class="tag tag--green">Explotación</span></td><td style="text-align:center;font-weight:700;font-size:1.2rem">4</td></tr>
+        <tr><td>$|E| < 1$, $r < 0.5$, $|E| \geq 0.5$</td><td>Asedio suave + Lévy</td><td><span class="tag tag--yellow">Explot. + Lévy</span></td><td style="text-align:center;font-weight:700;font-size:1.2rem">5</td></tr>
+        <tr><td>$|E| < 1$, $r < 0.5$, $|E| < 0.5$</td><td>Asedio duro + Lévy</td><td><span class="tag tag--yellow">Explot. + Lévy</span></td><td style="text-align:center;font-weight:700;font-size:1.2rem">6</td></tr>
+      </tbody></table>
+  </div>
+  <div class="callout-box anim" style="font-size:1.05rem"><strong>Parámetros del usuario:</strong> solo $N$ (población) y $T$ (iteraciones). $E_0$, $q$, $r$ son <strong>aleatorios y autoadaptativos</strong>.</div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 14 — SECTION: EL PROBLEMA ═══════════ -->
+<div class="slide slide--section">
+  <div class="section-number anim">03</div><div class="section-label anim">El Problema</div>
+  <div class="section-sub anim">Asignación de Green Cards basadas en empleo en Estados Unidos</div>
+</div>
+
+<!-- ═══════════ SLIDE 15 — CONTEXTO (antes Trump slide) ═══════════ -->
+<div class="slide" style="background:#1a1a2e;padding:0;overflow:hidden">
+  <div style="display:flex;height:100%;width:100%">
+    <div style="flex:0 0 40%;position:relative;overflow:hidden;background:#111">
+      <img src="./DonaldTrump.png" alt="Donald J. Trump" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(20%) contrast(1.1);opacity:.9" onerror="this.style.display='none'">
+      <div style="position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(transparent,rgba(0,0,0,.9))"></div>
+      <div style="position:absolute;bottom:14px;left:16px;right:16px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.4">Fig. 1: El presidente Trump anuncia una pausa migratoria, noviembre de 2025. Fuente: CNBC.</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:40px 48px;background:linear-gradient(135deg,#1a1a2e 0%,#2C3E50 100%)">
+      <div style="position:relative;margin-bottom:20px">
+        <div style="font-size:4.5rem;color:var(--yellow);font-family:'Playfair Display',serif;line-height:1;position:absolute;top:-25px;left:-8px;opacity:.5">&ldquo;</div>
+        <p class="anim" style="font-family:'Playfair Display',serif;font-size:1.45rem;font-style:italic;color:rgba(255,255,255,.92);line-height:1.5;margin-left:28px;max-width:500px">They're bringing drugs. They're bringing crime. They're rapists. And some, I assume, are good people.</p>
+        <div class="anim" style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:var(--yellow);font-weight:600;margin-top:12px;margin-left:28px">— Donald J. Trump, anuncio de candidatura, 2015</div>
+      </div>
+      <div class="anim" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 18px;margin:8px 0 16px 0">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;line-height:1.55;color:rgba(255,255,255,.78)">
+          Desde 2015, las políticas migratorias de EE.UU. se endurecieron significativamente. El sistema de <strong style="color:var(--yellow)">Green Cards basadas en empleo</strong> no se ha reformado desde 1990, generando un cuello de botella que afecta a <strong style="color:#FF6B6B">1.8 millones de personas</strong>. Las restricciones políticas son las <strong style="color:rgba(255,255,255,.95)">constraints matemáticos</strong> de nuestro modelo.
+        </div>
+      </div>
+      <div style="display:flex;gap:28px;margin-top:4px" class="anim">
+        <div style="flex:1;text-align:center;background:rgba(255,100,100,.08);border-radius:10px;padding:14px 8px">
+          <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:#FF6B6B;line-height:1">1.8M</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:rgba(255,255,255,.55);margin-top:4px">personas en espera</div>
+        </div>
+        <div style="flex:1;text-align:center;background:rgba(255,100,100,.08);border-radius:10px;padding:14px 8px">
+          <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:#FF6B6B;line-height:1">134</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:rgba(255,255,255,.55);margin-top:4px">años de espera (India EB-2)</div>
+        </div>
+        <div style="flex:1;text-align:center;background:rgba(255,255,255,.04);border-radius:10px;padding:14px 8px">
+          <div style="font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:rgba(255,255,255,.65);line-height:1">10</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:rgba(255,255,255,.55);margin-top:4px">años de restricciones</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 16 — LA PROBLEMÁTICA ═══════════ -->
+<div class="slide" style="padding:0;overflow:hidden">
+  <div style="display:flex;height:100%;width:100%">
+    <div style="flex:0 0 58%;display:flex;flex-direction:column;padding:32px 36px 24px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%)">
+      <h2 class="slide-title anim" style="margin-bottom:2px">La Problemática</h2>
+      <div class="slide-subtitle anim" style="margin-bottom:12px">El sistema Employment-Based (EB) de Green Cards en EE.UU.</div>
+      <div class="anim" style="background:linear-gradient(135deg,#1a0a0a,#2C1018);border-radius:14px;padding:18px 22px;color:white;border-left:5px solid #FF6B6B;margin-bottom:14px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">
+          <svg width="14" height="14" style="color:#FF6B6B;vertical-align:middle;margin-right:5px"><use href="#ico-bolt"/></svg>
+          La problemática en una oración
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.95)">
+          <strong style="color:var(--yellow)">140,000 green cards anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong>.
+        </div>
+        <div style="display:flex;gap:0;margin-top:12px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,107,107,.15)"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:#FF6B6B;line-height:1">134</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">años de espera</div></div>
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,214,0,.1)"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--yellow);line-height:1">140K</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">green cards/año</div></div>
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,107,107,.1)"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:#FF6B6B;line-height:1">1.8M</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">en cola</div></div>
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,214,0,.08)"><div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--yellow);line-height:1">7%</div><div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">tope por país</div></div>
+        </div>
+      </div>
+      <div class="anim" style="flex:1;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Categorías Employment-Based (INA, 1990)</div>
+        <table class="styled-table" style="font-size:.78rem;width:100%"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>GC/año</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EB-1</strong></td><td>Trabajadores prioritarios</td><td>28.6%</td><td>~40,040</td></tr>
+            <tr><td><strong>EB-2</strong></td><td>Grado avanzado</td><td>28.6%</td><td>~40,040</td></tr>
+            <tr><td><strong>EB-3</strong></td><td>Trabajadores calificados</td><td>28.6%</td><td>~40,040</td></tr>
+            <tr><td><strong>EB-4</strong></td><td>Inmigrantes especiales</td><td>7.1%</td><td>~9,940</td></tr>
+            <tr><td><strong>EB-5</strong></td><td>Inversionistas</td><td>7.1%</td><td>~9,940</td></tr>
+          </tbody></table>
+      </div>
+      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:auto"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+    </div>
+    <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5">
+      <img src="./visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:cover;object-position:center top" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;text-align:center;font-family:Source+Sans+3,sans-serif><div><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>visa_bulletin.png</div></div></div>'">
+      <div style="position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(transparent,rgba(0,0,0,.7))"></div>
+      <div style="position:absolute;bottom:12px;left:16px;right:16px;font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:rgba(255,255,255,.7);line-height:1.4;text-align:center">Visa Bulletin, febrero 2026 — U.S. Department of State</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 17 — SPILLOVER (REDISEÑADO) ═══════════ -->
+<div class="slide" style="padding:32px 44px 28px">
+  <h2 class="slide-title anim" style="margin-bottom:2px">Reglas de Spillover</h2>
+  <div class="slide-subtitle anim" style="margin-bottom:8px">Las green cards no utilizadas se redistribuyen de forma condicional</div>
+  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0">
+    <svg viewBox="0 0 900 420" style="width:100%;max-height:400px" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="spD" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#003CA6"/></marker>
+        <marker id="spU" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#27AE60"/></marker>
+        <marker id="spY" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#B8860B"/></marker>
+        <filter id="sh1"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity=".1"/></filter>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#EAF2FF"/><stop offset="100%" stop-color="#BBDEFB"/></linearGradient>
+      </defs>
+
+      <!-- EB-4 -->
+      <rect x="80" y="8" width="170" height="60" rx="14" fill="#FFF8E1" stroke="#FF9800" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="165" y="34" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="22" font-weight="800" fill="#E65100">EB-4</text>
+      <text x="165" y="56" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" fill="#999">7.1% · ~9,940</text>
+
+      <!-- EB-5 -->
+      <rect x="280" y="8" width="170" height="60" rx="14" fill="#FFF8E1" stroke="#FF9800" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="365" y="34" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="22" font-weight="800" fill="#E65100">EB-5</text>
+      <text x="365" y="56" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" fill="#999">7.1% · ~9,940</text>
+
+      <!-- Green arrows merging up to EB-1 -->
+      <path d="M165,68 L165,88 C165,105 265,105 265,118" fill="none" stroke="#27AE60" stroke-width="3" stroke-dasharray="7,4"/>
+      <path d="M365,68 L365,88 C365,105 265,105 265,118" fill="none" stroke="#27AE60" stroke-width="3" stroke-dasharray="7,4"/>
+      <line x1="265" y1="118" x2="265" y2="140" stroke="#27AE60" stroke-width="3" marker-end="url(#spU)"/>
+
+      <!-- Label: sobrantes suben -->
+      <rect x="478" y="72" width="165" height="32" rx="16" fill="#E8F5E9" stroke="#27AE60" stroke-width="1.5"/>
+      <text x="560" y="93" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#27AE60">&#9650; sobrantes suben</text>
+
+      <!-- EB-1 -->
+      <rect x="145" y="145" width="240" height="68" rx="16" fill="url(#g1)" stroke="#003CA6" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="265" y="175" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="26" font-weight="800" fill="#003CA6">EB-1</text>
+      <text x="265" y="200" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="#555">28.6% · ~40,040</text>
+
+      <!-- Arrow down to EB-2 -->
+      <line x1="265" y1="213" x2="265" y2="252" stroke="#003CA6" stroke-width="3" marker-end="url(#spD)"/>
+      <rect x="310" y="220" width="165" height="32" rx="16" fill="#EAF2FF" stroke="#003CA6" stroke-width="1.5"/>
+      <text x="392" y="241" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#003CA6">&#9660; sobrantes bajan</text>
+
+      <!-- EB-2 -->
+      <rect x="145" y="257" width="240" height="68" rx="16" fill="url(#g1)" stroke="#003CA6" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="265" y="287" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="26" font-weight="800" fill="#003CA6">EB-2</text>
+      <text x="265" y="312" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" fill="#555">28.6% · ~40,040</text>
+
+      <!-- Arrow down to EB-3 -->
+      <line x1="265" y1="325" x2="265" y2="358" stroke="#003CA6" stroke-width="3" marker-end="url(#spD)"/>
+
+      <!-- EB-3 -->
+      <rect x="145" y="362" width="240" height="55" rx="16" fill="url(#g1)" stroke="#003CA6" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="265" y="395" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="26" font-weight="800" fill="#003CA6">EB-3</text>
+
+      <!-- Family visas box -->
+      <rect x="560" y="145" width="240" height="75" rx="14" fill="#FFFDE7" stroke="#FFD600" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="680" y="175" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="18" font-weight="700" fill="#7c6a00">Visas Familiares</text>
+      <text x="680" y="198" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" fill="#888">no usadas → incrementan pool EB</text>
+      <path d="M560,182 L395,176" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#spY)"/>
+
+      <!-- COVID anomaly box -->
+      <rect x="560" y="335" width="240" height="82" rx="14" fill="#FFF0F0" stroke="#D32F2F" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="680" y="363" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="16" font-weight="700" fill="#C62828">Anomalía COVID</text>
+      <text x="680" y="390" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="24" font-weight="800" fill="#C62828">281,507 GC</text>
+      <text x="680" y="410" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#999">FY 2022 — el doble de lo normal</text>
+    </svg>
+  </div>
+  <div class="anim" style="display:flex;align-items:center;gap:14px;margin-top:6px;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:11px 20px">
+    <div style="flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:rgba(255,214,0,.15);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" style="color:var(--yellow)"><use href="#ico-bolt"/></svg></div>
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;line-height:1.45;color:rgba(255,255,255,.92)">
+      <strong style="color:var(--yellow)">Resultado:</strong> las green cards por categoría son <strong style="color:var(--yellow)">variables dependientes</strong> con <strong style="color:#FF6B6B">restricciones condicionales no lineales</strong> — imposibles de modelar con programación lineal.
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 18 — NP-DIFÍCIL ═══════════ -->
+<div class="slide" style="padding:0;overflow:hidden">
+  <div style="display:flex;height:100%;width:100%">
+    <div style="flex:0 0 35%;background:linear-gradient(160deg,#0a0e1a 0%,#1a1a2e 50%,#0d1b3e 100%);display:flex;flex-direction:column;justify-content:center;padding:44px 36px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;opacity:.04;background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:24px 24px"></div>
+      <div style="position:relative;z-index:1">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">
+          <svg width="12" height="12" style="vertical-align:middle;margin-right:4px;color:var(--red)"><use href="#ico-bolt"/></svg>Complejidad Computacional
+        </div>
+        <h2 style="font-family:'Playfair Display',Palatino,Georgia,serif;font-size:2.1rem;font-weight:900;color:white;line-height:1.15;margin-bottom:14px">¿Por qué es<br><span style="color:var(--yellow)">NP-Difícil</span>?</h2>
+        <div style="width:50px;height:4px;background:var(--yellow);border-radius:2px;margin-bottom:18px"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:24px">Nuestro problema es equivalente a <strong style="color:white">tres problemas clásicos NP-difícil combinados</strong>.</div>
+        <div style="display:flex;gap:14px">
+          <div style="flex:1;text-align:center;background:rgba(180,30,30,.12);border:1px solid rgba(180,30,30,.25);border-radius:10px;padding:12px 6px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:#FF6B6B;line-height:1">10K+</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px">dimensiones enteras</div>
+          </div>
+          <div style="flex:1;text-align:center;background:rgba(255,214,0,.06);border:1px solid rgba(255,214,0,.15);border-radius:10px;padding:12px 6px">
+            <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--yellow);line-height:1">3</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;color:rgba(255,255,255,.5);margin-top:3px">objetivos simultáneos</div>
+          </div>
+        </div>
+      </div>
+      <div style="position:absolute;bottom:12px;left:36px;right:20px;font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:rgba(255,255,255,.25)">Garey & Johnson (1979). <em>Computers and Intractability</em>.</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;padding:40px 40px 36px;background:var(--white);overflow:hidden">
+      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue) 0%,var(--blue) 60%,var(--yellow) 60%,var(--yellow) 100%)"></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px" class="anim">Equivalencia con problemas clásicos</div>
+      <div style="display:flex;gap:12px;margin-bottom:16px" class="anim">
+        <div style="flex:1;border-radius:12px;padding:16px 16px 14px;background:linear-gradient(135deg,#EDE7F6,#F3E5F5);border-left:4px solid #7E57C2">
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:#7E57C2;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Problema 1</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#4A148C;margin-bottom:4px">Asignación Generalizada</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--gray);line-height:1.45">Asignar solicitantes a slots de visa con capacidades heterogéneas.</div>
+        </div>
+        <div style="flex:1;border-radius:12px;padding:16px 16px 14px;background:linear-gradient(135deg,#E8EAF6,#E3F2FD);border-left:4px solid #3F51B5">
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:#3F51B5;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Problema 2</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#1A237E;margin-bottom:4px">Mochila Multidimensional</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--gray);line-height:1.45">Maximizar utilización sujeta a límites simultáneos.</div>
+        </div>
+        <div style="flex:1;border-radius:12px;padding:16px 16px 14px;background:linear-gradient(135deg,var(--blue-light),#BBDEFB);border-left:4px solid var(--blue)">
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Problema 3</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:#002670;margin-bottom:4px">Scheduling con Recursos</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;color:var(--gray);line-height:1.45">Ordenar colas FIFO con recursos limitados.</div>
+        </div>
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px" class="anim">Los tres obstáculos matemáticos</div>
+      <div style="display:flex;gap:12px;margin-bottom:14px" class="anim">
+        <div style="flex:1;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 16px;border-top:3px solid #FF6B6B">
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">A · Integralidad</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.45">No se puede asignar <strong style="color:white">0.3 visas</strong>. Cada green card es <strong style="color:var(--yellow)">indivisible</strong>.</div>
+        </div>
+        <div style="flex:1;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 16px;border-top:3px solid #FF6B6B">
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">B · Explosión Combinatoria</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.45">1.8M × 200+ países × 5 cat. = <strong style="color:var(--yellow)">10,000+ variables enteras</strong>.</div>
+        </div>
+        <div style="flex:1;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 16px;border-top:3px solid #FF6B6B">
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">C · No Convexidad</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.45">25,619 = legal. 25,621 = <strong style="color:var(--yellow)">ilegal</strong>. Acantilados.</div>
+        </div>
+      </div>
+      <div class="anim" style="background:var(--blue-light);border-left:4px solid var(--blue);border-radius:0 12px 12px 0;padding:14px 20px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;line-height:1.55;color:var(--gray)"><strong style="color:var(--blue)">Conclusión:</strong> la naturaleza del problema exige una <strong style="color:var(--blue)">metaheurística poblacional</strong> capaz de manejar variables enteras, restricciones no lineales y múltiples objetivos.</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#bbb;margin-top:auto;padding-top:8px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 19 — SECTION: HHO × GREEN CARDS ═══════════ -->
+<div class="slide slide--section"><div class="section-number anim">04</div><div class="section-label anim">HHO × Green Cards</div><div class="section-sub anim">Tres objetivos en conflicto y adaptación multiobjetivo</div></div>
+
+<!-- ═══════════ SLIDE 20 — TRES OBJETIVOS ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">Tres Objetivos en Conflicto</h2>
+  <div class="slide-subtitle anim">No existe una solución que optimice los tres simultáneamente</div>
+  <div class="cols">
+    <div class="col col--40 anim" style="justify-content:center">
+      <svg viewBox="0 0 380 360" style="width:100%;max-height:340px" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="190,35 40,310 340,310" fill="none" stroke="#003CA6" stroke-width="2.5" stroke-linejoin="round"/>
+        <circle cx="190" cy="35" r="30" fill="#E3F0FF" stroke="#003CA6" stroke-width="2.5"/><text x="190" y="30" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" font-weight="700" fill="#003CA6">f&#8321;</text><text x="190" y="47" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="9.5" fill="#003CA6">Espera</text>
+        <circle cx="40" cy="310" r="30" fill="#D1FAE5" stroke="#27AE60" stroke-width="2.5"/><text x="40" y="305" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" font-weight="700" fill="#065F46">f&#8322;</text><text x="40" y="322" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="9.5" fill="#065F46">Equidad</text>
+        <circle cx="340" cy="310" r="30" fill="#FDE8E8" stroke="#B41E1E" stroke-width="2.5"/><text x="340" y="305" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" font-weight="700" fill="#B41E1E">f&#8323;</text><text x="340" y="322" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="9.5" fill="#B41E1E">Utilización</text>
+        <text x="95" y="160" text-anchor="middle" transform="rotate(-52,95,160)" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B41E1E" font-weight="600">CONFLICTO</text>
+        <text x="285" y="160" text-anchor="middle" transform="rotate(52,285,160)" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B41E1E" font-weight="600">CONFLICTO</text>
+        <text x="190" y="338" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B41E1E" font-weight="600">CONFLICTO</text>
+        <text x="190" y="200" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" font-weight="700" fill="#2C3E50">Frente de</text><text x="190" y="220" text-anchor="middle" font-family="Playfair Display,serif" font-size="15" font-weight="700" fill="#2C3E50">Pareto</text>
+      </svg>
+    </div>
+    <div class="col col--60 anim" style="gap:10px">
+      <div class="formula-box" style="font-size:1rem;text-align:left;padding:10px 16px"><strong style="color:var(--blue)">$f_1$:</strong> Minimizar tiempo promedio de espera</div>
+      <div class="formula-box" style="font-size:1rem;text-align:left;padding:10px 16px"><strong style="color:var(--green)">$f_2$:</strong> Minimizar disparidad entre países (equidad)</div>
+      <div class="formula-box" style="font-size:1rem;text-align:left;padding:10px 16px"><strong style="color:var(--red)">$f_3$:</strong> Minimizar visas desperdiciadas (utilización)</div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <div class="alert-box" style="flex:1;font-size:.88rem"><strong>$f_1$ vs $f_2$:</strong> Dar más a India/China reduce espera pero viola equidad del 7%.</div>
+        <div class="alert-box" style="flex:1;font-size:.88rem"><strong>$f_2$ vs $f_3$:</strong> Aplicar 7% estricto genera desperdicio en países pequeños.</div>
+        <div class="alert-box" style="flex:1;font-size:.88rem"><strong>$f_1$ vs $f_3$:</strong> Maximizar uso favorece colas cortas, posterga larga espera.</div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 21 — MOHHO ═══════════ -->
+<div class="slide">
+  <h2 class="slide-title anim">Adaptación Multiobjetivo: MOHHO</h2>
+  <div class="slide-subtitle anim">Tres elementos adicionales al HHO estándar</div>
+  <div class="cols">
+    <div class="col anim" style="gap:12px">
+      <div style="background:#EDE7F6;border-radius:14px;padding:18px 22px"><div style="font-size:1.1rem;margin-bottom:6px"><svg width="20" height="20" style="color:#5E35B1;vertical-align:middle;margin-right:6px"><use href="#ico-box"/></svg><strong style="color:#5E35B1">1. Archivo Externo de Pareto</strong></div><p class="body-text" style="font-size:.95rem">Se reemplaza la presa única por un <strong>archivo de soluciones no dominadas</strong>. $\mathbf{a} \succ \mathbf{b}$ si $\mathbf{a}$ es al menos igual en todos y mejor en al menos uno.</p></div>
+      <div style="background:#E8F5E9;border-radius:14px;padding:18px 22px"><div style="font-size:1.1rem;margin-bottom:6px"><svg width="20" height="20" style="color:var(--green);vertical-align:middle;margin-right:6px"><use href="#ico-ruler"/></svg><strong style="color:var(--green)">2. Selección por Crowding Distance</strong></div><p class="body-text" style="font-size:.95rem">Soluciones en regiones <strong>menos pobladas</strong> del frente tienen mayor probabilidad de ser elegidas como líder.</p></div>
+      <div style="background:var(--orange-bg);border-radius:14px;padding:18px 22px"><div style="font-size:1.1rem;margin-bottom:6px"><svg width="20" height="20" style="color:var(--orange);vertical-align:middle;margin-right:6px"><use href="#ico-gear"/></svg><strong style="color:var(--orange)">3. Decodificador Greedy</strong></div><p class="body-text" style="font-size:.95rem">Verifica restricciones C1-C6. Si viola alguna, difiere el grupo. <strong>Garantiza factibilidad inherente.</strong></p></div>
+    </div>
+    <div class="col col--40 anim" style="justify-content:center">
+      <svg viewBox="0 0 320 310" style="width:100%" xmlns="http://www.w3.org/2000/svg">
+        <defs><marker id="ax" markerWidth="8" markerHeight="6" refX="4" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#2C3E50"/></marker></defs>
+        <line x1="50" y1="260" x2="290" y2="260" stroke="#2C3E50" stroke-width="2" marker-end="url(#ax)"/><line x1="50" y1="260" x2="50" y2="30" stroke="#2C3E50" stroke-width="2" marker-end="url(#ax)"/><line x1="50" y1="260" x2="10" y2="290" stroke="#2C3E50" stroke-width="1.5"/>
+        <text x="170" y="285" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#003CA6" font-weight="600">f&#8321; (espera)</text><text x="25" y="140" text-anchor="middle" transform="rotate(-90,25,140)" font-family="Source Sans 3,sans-serif" font-size="12" fill="#27AE60" font-weight="600">f&#8322; (equidad)</text><text x="18" y="285" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B41E1E" font-weight="600">f&#8323;</text>
+        <circle cx="80" cy="80" r="7" fill="#003CA6" opacity=".7"/><circle cx="100" cy="95" r="7" fill="#003CA6" opacity=".7"/><circle cx="125" cy="105" r="7" fill="#003CA6" opacity=".7"/><circle cx="150" cy="120" r="7" fill="#003CA6" opacity=".7"/><circle cx="170" cy="140" r="7" fill="#003CA6" opacity=".7"/><circle cx="190" cy="160" r="7" fill="#003CA6" opacity=".7"/><circle cx="210" cy="180" r="7" fill="#003CA6" opacity=".7"/><circle cx="235" cy="200" r="7" fill="#003CA6" opacity=".7"/><circle cx="255" cy="225" r="7" fill="#003CA6" opacity=".7"/>
+        <path d="M80,80 Q140,90 170,140 Q200,175 255,225" fill="none" stroke="#FFD600" stroke-width="3" stroke-dasharray="6,3"/>
+        <circle cx="170" cy="80" r="5" fill="#ccc" opacity=".5"/><circle cx="220" cy="100" r="5" fill="#ccc" opacity=".5"/><circle cx="130" cy="180" r="5" fill="#ccc" opacity=".5"/><circle cx="200" cy="120" r="5" fill="#ccc" opacity=".5"/><circle cx="250" cy="150" r="5" fill="#ccc" opacity=".5"/><circle cx="180" cy="200" r="5" fill="#ccc" opacity=".5"/>
+        <circle cx="85" cy="248" r="5" fill="#003CA6" opacity=".7"/><text x="96" y="252" font-family="Source Sans 3,sans-serif" font-size="10" fill="#555">No dominadas (Pareto)</text><circle cx="200" cy="248" r="4" fill="#ccc" opacity=".5"/><text x="210" y="252" font-family="Source Sans 3,sans-serif" font-size="10" fill="#999">Dominadas</text>
+      </svg>
+      <div class="callout-box" style="margin-top:6px;font-size:.9rem">Cada punto azul es una asignación válida con diferente balance. El tomador de decisiones elige.</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 22 — MAPEO HHO → GREEN CARDS ═══════════ -->
+<div class="slide" style="padding:36px 44px 28px">
+  <h2 class="slide-title anim" style="font-size:1.9rem">Mapeo Completo: HHO → Green Cards</h2>
+  <div class="slide-subtitle anim" style="margin-bottom:10px">Cada componente del algoritmo se traduce en una acción sobre la distribución de 140,000 visas</div>
+  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center">
+    <svg viewBox="0 0 1120 440" style="width:100%;max-height:410px" xmlns="http://www.w3.org/2000/svg">
+      <defs><marker id="fm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#003CA6"/></marker></defs>
+      <rect x="10" y="5" width="320" height="34" rx="6" fill="#003CA6"/><text x="170" y="27" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" font-weight="700" fill="white">Componente HHO</text>
+      <text x="395" y="27" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" font-weight="700" fill="#003CA6">→</text>
+      <rect x="440" y="5" width="660" height="34" rx="6" fill="#27AE60"/><text x="770" y="27" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" font-weight="700" fill="white">Equivalente en Green Cards</text>
+
+      <rect x="10" y="50" width="320" height="48" rx="8" fill="#E3F0FF" stroke="#BBDEFB" stroke-width="1.5"/><text x="30" y="70" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#003CA6">Halcón individual</text><text x="30" y="87" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Solución candidata X_i</text>
+      <line x1="330" y1="74" x2="440" y2="74" stroke="#003CA6" stroke-width="2" marker-end="url(#fm)" stroke-dasharray="5,3"/>
+      <rect x="440" y="50" width="660" height="48" rx="8" fill="#D1FAE5" stroke="#A5D6A7" stroke-width="1.5"/><text x="460" y="70" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#065F46">Una distribución completa de 140,000 visas</text><text x="460" y="87" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Permutación de orden de procesamiento de cohortes país-categoría-fecha</text>
+
+      <rect x="10" y="108" width="320" height="48" rx="8" fill="#E3F0FF" stroke="#BBDEFB" stroke-width="1.5"/><text x="30" y="128" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#003CA6">Presa (conejo)</text><text x="30" y="145" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Mejor solución / líder Pareto</text>
+      <line x1="330" y1="132" x2="440" y2="132" stroke="#003CA6" stroke-width="2" marker-end="url(#fm)" stroke-dasharray="5,3"/>
+      <rect x="440" y="108" width="660" height="48" rx="8" fill="#D1FAE5" stroke="#A5D6A7" stroke-width="1.5"/><text x="460" y="128" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#065F46">Asignación no dominada del archivo Pareto</text><text x="460" y="145" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Mejor compromiso entre f₁ (espera), f₂ (equidad), f₃ (utilización)</text>
+
+      <rect x="10" y="166" width="320" height="48" rx="8" fill="#FFF3E0" stroke="#FFE0B2" stroke-width="1.5"/><text x="30" y="186" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#E65100">Energía de escape E</text><text x="30" y="203" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">E = 2E₀(1 - t/T)</text>
+      <line x1="330" y1="190" x2="440" y2="190" stroke="#003CA6" stroke-width="2" marker-end="url(#fm)" stroke-dasharray="5,3"/>
+      <rect x="440" y="166" width="660" height="48" rx="8" fill="#FFF8D6" stroke="#FFD600" stroke-width="1.5"/><text x="460" y="186" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#7c6a00">Fase de la optimización</text><text x="460" y="203" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">|E|≥1: probar distribuciones radicalmente diferentes · |E|&lt;1: ajustar finamente</text>
+
+      <rect x="10" y="224" width="320" height="48" rx="8" fill="#E3F0FF" stroke="#BBDEFB" stroke-width="1.5"/><text x="30" y="244" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#003CA6">Exploración (Ops 1-2)</text><text x="30" y="261" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Búsqueda global amplia</text>
+      <line x1="330" y1="248" x2="440" y2="248" stroke="#003CA6" stroke-width="2" marker-end="url(#fm)" stroke-dasharray="5,3"/>
+      <rect x="440" y="224" width="660" height="48" rx="8" fill="#D1FAE5" stroke="#A5D6A7" stroke-width="1.5"/><text x="460" y="244" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#065F46">Probar asignaciones diversas</text><text x="460" y="261" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Redistribuir visas entre países/categorías de formas radicalmente distintas</text>
+
+      <rect x="10" y="282" width="320" height="48" rx="8" fill="#E3F0FF" stroke="#BBDEFB" stroke-width="1.5"/><text x="30" y="302" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#003CA6">Explotación (Ops 3-4)</text><text x="30" y="319" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Refinamiento local</text>
+      <line x1="330" y1="306" x2="440" y2="306" stroke="#003CA6" stroke-width="2" marker-end="url(#fm)" stroke-dasharray="5,3"/>
+      <rect x="440" y="282" width="660" height="48" rx="8" fill="#D1FAE5" stroke="#A5D6A7" stroke-width="1.5"/><text x="460" y="302" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#065F46">Ajustar topes y redistribuciones finamente</text><text x="460" y="319" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Mover ±100 visas entre países cercanos al tope del 7%</text>
+
+      <rect x="10" y="340" width="320" height="48" rx="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1.5"/><text x="30" y="360" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#6A1B9A">Vuelos de Lévy (Ops 5-6)</text><text x="30" y="377" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Saltos de largo alcance</text>
+      <line x1="330" y1="364" x2="440" y2="364" stroke="#003CA6" stroke-width="2" marker-end="url(#fm)" stroke-dasharray="5,3"/>
+      <rect x="440" y="340" width="660" height="48" rx="8" fill="#EDE7F6" stroke="#CE93D8" stroke-width="1.5"/><text x="460" y="360" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#6A1B9A">Saltar las discontinuidades del tope del 7%</text><text x="460" y="377" font-family="Source Sans 3,sans-serif" font-size="11" fill="#555">Explorar: un país recibe 0 vs. 25,620 (máximo legal). Romper el acantilado</text>
+
+      <rect x="10" y="398" width="320" height="38" rx="8" fill="#FDE8E8" stroke="#FECACA" stroke-width="1.5"/><text x="30" y="422" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#B41E1E">Fitness (captura exitosa)</text>
+      <line x1="330" y1="417" x2="440" y2="417" stroke="#003CA6" stroke-width="2" marker-end="url(#fm)" stroke-dasharray="5,3"/>
+      <rect x="440" y="398" width="660" height="38" rx="8" fill="#FDE8E8" stroke="#FECACA" stroke-width="1.5"/><text x="460" y="422" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#B41E1E">Evaluación de f₁, f₂, f₃ + dominancia Pareto</text>
+    </svg>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+<!-- ═══════════ SLIDE 23 — CONCLUSIONES ═══════════ -->
+<div class="slide" style="padding:0;overflow:hidden">
+  <div style="display:flex;height:100%;width:100%">
+    <div style="flex:0 0 38%;position:relative;overflow:hidden;background:#0a1628">
+      <img src="./harris.png" alt="Harris's hawk" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:.7;filter:contrast(1.1) brightness(.9)" onerror="this.style.display='none'">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,36,112,.55) 0%,rgba(0,20,60,.8) 100%)"></div>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:40px 32px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Fase 01 · Cierre</div>
+        <h2 style="font-family:'Playfair Display',Palatino,Georgia,serif;font-size:2.2rem;font-weight:900;color:white;line-height:1.15;margin-bottom:14px">Conclusiones<br>y Trabajo<br><span style="color:var(--yellow)">Futuro</span></h2>
+        <div style="width:50px;height:4px;background:var(--yellow);border-radius:2px;margin-bottom:18px"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.55">Hallazgos principales y la ruta hacia la implementación completa del modelo MOHHO.</div>
+      </div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;padding:44px 44px 36px;background:var(--white);overflow:hidden">
+      <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:14px;padding:22px 26px;color:white;margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><svg width="18" height="18" style="color:var(--yellow)"><use href="#ico-check"/></svg><span style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em">Conclusiones de la Fase 01</span></div>
+        <ul style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;line-height:1.65;color:rgba(255,255,255,.9);list-style:none;padding:0;margin:0">
+          <li style="padding-left:20px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--yellow);border-radius:2px;transform:rotate(45deg)"></span>HHO es un candidato prometedor gracias a sus <strong style="color:var(--yellow)">6 operadores adaptativos</strong> y su transición estocástica entre exploración y explotación.</li>
+          <li style="padding-left:20px;position:relative;margin-bottom:8px"><span style="position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--yellow);border-radius:2px;transform:rotate(45deg)"></span>El problema de Green Cards es <strong style="color:rgba(255,255,255,.95)">NP-difícil, multiobjetivo, con restricciones no lineales</strong>: ideal para metaheurísticas.</li>
+          <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;top:9px;width:8px;height:8px;background:#FF6B6B;border-radius:2px;transform:rotate(45deg)"></span>El <strong style="color:#FF6B6B">impacto social directo</strong> — 1.8 millones de personas en espera — justifica esta línea de investigación.</li>
+        </ul>
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px" class="anim"><svg width="14" height="14" style="color:var(--blue);vertical-align:middle;margin-right:4px"><use href="#ico-target"/></svg>Trabajo Futuro</div>
+      <div style="display:flex;gap:14px;flex:1;min-height:0" class="anim">
+        <div style="flex:1;background:var(--blue-light);border-radius:12px;padding:18px 20px;border-top:4px solid var(--blue);display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;font-weight:700;color:var(--blue)">Fase 02</span><span style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:var(--gray-light)">2do parcial</span></div>
+          <ul class="bullet-list" style="font-size:.88rem;flex:1">
+            <li>Modelo matemático completo con <strong>datos reales</strong> del Visa Bulletin</li>
+            <li>Formulación formal de restricciones con <strong>spillover dinámico</strong></li>
+            <li>Estrategia de integración del modelo con MOHHO</li>
+          </ul>
+        </div>
+        <div style="flex:1;background:var(--green-bg);border-radius:12px;padding:18px 20px;border-top:4px solid var(--green);display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px"><span style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;font-weight:700;color:var(--green)">Fase Final</span><span style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:var(--gray-light)">Evaluación final</span></div>
+          <ul class="bullet-list" style="font-size:.88rem;flex:1">
+            <li>Implementación <strong>MOHHO en Python</strong> (Google Colab)</li>
+            <li>Análisis del <strong>frente de Pareto</strong> resultante</li>
+            <li>Comparación vs. asignación actual y vs. <strong>NSGA-II</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#bbb;margin-top:10px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 24 — REFLEXIONES ═══════════ -->
+<div class="slide slide--dark" style="padding:40px 50px 36px">
+  <h2 class="slide-title anim" style="margin-bottom:16px">Reflexiones Personales</h2>
+  <div style="display:flex;gap:24px;flex:1;min-height:0" class="anim">
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:16px;padding:20px 22px;display:flex;gap:20px;align-items:center;border:1px solid rgba(255,255,255,.08)">
+        <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.3)">
+          <img src="./yazmin_photo.jpg" alt="Yazmín" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:rgba(255,255,255,.05)><svg width=50 height=50 style=color:#FFD600><use href=#ico-people/></svg></div>'">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:1.2rem;font-weight:700;color:var(--yellow);margin-bottom:6px">Yazmín I. Flores Martínez</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.82)">Llegué a EE.UU. en 2012. Años de incertidumbre. Obtuve mi Green Card, pero el alivio vino con una pregunta: <strong style="color:var(--yellow)">¿por qué tuvo que ser así?</strong> Cada variable $x_{i,t}$ representa a una persona real.</div>
+        </div>
+      </div>
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:16px;padding:20px 22px;display:flex;gap:20px;align-items:center;border:1px solid rgba(255,255,255,.08)">
+        <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.3)">
+          <img src="./javi_photo.jpg" alt="Javier" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:rgba(255,255,255,.05)><svg width=50 height=50 style=color:#FFD600><use href=#ico-people/></svg></div>'">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:1.2rem;font-weight:700;color:var(--yellow);margin-bottom:6px">Javier A. Rebull Saucedo</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.82)">Vivo en Boston desde 2013. <strong style="color:var(--yellow)">Dos procesos de Green Card fallidos.</strong> 13 años con permiso temporal. Sigo esperando. Elegimos este problema porque es <em>nuestro problema</em>.</div>
+        </div>
+      </div>
+    </div>
+    <div style="flex:0 0 320px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px 16px">
+      <svg width="56" height="56" style="color:var(--yellow);margin-bottom:20px;opacity:.8"><use href="#ico-hawk"/></svg>
+      <blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.85);line-height:1.55;max-width:300px">Los halcones cazan en equipo porque un halcón solo no puede atrapar un conejo que zigzaguea.</blockquote>
+      <div style="width:50px;height:3px;background:var(--yellow);margin:18px 0;border-radius:2px;opacity:.5"></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.05rem;color:var(--yellow);font-weight:600;margin-bottom:4px">Cooperación, adaptación y persistencia.</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:rgba(255,255,255,.4);margin-top:16px">Gracias. Estamos listos para sus preguntas.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 25 — REFERENCIAS ═══════════ -->
+<div class="slide" style="padding:44px 50px 36px">
+  <h2 class="slide-title anim">Referencias</h2>
+  <div class="slide-subtitle anim">Bibliografía en formato APA 7 · 16 fuentes consultadas</div>
+  <div style="flex:1;overflow-y:auto;display:flex;gap:20px;font-family:'Source Sans 3',sans-serif" class="anim">
+    <div style="flex:1;font-size:.78rem;line-height:1.55;color:var(--gray)">
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Alabool, H. M., et al.</span> (2021). Harris hawks optimization: A comprehensive review. <em>Neural Comp. & Applications, 33</em>(15).</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Bansak, K. & Paulson, E.</span> (2024). Outcome-driven dynamic refugee assignment. <em>Operations Research, 72</em>(5).</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Boundless Immigration.</span> (2024). Indian workers face up to 134-year wait for a green card.</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Çerçi, S. & Dönmez, E.</span> (2022). Hybrid multi-objective Harris Hawk optimization. <em>Adv. in Eng. Software, 173</em>.</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Congressional Research Service.</span> (2023). U.S. employment-based immigration policy (R47164).</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Freund, D., et al.</span> (2023). Group fairness in dynamic refugee assignment. <em>arXiv:2301.10642</em>.</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">FWD.us.</span> (2024). Per-country cap reform: Priority bill spotlight.</div>
+      <div style="padding:7px 0"><span style="font-weight:600;color:var(--blue-dark)">Garey, M. R. & Johnson, D. S.</span> (1979). <em>Computers and Intractability</em>. W. H. Freeman.</div>
+    </div>
+    <div style="width:1px;background:#e0e0e0;flex-shrink:0"></div>
+    <div style="flex:1;font-size:.78rem;line-height:1.55;color:var(--gray)">
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Heidari, A. A., et al.</span> (2019). Harris hawks optimization: Algorithm and applications. <em>Future Gen. Computer Systems, 97</em>. <span class="badge badge--blue" style="font-size:.65rem;vertical-align:middle">Paper principal</span></div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Kuşoğlu, İ. & Yüzgeç, U.</span> (2020). Multi-objective Harris Hawks optimizer. <em>BSEU J. Eng. Research, 1</em>(1).</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Li, G., Gong, M. & Li, H.</span> (2024). Towards fairness-aware multi-objective optimization. <em>Complex & Intell. Systems, 10</em>.</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Li, J. & Wu, M.</span> (2023). Enhancing the Harris' Hawk optimiser. <em>Soft Computing, 27</em>(21).</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">Pathak, P., et al.</span> (2025). Immigration lottery design. <em>Rev. of Economics & Statistics, 107</em>(1).</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">U.S. Citizenship & Immigration Services.</span> (2023). FY 2023 EB adjustment of status FAQs.</div>
+      <div style="padding:7px 0;border-bottom:1px solid #f0f0f0"><span style="font-weight:600;color:var(--blue-dark)">U.S. Department of State.</span> (2026). Visa bulletin for February 2026.</div>
+      <div style="padding:7px 0"><span style="font-weight:600;color:var(--blue-dark)">Zhang, L., Li, Y. & Wang, X.</span> (2023). Improved HHO with bi-goal evolution. <em>Ingénierie des Systèmes d'Information, 28</em>(5).</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+</div>
+
+</div><!-- end deck -->
+
+<!-- SIDEBAR NAVIGATION -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">Navegación</div>
+  <div class="sidebar-scroll" id="sidebarScroll"></div>
+</div>
+
+<div class="nav-bar">
+  <button class="nav-btn" onclick="navigate(-1)" title="←">&#9664;</button>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:4%"></div></div>
+  <span class="nav-counter" id="counter">1 / 25</span>
+  <button class="nav-btn" onclick="navigate(1)" title="→">&#9654;</button>
+  <button class="nav-notes-btn" id="fsBtn" onclick="toggleFullscreen()" title="Pantalla completa (F)">&#9974; Fullscreen</button>
+</div>
+
+<script>
+const slides=document.querySelectorAll('.slide'),counter=document.getElementById('counter'),sidebarScroll=document.getElementById('sidebarScroll'),progressBar=document.getElementById('progressBar');let current=0;
+
+const slideLabels=[
+  'Portada','Metaheurísticas',
+  '01 · La Metaheurística','Paper HHO','¿Por qué HHO?','Biología','Energía E','Diagrama HHO',
+  '02 · Operadores','Ops 1-2','Ops 3-4','Ops 5-6','Tabla Ops',
+  '03 · El Problema','Contexto','Problemática','Spillover','NP-Difícil',
+  '04 · HHO × GC','Tres Objetivos','MOHHO','Mapeo',
+  'Conclusiones','Reflexiones','Referencias'
+];
+const sectionSlides=[2,8,13,18];
+slideLabels.forEach((label,i)=>{
+  if(sectionSlides.includes(i)){const d=document.createElement('div');d.className='sb-divider';sidebarScroll.appendChild(d)}
+  const item=document.createElement('div');
+  item.className='sb-item'+(sectionSlides.includes(i)?' sb-section':'')+(i===0?' sb-active':'');
+  item.innerHTML=`<div class="sb-num">${i+1}</div><div class="sb-label">${label}</div>`;
+  item.onclick=()=>{current=i;showSlide(i)};
+  sidebarScroll.appendChild(item);
+});
+
+function updateSidebar(i){
+  document.querySelectorAll('.sb-item').forEach((el,idx)=>el.classList.toggle('sb-active',idx===i));
+  const active=document.querySelectorAll('.sb-item')[i];
+  if(active)active.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+
+function showSlide(i){slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));counter.textContent=`${i+1} / ${slides.length}`;progressBar.style.width=`${((i+1)/slides.length)*100}%`;updateSidebar(i);if(window.MathJax&&MathJax.Hub)MathJax.Hub.Queue(["Typeset",MathJax.Hub,slides[i]])}
+function navigate(d){current=Math.max(0,Math.min(slides.length-1,current+d));showSlide(current)}
+function toggleFullscreen(){if(!document.fullscreenElement&&!document.webkitFullscreenElement){const el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen();else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Salir'}else{if(document.exitFullscreen)document.exitFullscreen();else if(document.webkitExitFullscreen)document.webkitExitFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Fullscreen'}setTimeout(scalePresentation,150);setTimeout(scalePresentation,400)}
+document.addEventListener('fullscreenchange',()=>{document.getElementById('fsBtn').innerHTML=document.fullscreenElement?'&#9974; Salir':'&#9974; Fullscreen';setTimeout(scalePresentation,100);setTimeout(scalePresentation,350)});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();navigate(1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();navigate(-1)}if(e.key==='Home'){e.preventDefault();current=0;showSlide(0)}if(e.key==='End'){e.preventDefault();current=slides.length-1;showSlide(current)}if(e.key==='f'||e.key==='F')toggleFullscreen()});
+let tx=0;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX});document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)navigate(d>0?1:-1)});
+function scalePresentation(){const dk=document.getElementById('deck');const fs=!!(document.fullscreenElement||document.webkitFullscreenElement);const w=window.innerWidth,h=window.innerHeight;const factor=fs?1.0:0.92;const s=Math.min(w/1280,h/720)*factor;dk.style.transform=`scale(${s})`;dk.style.transformOrigin='center center'}
+window.addEventListener('resize',scalePresentation);document.addEventListener('fullscreenchange',scalePresentation);scalePresentation();showSlide(0);
+</script>
+</body>
+</html>
