@@ -511,29 +511,67 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 <div class="slide" style="padding:0;overflow:hidden" data-notes="'Este es el paper original de HHO, publicado en 2019 en Future Generation Computer Systems (Elsevier, Q1). Tiene más de 5,000 citaciones. Lo seleccionamos porque NO pertenece a ninguna familia vista en clase y ofrece 6 operadores distintos con solo 2 parámetros.' Mencionar que el DOI está disponible para quien quiera revisar el artículo completo.">
   <div style="display:flex;height:100%;width:100%">
     <!-- Left: Info panel (48%) -->
-    <div style="flex:0 0 48%;display:flex;flex-direction:column;padding:38px 40px 28px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%)">
-      <h2 class="slide-title anim" style="margin-bottom:4px">El Algoritmo Seleccionado</h2>
-      <div class="slide-subtitle anim" style="margin-bottom:18px">Harris Hawks Optimization (HHO)</div>
-      <!-- Paper reference card -->
-      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:14px;padding:22px 24px;color:white;margin-bottom:16px">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">
-          <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-clipboard"/></svg>
+    <div style="flex:0 0 48%;display:flex;flex-direction:column;padding:28px 32px 20px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%);overflow-y:auto">
+      <h2 class="slide-title anim" style="margin-bottom:2px;font-size:1.35rem">El Algoritmo Seleccionado</h2>
+      <div class="slide-subtitle anim" style="margin-bottom:10px;font-size:.82rem">Harris Hawks Optimization (HHO)</div>
+      <!-- Paper reference card — compact -->
+      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:12px 16px;color:white;margin-bottom:8px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">
+          <svg width="12" height="12" style="color:var(--yellow);vertical-align:middle;margin-right:3px"><use href="#ico-clipboard"/></svg>
           Referencia del artículo
         </div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.6;color:rgba(255,255,255,.9)">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.76rem;line-height:1.5;color:rgba(255,255,255,.88)">
           Heidari, A. A., Mirjalili, S., Faris, H., Aljarah, I., Mafarja, M., &amp; Chen, H. (2019). <em style="color:var(--yellow)">Harris hawks optimization: Algorithm and applications.</em> <strong>Future Generation Computer Systems</strong>, 97, 849–872.
         </div>
-        <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15)">
-          <a href="https://doi.org/10.1016/j.future.2019.02.028" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--yellow);text-decoration:none;word-break:break-all">https://doi.org/10.1016/j.future.2019.02.028</a>
+        <div style="margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,255,255,.12)">
+          <a href="https://doi.org/10.1016/j.future.2019.02.028" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--yellow);text-decoration:none;word-break:break-all">doi.org/10.1016/j.future.2019.02.028</a>
         </div>
       </div>
-      <!-- Key stats -->
-      <div class="anim" style="display:flex;gap:12px;margin-bottom:auto">
-        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.5rem">2019</div><div class="stat-label">publicación</div></div>
-        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.5rem;color:var(--blue)">Q1</div><div class="stat-label">Elsevier</div></div>
-        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.5rem;color:var(--green)">5,000+</div><div class="stat-label">citaciones</div></div>
+      <!-- Impact metrics — badges -->
+      <div class="anim" style="display:flex;gap:8px;margin-bottom:10px">
+        <div style="flex:1;background:linear-gradient(135deg,#EAF2FF,#BBDEFB);border:1.5px solid var(--blue);border-radius:10px;padding:8px 6px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--blue);line-height:1">2019</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:#555;margin-top:2px;font-weight:600">Publicación</div>
+        </div>
+        <div style="flex:1;background:linear-gradient(135deg,#FFFDE7,#FFF8E1);border:1.5px solid #FFB300;border-radius:10px;padding:8px 6px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:#E65100;line-height:1">Q1</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:#555;margin-top:2px;font-weight:600">FGCS · Elsevier</div>
+        </div>
+        <div style="flex:1;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border:1.5px solid var(--green);border-radius:10px;padding:8px 6px;text-align:center">
+          <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--green);line-height:1">5K+</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:.62rem;color:#555;margin-top:2px;font-weight:600">Citaciones</div>
+        </div>
       </div>
-      <div class="slide-footer" style="position:relative;padding:8px 0 0;margin-top:auto"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+      <!-- WHY HHO — main block -->
+      <div class="anim" style="background:linear-gradient(135deg,#E8F5E9 0%,#f0faf1 100%);border:1.5px solid #A5D6A7;border-radius:10px;padding:12px 14px;flex:1;display:flex;flex-direction:column">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">
+          <svg width="13" height="13" style="color:var(--green);vertical-align:middle;margin-right:3px"><use href="#ico-hawk"/></svg>
+          ¿Por qué HHO para Green Cards?
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;font-family:'Source Sans 3',sans-serif;font-size:.76rem;line-height:1.4;color:#333">
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">1</div>
+            <div><strong style="color:var(--green)">Inspiración biológica:</strong> modela la cacería cooperativa del halcón de Harris — la estrategia <em>surprise pounce</em> donde múltiples halcones convergen simultáneamente.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">2</div>
+            <div><strong style="color:var(--green)">6 operadores adaptativos:</strong> exploración (2 estrategias), explotación con 4 modos — soft/hard besiege ± <strong>Lévy flights</strong> — controlados por energía <em>E</em> y probabilidad <em>r</em>.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">3</div>
+            <div><strong style="color:var(--green)">Transición inteligente:</strong> E&nbsp;=&nbsp;2E₀(1&nbsp;−&nbsp;t/T) decrece dinámicamente. |E|&nbsp;≥&nbsp;1 explora, |E|&nbsp;&lt;&nbsp;1 explota — ideal para <strong>+10,000 dimensiones</strong>.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">4</div>
+            <div><strong style="color:var(--green)">Escalabilidad demostrada:</strong> rendimiento superior hasta 1,000 dim vs. GA, PSO, DE, GWO, MFO y otros en <strong>29 funciones benchmark</strong>.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start">
+            <div style="flex:0 0 18px;height:18px;border-radius:50%;background:var(--green);color:white;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;margin-top:1px">5</div>
+            <div><strong style="color:var(--green)">Sin derivadas ni linealidad:</strong> population-based, gradient-free — perfecto para nuestro problema <strong>NP-difícil</strong> con restricciones no lineales y variables enteras.</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:8px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
     </div>
     <!-- Right: Article image full-height (52%) -->
     <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5;display:flex;align-items:center;justify-content:center;padding:24px">
