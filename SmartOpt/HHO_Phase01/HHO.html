@@ -509,13 +509,48 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
   <div class="section-sub anim">Harris Hawks Optimization (HHO) · Heidari et al., 2019</div>
 </div>
 
-<!-- ═══════════ SLIDE 9 — ¿POR QUÉ HHO? ═══════════ -->
+<!-- ═══════════ SLIDE 9 — ALGORITMO SELECCIONADO ═══════════ -->
+<div class="slide" style="padding:0;overflow:hidden" data-notes="'Este es el paper original de HHO, publicado en 2019 en Future Generation Computer Systems (Elsevier, Q1). Tiene más de 5,000 citaciones. Lo seleccionamos porque NO pertenece a ninguna familia vista en clase y ofrece 6 operadores distintos con solo 2 parámetros.' Mencionar que el DOI está disponible para quien quiera revisar el artículo completo.">
+  <div style="display:flex;height:100%;width:100%">
+    <!-- Left: Info panel (48%) -->
+    <div style="flex:0 0 48%;display:flex;flex-direction:column;padding:38px 40px 28px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%)">
+      <h2 class="slide-title anim" style="margin-bottom:4px">El Algoritmo Seleccionado</h2>
+      <div class="slide-subtitle anim" style="margin-bottom:18px">Harris Hawks Optimization (HHO)</div>
+      <!-- Paper reference card -->
+      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:14px;padding:22px 24px;color:white;margin-bottom:16px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">
+          <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-clipboard"/></svg>
+          Referencia del artículo
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.6;color:rgba(255,255,255,.9)">
+          Heidari, A. A., Mirjalili, S., Faris, H., Aljarah, I., Mafarja, M., &amp; Chen, H. (2019). <em style="color:var(--yellow)">Harris hawks optimization: Algorithm and applications.</em> <strong>Future Generation Computer Systems</strong>, 97, 849–872.
+        </div>
+        <div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.15)">
+          <a href="https://doi.org/10.1016/j.future.2019.02.028" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--yellow);text-decoration:none;word-break:break-all">https://doi.org/10.1016/j.future.2019.02.028</a>
+        </div>
+      </div>
+      <!-- Key stats -->
+      <div class="anim" style="display:flex;gap:12px;margin-bottom:auto">
+        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.5rem">2019</div><div class="stat-label">publicación</div></div>
+        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.5rem;color:var(--blue)">Q1</div><div class="stat-label">Elsevier</div></div>
+        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.5rem;color:var(--green)">5,000+</div><div class="stat-label">citaciones</div></div>
+      </div>
+      <div class="slide-footer" style="position:relative;padding:8px 0 0;margin-top:auto"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+    </div>
+    <!-- Right: Article image full-height (52%) -->
+    <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5;display:flex;align-items:center;justify-content:center;padding:24px">
+      <img src="articleimage.png" alt="Harris Hawks Optimization — Paper original" style="width:100%;height:100%;object-fit:contain;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,.15)" onerror="this.parentElement.innerHTML='<div style=text-align:center;font-family:Source+Sans+3,sans-serif><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>articleimage.png</div></div>'">
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SLIDE 10 — ¿POR QUÉ HHO? ═══════════ -->
 <div class="slide" data-notes="NO elegimos nada del temario. 5 argumentos: inspiración biológica única, moderno (2019, 5000+ citas), 6 operadores, extensión multiobjetivo, solo 2 parámetros. — PREGUNTA: ¿Ventaja sobre otros? R: Más operadores (6 vs 2-3), vuelos de Lévy dan escape, transición estocástica.">
   <h2 class="slide-title anim">¿Por qué Harris Hawks Optimization?</h2>
   <div class="slide-subtitle anim">Selección y originalidad de la metaheurística</div>
-  <!-- Banner image -->
-  <div class="anim" style="height:140px;border-radius:12px;overflow:hidden;margin-bottom:14px;position:relative">
-    <img src="harris_hawks_trio.png" alt="Halcones de Harris en grupo" style="width:100%;height:100%;object-fit:cover;object-position:center 35%" onerror="this.parentElement.style.display='none'">
+  <!-- Banner image — wider -->
+  <div class="anim" style="height:155px;border-radius:12px;overflow:hidden;margin-bottom:14px;position:relative">
+    <img src="harris_hawks_trio.png" alt="Halcones de Harris en grupo" style="width:110%;height:100%;object-fit:cover;object-position:center 35%;margin-left:-5%" onerror="this.parentElement.style.display='none'">
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,60,166,.6) 0%,transparent 40%,transparent 60%,rgba(0,60,166,.6) 100%)"></div>
     <div style="position:absolute;bottom:8px;left:14px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:rgba(255,255,255,.5)">Parabuteo unicinctus — caza cooperativa en grupo</div>
   </div>
@@ -1097,7 +1132,7 @@ const slides=document.querySelectorAll('.slide'),counter=document.getElementById
 const slideLabels=[
   'Portada','Contexto','Metaheurísticas',
   '01 · Problema','Sistema EB','Spillover','NP-Difícil',
-  '02 · Metaheurística','¿Por qué HHO?','Biología','Energía E','Diagrama P1','Diagrama P2',
+  '02 · Metaheurística','Paper HHO','¿Por qué HHO?','Biología','Energía E','Diagrama P1','Diagrama P2',
   '03 · Operadores','Ops 1-2','Ops 3-4','Ops 5-6','Tabla Ops',
   '04 · HHO × GC','Tres Objetivos','MOHHO','Mapeo',
   'Conclusiones','Reflexiones','Referencias'
