@@ -112,6 +112,27 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 .slide.active .anim{animation:fadeUp .5s ease both}
 .slide.active .anim:nth-child(2){animation-delay:.08s}.slide.active .anim:nth-child(3){animation-delay:.16s}.slide.active .anim:nth-child(4){animation-delay:.24s}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+/* Sidebar */
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:52px;background:rgba(0,0,0,.85);backdrop-filter:blur(16px);z-index:200;display:flex;flex-direction:column;transition:width .25s ease;overflow:hidden;border-right:1px solid rgba(255,255,255,.08)}
+.sidebar:hover{width:220px}
+.sidebar-header{padding:12px 14px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;opacity:0;transition:opacity .2s;border-bottom:1px solid rgba(255,255,255,.08)}
+.sidebar:hover .sidebar-header{opacity:1}
+.sidebar-scroll{flex:1;overflow-y:auto;overflow-x:hidden;padding:4px 0}
+.sidebar-scroll::-webkit-scrollbar{width:3px}.sidebar-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2);border-radius:3px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:6px 14px;cursor:pointer;transition:background .15s;white-space:nowrap;border-left:3px solid transparent}
+.sb-item:hover{background:rgba(255,255,255,.08)}
+.sb-item.sb-active{border-left-color:var(--yellow);background:rgba(255,214,0,.08)}
+.sb-num{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5);background:rgba(255,255,255,.06);flex-shrink:0;transition:all .15s}
+.sb-item.sb-active .sb-num{background:var(--yellow);color:var(--blue-dark)}
+.sb-item.sb-section .sb-num{background:var(--blue);color:white;border-radius:4px}
+.sb-label{font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:rgba(255,255,255,.55);opacity:0;transition:opacity .2s;overflow:hidden;text-overflow:ellipsis}
+.sidebar:hover .sb-label{opacity:1}
+.sb-item.sb-active .sb-label{color:var(--yellow)}
+.sb-divider{height:1px;background:rgba(255,255,255,.06);margin:4px 14px}
+:fullscreen .sidebar{opacity:0;pointer-events:none;transition:opacity .3s,width .25s}
+:fullscreen .sidebar:hover{opacity:1;pointer-events:auto}
+:-webkit-full-screen .sidebar{opacity:0;pointer-events:none}
+:-webkit-full-screen .sidebar:hover{opacity:1;pointer-events:auto}
 /* flowchart helpers */
 .fc-box{font-family:'Source Sans 3',sans-serif}
 </style>
@@ -138,13 +159,19 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 
 <!-- ═══════════ SLIDE 1 — PORTADA ═══════════ -->
 <div class="slide slide--cover active" data-notes="Saludo: 'Buenos días, profesor Porras, compañeros.' Presentarnos: Yazmín y Javier. 'Vamos a presentar una metaheurística moderna aplicada a un problema que vivimos en carne propia.' ~30 seg.">
-  <img src="LogoSInFondoMIAAD.png" alt="MIAAD" style="width:200px;height:auto;margin-bottom:16px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3))" onerror="this.style.display='none'">
+  <!-- Logo: circle-clipped to show only the crest, no UACJ text -->
+  <div style="width:150px;height:150px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.9);box-shadow:0 8px 32px rgba(0,0,0,.3);margin-bottom:20px;flex-shrink:0">
+    <img src="LogoSInFondoMIAAD.png" alt="UACJ" style="width:150px;height:auto;object-fit:cover;object-position:center top;display:block" onerror="this.parentElement.style.display='none'">
+  </div>
   <div class="cover-inst">Universidad Autónoma de Ciudad Juárez</div>
   <div class="cover-program">Maestría en Inteligencia Artificial y Analítica de Datos</div>
+  <div style="height:8px"></div>
   <div class="cover-phase">Proyecto Final · Fase 01</div>
+  <div style="height:6px"></div>
   <div class="cover-title">Optimización Multiobjetivo de la Asignación de<br><em>Green Cards</em> en EE.UU. mediante<br>Harris Hawks Optimization</div>
-  <div style="height:18px"></div>
+  <div style="height:28px"></div>
   <div class="cover-authors">Yazmín I. Flores Martínez &nbsp;·&nbsp; Javier A. Rebull Saucedo</div>
+  <div style="height:6px"></div>
   <div class="cover-meta">Optimización Inteligente · Mtro. Raúl Gibrán Porras Alaniz · 17 de febrero de 2026</div>
 </div>
 
@@ -825,17 +852,39 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 </div>
 
 <!-- ═══════════ SLIDE 24 — CONCLUSIÓN ═══════════ -->
-<div class="slide slide--dark" data-notes="Cierre emocional. Yazmín lee su reflexión, Javier la suya. 'Los halcones cazan en equipo porque un halcón solo no puede atrapar un conejo que zigzaguea.' Agradecer. Preguntas.">
-  <h2 class="slide-title anim" style="margin-bottom:14px">Conclusión: Esto es Personal</h2>
-  <div class="cols anim" style="gap:20px;flex:1">
-    <div class="col" style="gap:14px">
-      <div class="person-card" style="background:rgba(255,255,255,.08)"><div class="person-photo"><img src="yazmin_photo.jpg" alt="Yazmín" onerror="this.parentElement.innerHTML='<svg width=40 height=40 style=color:#FFD600><use href=#ico-people/></svg>'"></div><div><div class="person-name" style="color:var(--yellow)">Yazmín Flores</div><div class="person-text" style="color:rgba(255,255,255,.8);font-size:.9rem">Llegué a EE.UU. en 2012. Años de incertidumbre. Obtuve mi Green Card, pero el alivio vino con una pregunta: <strong style="color:var(--yellow)">¿por qué tuvo que ser así?</strong> Cada variable $x_{i,t}$ representa a una persona real.</div></div></div>
-      <div class="person-card" style="background:rgba(255,255,255,.08)"><div class="person-photo"><img src="javi_photo.jpg" alt="Javier" onerror="this.parentElement.innerHTML='<svg width=40 height=40 style=color:#FFD600><use href=#ico-people/></svg>'"></div><div><div class="person-name" style="color:var(--yellow)">Javier Rebull</div><div class="person-text" style="color:rgba(255,255,255,.8);font-size:.9rem">Vivo en Boston desde 2013. <strong style="color:var(--yellow)">Dos procesos de Green Card fallidos.</strong> 13 años con permiso temporal. Sigo esperando. Elegimos este problema porque es <em>nuestro problema</em>.</div></div></div>
+<div class="slide slide--dark" style="padding:40px 50px 36px" data-notes="Cierre emocional. Yazmín lee su reflexión, Javier la suya. 'Los halcones cazan en equipo porque un halcón solo no puede atrapar un conejo que zigzaguea.' Agradecer. Preguntas.">
+  <h2 class="slide-title anim" style="margin-bottom:16px">Conclusión: Esto es Personal</h2>
+  <div style="display:flex;gap:24px;flex:1;min-height:0" class="anim">
+    <!-- LEFT: Two person cards with big photos -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px">
+      <!-- Yazmín -->
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:16px;padding:20px 22px;display:flex;gap:20px;align-items:center;border:1px solid rgba(255,255,255,.08)">
+        <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.3)">
+          <img src="yazmin_photo.jpg" alt="Yazmín" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:rgba(255,255,255,.05)><svg width=50 height=50 style=color:#FFD600><use href=#ico-people/></svg></div>'">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:1.2rem;font-weight:700;color:var(--yellow);margin-bottom:6px">Yazmín I. Flores Martínez</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.82)">Llegué a EE.UU. en 2012. Años de incertidumbre. Obtuve mi Green Card, pero el alivio vino con una pregunta: <strong style="color:var(--yellow)">¿por qué tuvo que ser así?</strong> Cada variable $x_{i,t}$ representa a una persona real.</div>
+        </div>
+      </div>
+      <!-- Javier -->
+      <div style="flex:1;background:rgba(255,255,255,.06);border-radius:16px;padding:20px 22px;display:flex;gap:20px;align-items:center;border:1px solid rgba(255,255,255,.08)">
+        <div style="width:110px;height:110px;border-radius:50%;overflow:hidden;border:3px solid var(--yellow);flex-shrink:0;box-shadow:0 4px 16px rgba(0,0,0,.3)">
+          <img src="javi_photo.jpg" alt="Javier" style="width:100%;height:100%;object-fit:cover" onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;background:rgba(255,255,255,.05)><svg width=50 height=50 style=color:#FFD600><use href=#ico-people/></svg></div>'">
+        </div>
+        <div style="flex:1">
+          <div style="font-size:1.2rem;font-weight:700;color:var(--yellow);margin-bottom:6px">Javier A. Rebull Saucedo</div>
+          <div style="font-family:'Source Sans 3',sans-serif;font-size:1rem;line-height:1.55;color:rgba(255,255,255,.82)">Vivo en Boston desde 2013. <strong style="color:var(--yellow)">Dos procesos de Green Card fallidos.</strong> 13 años con permiso temporal. Sigo esperando. Elegimos este problema porque es <em>nuestro problema</em>.</div>
+        </div>
+      </div>
     </div>
-    <div class="col col--40 anim" style="justify-content:center;text-align:center;padding:20px">
-      <svg width="60" height="60" style="color:var(--yellow);margin-bottom:18px"><use href="#ico-hawk"/></svg>
-      <blockquote style="font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.85);line-height:1.5;max-width:340px;margin:0 auto">Los halcones cazan en equipo porque un halcón solo no puede atrapar un conejo que zigzaguea. Los problemas complejos requieren <strong style="color:var(--yellow)">cooperación, adaptación y persistencia</strong>.</blockquote>
-      <div style="margin-top:28px;font-family:'Source Sans 3',sans-serif;font-size:.95rem;color:rgba(255,255,255,.5)">Gracias. Estamos listos para sus preguntas.</div>
+    <!-- RIGHT: Quote + closing -->
+    <div style="flex:0 0 320px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:10px 16px">
+      <svg width="56" height="56" style="color:var(--yellow);margin-bottom:20px;opacity:.8"><use href="#ico-hawk"/></svg>
+      <blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;color:rgba(255,255,255,.85);line-height:1.55;max-width:300px">Los halcones cazan en equipo porque un halcón solo no puede atrapar un conejo que zigzaguea.</blockquote>
+      <div style="width:50px;height:3px;background:var(--yellow);margin:18px 0;border-radius:2px;opacity:.5"></div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:1.05rem;color:var(--yellow);font-weight:600;margin-bottom:4px">Cooperación, adaptación y persistencia.</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:rgba(255,255,255,.4);margin-top:16px">Gracias. Estamos listos para sus preguntas.</div>
     </div>
   </div>
 </div>
@@ -869,6 +918,12 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 
 </div><!-- end deck -->
 
+<!-- SIDEBAR NAVIGATION -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-header">Navegación</div>
+  <div class="sidebar-scroll" id="sidebarScroll"></div>
+</div>
+
 <div class="notes-panel" id="notesPanel"></div>
 <div class="nav-bar">
   <button class="nav-btn" onclick="navigate(-1)" title="←">&#9664;</button>
@@ -879,8 +934,34 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 </div>
 
 <script>
-const slides=document.querySelectorAll('.slide'),counter=document.getElementById('counter'),notesPanel=document.getElementById('notesPanel');let current=0,notesVisible=false;
-function showSlide(i){slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));counter.textContent=`${i+1} / ${slides.length}`;updateNotes(i);if(window.MathJax&&MathJax.Hub)MathJax.Hub.Queue(["Typeset",MathJax.Hub,slides[i]])}
+const slides=document.querySelectorAll('.slide'),counter=document.getElementById('counter'),notesPanel=document.getElementById('notesPanel'),sidebarScroll=document.getElementById('sidebarScroll');let current=0,notesVisible=false;
+
+// Build sidebar
+const slideLabels=[
+  'Portada','Contexto','Metaheurísticas',
+  '01 · Problema','Sistema EB','Spillover','NP-Difícil',
+  '02 · Metaheurística','¿Por qué HHO?','Biología','Energía E','Diagrama P1','Diagrama P2',
+  '03 · Operadores','Ops 1-2','Ops 3-4','Ops 5-6','Tabla Ops',
+  '04 · HHO × GC','Tres Objetivos','MOHHO','Mapeo',
+  'Trabajo Futuro','Conclusión','Referencias'
+];
+const sectionSlides=[3,7,13,18];
+slideLabels.forEach((label,i)=>{
+  if(sectionSlides.includes(i)){const d=document.createElement('div');d.className='sb-divider';sidebarScroll.appendChild(d)}
+  const item=document.createElement('div');
+  item.className='sb-item'+(sectionSlides.includes(i)?' sb-section':'')+(i===0?' sb-active':'');
+  item.innerHTML=`<div class="sb-num">${i+1}</div><div class="sb-label">${label}</div>`;
+  item.onclick=()=>{current=i;showSlide(i)};
+  sidebarScroll.appendChild(item);
+});
+
+function updateSidebar(i){
+  document.querySelectorAll('.sb-item').forEach((el,idx)=>el.classList.toggle('sb-active',idx===i));
+  const active=document.querySelectorAll('.sb-item')[i];
+  if(active)active.scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+
+function showSlide(i){slides.forEach((s,idx)=>s.classList.toggle('active',idx===i));counter.textContent=`${i+1} / ${slides.length}`;updateNotes(i);updateSidebar(i);if(window.MathJax&&MathJax.Hub)MathJax.Hub.Queue(["Typeset",MathJax.Hub,slides[i]])}
 function navigate(d){current=Math.max(0,Math.min(slides.length-1,current+d));showSlide(current)}
 function updateNotes(i){const n=slides[i].getAttribute('data-notes');if(n&&notesVisible){const p=n.split('— PREGUNTA');let h='<h4>Notas del Presentador</h4><p>'+p[0].replace(/\. /g,'.</p><p>')+'</p>';if(p[1])h+='<div class="notes-q"><h4>Pregunta Probable</h4><p>'+p[1].replace(':',':</p><p>').replace(' R: ','</p><p><strong>R:</strong> ')+'</p></div>';notesPanel.innerHTML=h;notesPanel.classList.add('visible')}else notesPanel.classList.remove('visible')}
 function toggleNotes(){notesVisible=!notesVisible;document.getElementById('notesBtn').textContent=notesVisible?'Ocultar':'N · Notas';updateNotes(current)}
