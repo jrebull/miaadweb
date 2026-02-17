@@ -276,10 +276,10 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 <div class="slide" style="padding:44px 50px 40px" data-notes="EXPLICAR CON CALMA: 'El gobierno de EE.UU. otorga 140,000 Green Cards por empleo al año, divididas en 5 categorías. Pero hay una restricción clave: NINGÚN país puede recibir más del 7% del total. Esto parece equitativo, pero crea una distorsión brutal: India, con millones de profesionistas de tech, tiene el mismo tope que Luxemburgo. El resultado: 1.8 millones de personas esperando, y la cola de India puede superar los 134 años. A la derecha ven el Visa Bulletin de febrero 2026: el documento oficial del Departamento de Estado que publica mensualmente qué fechas de prioridad están siendo procesadas.' — PREGUNTA: ¿De dónde sale el 7%? R: INA §202(a)(2): 7% del total combinado de visas familiares+empleo (~366K), resultando en ~25,620 por país.">
   <h2 class="slide-title anim">El Sistema EB en 60 Segundos</h2>
   <div class="slide-subtitle anim">Immigration and Nationality Act (INA), diseñado en 1990</div>
-  <div style="display:flex;gap:20px;flex:1;min-height:0">
+  <div style="display:flex;gap:18px;flex:1;min-height:0;margin-top:-4px">
     <!-- Left column: compact table + stats + problem box -->
-    <div class="anim" style="flex:0 0 52%;display:flex;flex-direction:column;gap:10px">
-      <table class="styled-table" style="font-size:.85rem"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>Green Cards/año</th></tr></thead>
+    <div class="anim" style="flex:0 0 46%;display:flex;flex-direction:column;gap:8px">
+      <table class="styled-table" style="font-size:.82rem"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>GC/año</th></tr></thead>
         <tbody>
           <tr><td><strong>EB-1</strong></td><td>Trabajadores prioritarios</td><td>28.6%</td><td>~40,040</td></tr>
           <tr><td><strong>EB-2</strong></td><td>Grado avanzado</td><td>28.6%</td><td>~40,040</td></tr>
@@ -298,13 +298,13 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
           <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-bolt"/></svg>
           La problemática en una oración
         </div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.98rem;line-height:1.5;color:rgba(255,255,255,.92)">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.5;color:rgba(255,255,255,.92)">
           <strong style="color:var(--yellow)">140,000 green cards anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong> para un ciudadano indio en EB-2 mientras otros países ni agotan su cuota.
         </div>
       </div>
     </div>
-    <!-- Right: Visa Bulletin image - TALL/VERTICAL -->
-    <div class="anim" style="flex:1;display:flex;flex-direction:column;gap:6px;min-height:0">
+    <!-- Right: Visa Bulletin image - WIDER -->
+    <div class="anim" style="flex:1;display:flex;flex-direction:column;gap:4px;min-height:0">
       <div style="flex:1;border-radius:10px;overflow:hidden;border:2px solid #dee2e6;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.08)">
         <img src="visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:40px;font-family:Source+Sans+3,sans-serif><svg width=48 height=48 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:10px>visa_bulletin.png</div><div style=font-size:.75rem;color:#bbb>Coloca la imagen en la misma carpeta</div></div>'">
       </div>
@@ -844,20 +844,43 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
 </div>
 
-<!-- ═══════════ SLIDE 23 — TRABAJO FUTURO ═══════════ -->
-<div class="slide" data-notes="Fase 02: modelo formal con datos reales. Fase Final: implementación Python, frente de Pareto, comparación vs NSGA-II. Conclusiones generales: HHO es prometedor para este tipo de problemas por su riqueza de operadores, y el problema de Green Cards es un caso de optimización multiobjetivo con impacto social directo.">
-  <h2 class="slide-title anim">Trabajo Futuro</h2>
-  <div class="slide-subtitle anim">Fases 02 y Final del proyecto</div>
-  <div style="display:flex;gap:18px;margin-top:12px" class="anim">
-    <div style="flex:1;background:var(--blue-light);border-radius:14px;padding:22px 22px;display:flex;flex-direction:column"><div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span class="tag tag--blue" style="font-size:.9rem;padding:4px 14px">FASE 02</span><span style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:var(--gray-light)">Segunda evaluación parcial</span></div><ul class="bullet-list" style="font-size:.95rem"><li>Modelo matemático completo con datos reales del Visa Bulletin</li><li>Formulación formal de restricciones con spillover dinámico</li><li>Estrategia de integración del modelo con MOHHO</li></ul></div>
-    <div style="flex:1;background:var(--green-bg);border-radius:14px;padding:22px 22px;display:flex;flex-direction:column"><div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><span class="tag tag--green" style="font-size:.9rem;padding:4px 14px">FASE FINAL</span><span style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;color:var(--gray-light)">Evaluación final</span></div><ul class="bullet-list" style="font-size:.95rem"><li>Implementación MOHHO en Python (Google Colab)</li><li>Experimentación con datos reales de demanda</li><li>Análisis del frente de Pareto resultante</li><li>Comparación vs. asignación actual y vs. NSGA-II</li></ul></div>
-  </div>
-  <!-- Team conclusions -->
-  <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:14px;padding:18px 24px;margin-top:14px;display:flex;gap:24px;align-items:center">
-    <svg width="36" height="36" style="color:var(--yellow);flex-shrink:0;opacity:.8"><use href="#ico-hawk"/></svg>
-    <div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">Conclusiones generales del equipo</div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.88)">HHO es un candidato prometedor para la optimización de Green Cards gracias a sus <strong style="color:var(--yellow)">6 operadores adaptativos</strong> y su transición estocástica exploración/explotación. El problema reúne las características ideales para una metaheurística: es <strong style="color:rgba(255,255,255,.95)">NP-difícil, multiobjetivo, con restricciones no lineales</strong>, y tiene un <strong style="color:#FF6B6B">impacto social directo</strong> que motiva nuestra investigación.</div>
+<!-- ═══════════ SLIDE 23 — CONCLUSIONES Y TRABAJO FUTURO ═══════════ -->
+<div class="slide" style="padding:44px 50px 40px" data-notes="Conclusiones: HHO es prometedor por sus 6 operadores adaptativos y transición exploración/explotación. El problema de Green Cards es NP-difícil, multiobjetivo, con restricciones no lineales e impacto social directo. Fase 02: modelo formal con datos reales. Fase Final: implementación Python, frente de Pareto, comparación vs NSGA-II.">
+  <h2 class="slide-title anim">Conclusiones y Trabajo Futuro</h2>
+  <div class="slide-subtitle anim">Hallazgos de la Fase 01 y siguientes pasos del proyecto</div>
+  <div style="display:flex;gap:20px;flex:1;min-height:0">
+    <!-- LEFT: Conclusions + Future phases -->
+    <div style="flex:1;display:flex;flex-direction:column;gap:12px">
+      <!-- Conclusions box -->
+      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:14px;padding:18px 22px;color:white;flex:0 0 auto">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">
+          <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-check"/></svg>
+          Conclusiones de la Fase 01
+        </div>
+        <ul style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.88);list-style:none;padding:0;margin:0">
+          <li style="padding-left:16px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--yellow);border-radius:50%"></span>HHO es un candidato prometedor gracias a sus <strong style="color:var(--yellow)">6 operadores adaptativos</strong> y transición estocástica exploración/explotación.</li>
+          <li style="padding-left:16px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--yellow);border-radius:50%"></span>El problema de Green Cards es <strong style="color:rgba(255,255,255,.95)">NP-difícil, multiobjetivo, con restricciones no lineales</strong>: ideal para metaheurísticas.</li>
+          <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;background:#FF6B6B;border-radius:50%"></span>El <strong style="color:#FF6B6B">impacto social directo</strong> (1.8M personas en espera) justifica y motiva la investigación.</li>
+        </ul>
+      </div>
+      <!-- Future phases -->
+      <div style="display:flex;gap:12px;flex:1;min-height:0" class="anim">
+        <div style="flex:1;background:var(--blue-light);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span class="tag tag--blue" style="font-size:.82rem;padding:3px 12px">FASE 02</span></div>
+          <ul class="bullet-list" style="font-size:.88rem"><li>Modelo matemático completo con datos reales del Visa Bulletin</li><li>Formulación formal de restricciones con spillover dinámico</li><li>Estrategia de integración del modelo con MOHHO</li></ul>
+        </div>
+        <div style="flex:1;background:var(--green-bg);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span class="tag tag--green" style="font-size:.82rem;padding:3px 12px">FASE FINAL</span></div>
+          <ul class="bullet-list" style="font-size:.88rem"><li>Implementación MOHHO en Python (Google Colab)</li><li>Análisis del frente de Pareto resultante</li><li>Comparación vs. asignación actual y vs. NSGA-II</li></ul>
+        </div>
+      </div>
+    </div>
+    <!-- RIGHT: Hawk image -->
+    <div class="anim" style="flex:0 0 300px;display:flex;flex-direction:column;gap:6px;min-height:0">
+      <div style="flex:1;border-radius:14px;overflow:hidden;border:2px solid rgba(0,60,166,.1);background:var(--off-white);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.06)">
+        <img src="harris.png" alt="Harris's hawk" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:40px;font-family:Source+Sans+3,sans-serif><svg width=56 height=56 style=color:#003CA6;opacity:.3><use href=#ico-hawk/></svg><div style=font-size:.85rem;color:#999;margin-top:10px>harris.png</div></div>'">
+      </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:var(--gray-light);text-align:center;line-height:1.4">Fig. Harris's hawk. Fuente: Heidari, A. A., et al. (2019).<br><em>Future Generation Computer Systems, 97</em>, 849-872.</div>
     </div>
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
@@ -958,7 +981,7 @@ const slideLabels=[
   '02 · Metaheurística','¿Por qué HHO?','Biología','Energía E','Diagrama P1','Diagrama P2',
   '03 · Operadores','Ops 1-2','Ops 3-4','Ops 5-6','Tabla Ops',
   '04 · HHO × GC','Tres Objetivos','MOHHO','Mapeo',
-  'Trabajo Futuro','Reflexiones','Referencias'
+  'Conclusiones','Reflexiones','Referencias'
 ];
 const sectionSlides=[3,7,13,18];
 slideLabels.forEach((label,i)=>{
