@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javier Rebull — miaad.dev</title>
+  <meta name="description" content="Javier Rebull · Estudiante MIAAD · UACJ">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul:        #003CA6;
+      --azul-dark:   #002B7A;
+      --azul-light:  #E8EEF9;
+      --amarillo:    #FFD600;
+      --amarillo-soft:#FFF8D6;
+      --gris:        #555559;
+      --negro:       #231F20;
+      --bg:          #FAFAFA;
+      --surface:     #FFFFFF;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--negro);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Top accent ── */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 4px;
+      background: linear-gradient(90deg, var(--azul) 0%, var(--azul) 70%, var(--amarillo) 100%);
+    }
+
+    /* ── Header ── */
+    header {
+      position: sticky; top: 0; z-index: 90;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(0,60,166,0.08);
+      padding: 0 2rem;
+    }
+    nav {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .logo {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--azul); text-decoration: none; letter-spacing: -0.02em;
+    }
+    .logo span { color: var(--amarillo); }
+
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 500;
+      color: var(--gris); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--azul); }
+
+    /* ── Hero / Profile ── */
+    .hero {
+      max-width: 900px; margin: 0 auto;
+      padding: 5rem 2rem 3.5rem;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .photo-wrapper {
+      width: 160px; height: 160px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 3px solid var(--azul-light);
+      box-shadow: 0 8px 30px rgba(0,60,166,0.10);
+      position: relative;
+    }
+    .photo-wrapper::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--amarillo);
+    }
+    .photo-wrapper img {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+
+    .hero-text .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--azul-light); color: var(--azul);
+      font-size: 0.72rem; font-weight: 600;
+      padding: 0.3rem 0.8rem; border-radius: 100px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px;
+      background: var(--amarillo); border-radius: 50%;
+    }
+
+    .hero-text h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      font-weight: 700; color: var(--negro);
+      line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .hero-text h1 em { font-style: italic; color: var(--azul); }
+
+    .hero-subtitle {
+      font-size: 1rem; color: var(--gris); margin-bottom: 1.2rem;
+    }
+
+    .hero-links {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+    }
+    .hero-links a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 500;
+      color: var(--azul); text-decoration: none;
+      background: var(--azul-light);
+      padding: 0.35rem 0.75rem; border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .hero-links a:hover { background: var(--azul); color: #fff; }
+    .hero-links a svg { width: 13px; height: 13px; }
+
+    /* ── Shared ── */
+    .wrapper { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+    .divider hr { border: none; height: 1px; background: rgba(0,60,166,0.08); }
+
+    section { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+    .section-label {
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--azul); margin-bottom: 0.6rem;
+    }
+    section h2 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.65rem; font-weight: 700;
+      color: var(--negro); margin-bottom: 1.25rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* ── CV Cards ── */
+    .cv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .cv-card {
+      background: var(--surface);
+      border: 1px solid rgba(0,60,166,0.07);
+      border-radius: 12px;
+      padding: 1.3rem 1.4rem;
+    }
+    .cv-card.full { grid-column: 1 / -1; }
+    .cv-card-label {
+      font-size: 0.65rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--azul); margin-bottom: 0.5rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .cv-card-label .accent {
+      width: 5px; height: 5px;
+      background: var(--amarillo); border-radius: 50%;
+    }
+    .cv-card p, .cv-card li {
+      font-size: 0.85rem; color: var(--gris); line-height: 1.65;
+    }
+    .cv-card ul { list-style: none; padding: 0; }
+    .cv-card ul li {
+      padding: 0.25rem 0; padding-left: 1rem; position: relative;
+    }
+    .cv-card ul li::before {
+      content: ''; position: absolute; left: 0; top: 0.65rem;
+      width: 4px; height: 4px;
+      background: var(--amarillo); border-radius: 50%;
+    }
+    .cv-card .role { font-weight: 600; color: var(--negro); }
+    .cv-card .org { color: var(--azul); font-weight: 500; }
+    .cv-card .period { font-size: 0.75rem; color: #aaa; }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
+    .tag {
+      font-size: 0.68rem; font-weight: 600;
+      background: var(--azul-light); color: var(--azul);
+      padding: 0.2rem 0.55rem; border-radius: 4px;
+    }
+    .tag.yellow { background: var(--amarillo-soft); color: #8A6D00; }
+
+    /* ── Convocatoria ── */
+    .convocatoria {
+      background: var(--azul); border-radius: 14px;
+      padding: 2rem 2.2rem; color: #fff;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+    }
+    .convocatoria-text h3 {
+      font-family: 'EB Garamond', serif;
+      font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem;
+    }
+    .convocatoria-text h3 span { color: var(--amarillo); }
+    .convocatoria-text p { font-size: 0.85rem; opacity: 0.8; }
+    .convocatoria-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--amarillo); color: var(--negro);
+      font-size: 0.82rem; font-weight: 700;
+      padding: 0.65rem 1.3rem; border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .convocatoria-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(255,214,0,0.4);
+    }
+    .convocatoria-btn svg { width: 14px; height: 14px; }
+
+    /* ── Info chips ── */
+    .info-chips {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem;
+    }
+    .info-chip {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: var(--surface); border: 1px solid rgba(0,60,166,0.1);
+      padding: 0.4rem 0.8rem; border-radius: 8px;
+      font-size: 0.78rem; color: var(--gris);
+    }
+    .info-chip strong { color: var(--negro); font-weight: 600; }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 900px; margin: 0 auto;
+      padding: 2.5rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.75rem; color: #aaa;
+    }
+    footer a { color: var(--azul); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-uacj { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-uacj .dot { width: 5px; height: 5px; background: var(--amarillo); border-radius: 50%; }
+
+    /* ── Animations ── */
+    .fade-in {
+      opacity: 0; transform: translateY(14px);
+      animation: fadeUp 0.55s ease forwards;
+    }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    .d1 { animation-delay: 0.05s; }
+    .d2 { animation-delay: 0.1s; }
+    .d3 { animation-delay: 0.15s; }
+    .d4 { animation-delay: 0.2s; }
+    .d5 { animation-delay: 0.25s; }
+    .d6 { animation-delay: 0.3s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 4rem 1.5rem 2.5rem;
+        gap: 1.5rem;
+      }
+      .photo-wrapper { margin: 0 auto; width: 130px; height: 130px; }
+      .hero-links { justify-content: center; }
+      .cv-grid { grid-template-columns: 1fr; }
+      .convocatoria { flex-direction: column; text-align: center; }
+      section { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar"></div>
+
+  <!-- Nav -->
+  <header>
+    <nav>
+      <a href="/" class="logo">miaad<span>.</span>dev</a>
+      <ul class="nav-links">
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#programa">Programa</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="photo-wrapper fade-in d1">
+      <img src="javi_photo.jpg" alt="Javier Rebull" />
+    </div>
+    <div class="hero-text">
+      <div class="hero-badge fade-in d1">Estudiante MIAAD · UACJ</div>
+      <h1 class="fade-in d2">Javier <em>Rebull</em></h1>
+      <p class="hero-subtitle fade-in d3">
+        Senior Full Stack Engineer &amp; AI Specialist con 15+ años de experiencia en sistemas distribuidos, machine learning y arquitectura de software. Actualmente cursando la Maestría en Inteligencia Artificial y Analítica de Datos.
+      </p>
+      <div class="hero-links fade-in d4">
+        <a href="https://www.linkedin.com/in/rebull/" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.47 2H3.53A1.45 1.45 0 002 3.47v17.06A1.45 1.45 0 003.47 22h17.06A1.45 1.45 0 0022 20.53V3.47A1.45 1.45 0 0020.47 2zM8.09 18.74h-3v-9h3v9zM6.59 8.48a1.56 1.56 0 110-3.12 1.56 1.56 0 010 3.12zM18.91 18.74h-3v-4.26c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.18-1.73 2.39v4.34h-3v-9h2.89v1.3h.04a3.16 3.16 0 012.84-1.56c3.04 0 3.6 2 3.6 4.59v4.67z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/jrebull" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+          GitHub
+        </a>
+        <a href="https://rebull.org" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          rebull.org
+        </a>
+        <a href="mailto:rebull@outlook.com">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          Contacto
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper"><div class="divider"><hr></div></div>
+
+  <!-- Mini CV -->
+  <section id="perfil">
+    <p class="section-label">Resumen Profesional</p>
+    <h2>Perfil</h2>
+
+    <div class="cv-grid">
+
+      <div class="cv-card fade-in d1">
+        <div class="cv-card-label"><span class="accent"></span> Experiencia</div>
+        <ul>
+          <li><span class="role">Sr. Associate App Development</span><br><span class="org">Santander Bank US</span> · <span class="period">2024 – Presente</span></li>
+          <li><span class="role">Associate App Development</span><br><span class="org">Santander Bank US</span> · <span class="period">2019 – 2024</span></li>
+          <li><span class="role">Computer Systems Analyst</span><br><span class="org">Vass IT US</span> · <span class="period">2013 – 2019</span></li>
+          <li><span class="role">Spec Analytics Analyst 2</span><br><span class="org">Citibank Banamex</span> · <span class="period">2010 – 2013</span></li>
+          <li><span class="role">Sr. Programmer</span><br><span class="org">Accenture</span> · <span class="period">2007 – 2010</span></li>
+        </ul>
+      </div>
+
+      <div class="cv-card fade-in d2">
+        <div class="cv-card-label"><span class="accent"></span> Formación Académica</div>
+        <ul>
+          <li><span class="role">M.S. Inteligencia Artificial y Analítica de Datos</span><br><span class="org">UACJ</span> · <span class="period">2025 – 2027</span></li>
+          <li><span class="role">M.S. Inteligencia Artificial Aplicada</span><br><span class="org">Tec de Monterrey</span> · <span class="period">2024 – 2026 · GPA 4.0</span></li>
+          <li><span class="role">B.S. Ciencias de la Computación</span><br><span class="org">ESCOM · IPN</span> · <span class="period">2002 – 2006</span></li>
+        </ul>
+      </div>
+
+      <div class="cv-card full fade-in d3">
+        <div class="cv-card-label"><span class="accent"></span> Stack Tecnológico</div>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">React</span>
+          <span class="tag">Angular</span>
+          <span class="tag">Java</span>
+          <span class="tag">C/C++</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Scikit-learn</span>
+          <span class="tag yellow">AWS</span>
+          <span class="tag yellow">Docker</span>
+          <span class="tag yellow">MLOps</span>
+          <span class="tag">SQL</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">Microservices</span>
+          <span class="tag yellow">Computer Vision</span>
+          <span class="tag yellow">NLP</span>
+          <span class="tag">Deep Learning</span>
+        </div>
+      </div>
+
+      <div class="cv-card fade-in d4">
+        <div class="cv-card-label"><span class="accent"></span> Certificaciones Destacadas</div>
+        <ul>
+          <li>AWS Certified AI Practitioner</li>
+          <li>AWS Certified Cloud Practitioner</li>
+          <li>Scrum Master Professional (SMPC®)</li>
+          <li>NVIDIA Deep Learning Fundamentals</li>
+          <li>HSK 2 — Chino Mandarín</li>
+        </ul>
+      </div>
+
+      <div class="cv-card fade-in d5">
+        <div class="cv-card-label"><span class="accent"></span> Idiomas</div>
+        <ul>
+          <li><span class="role">Español e Inglés</span> — Fluido</li>
+          <li><span class="role">Chino Mandarín</span> — Conversacional (HSK 2)</li>
+          <li><span class="role">Francés</span> — Conversacional</li>
+        </ul>
+        <div style="margin-top:1rem;">
+          <div class="cv-card-label"><span class="accent"></span> Ubicación</div>
+          <p>Abington, Massachusetts, EE.UU.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="wrapper"><div class="divider"><hr></div></div>
+
+  <!-- Programa -->
+  <section id="programa">
+    <p class="section-label">Acerca del Programa</p>
+    <h2>MIAAD · UACJ</h2>
+
+    <p style="font-size:0.9rem; color:var(--gris); max-width:640px; margin-bottom:1.5rem; line-height:1.7;">
+      La Maestría en Inteligencia Artificial y Analítica de Datos del Instituto de Ingeniería y Tecnología forma profesionales capaces de diseñar e implementar soluciones basadas en IA y ciencia de datos para resolver problemáticas complejas.
+    </p>
+
+    <div class="info-chips">
+      <div class="info-chip"><strong>Campus</strong> IIT</div>
+      <div class="info-chip"><strong>Orientación</strong> Profesionalizante</div>
+      <div class="info-chip"><strong>Modalidad</strong> Remota</div>
+      <div class="info-chip"><strong>Duración</strong> 4 Semestres</div>
+      <div class="info-chip"><strong>Créditos</strong> 82</div>
+    </div>
+
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-uacj">
+      <span class="dot"></span>
+      <span>Universidad Autónoma de Ciudad Juárez</span>
+    </div>
+    <span>miaad.dev &copy; 2026 · <a href="https://rebull.org">Javier Rebull</a></span>
+  </footer>
+
+</body>
+</html>
