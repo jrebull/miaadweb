@@ -21,8 +21,8 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 /* Cover */
 .slide--cover{background:linear-gradient(145deg,var(--blue-dark) 0%,var(--blue) 100%);color:var(--white);align-items:center;justify-content:center;text-align:center;padding:48px 80px}
 .slide--cover::before{background:var(--yellow);height:5px}
-.slide--cover .cover-logo{width:80px;height:80px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 4px 24px rgba(0,0,0,.2);overflow:hidden}
-.slide--cover .cover-logo img{width:64px;height:64px;object-fit:contain}
+.slide--cover .cover-logo{width:160px;height:160px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;margin-bottom:22px;box-shadow:0 8px 32px rgba(0,0,0,.25);overflow:hidden;padding:12px}
+.slide--cover .cover-logo img{width:100%;height:100%;object-fit:contain}
 .cover-inst{font-family:'Source Sans 3',sans-serif;font-size:.9rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin-bottom:4px}
 .cover-program{font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.9;margin-bottom:24px}
 .cover-title{font-size:2.3rem;font-weight:900;line-height:1.2;margin-bottom:8px}
@@ -86,7 +86,18 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 /* Inline icon */
 .ico{display:inline-block;vertical-align:middle;margin-right:4px}
 /* Nav */
-.nav-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);padding:8px 20px;border-radius:30px;z-index:100}
+.nav-bar{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;background:rgba(0,0,0,.75);backdrop-filter:blur(12px);padding:8px 20px;border-radius:30px;z-index:100;transition:opacity .3s}
+/* Fullscreen: hide controls, fill screen, dark bg */
+:fullscreen .nav-bar,::backdrop{background:#000}
+:fullscreen .nav-bar{opacity:0;pointer-events:none;transition:opacity .3s}
+:fullscreen .nav-bar:hover{opacity:1;pointer-events:auto}
+:fullscreen .notes-panel{bottom:10px}
+:fullscreen body{background:#000}
+:fullscreen .deck{border-radius:0;box-shadow:none}
+:-webkit-full-screen .nav-bar{opacity:0;pointer-events:none}
+:-webkit-full-screen .nav-bar:hover{opacity:1;pointer-events:auto}
+:-webkit-full-screen body{background:#000}
+:-webkit-full-screen .deck{border-radius:0;box-shadow:none}
 .nav-btn{width:36px;height:36px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:white;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .nav-btn:hover{background:var(--yellow);color:var(--blue-dark)}
 .nav-counter{font-family:'Source Sans 3',sans-serif;color:rgba(255,255,255,.7);font-size:.85rem;min-width:60px;text-align:center}
@@ -244,7 +255,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
           La problemática en una oración
         </div>
         <div style="font-family:'Source Sans 3',sans-serif;font-size:1.05rem;line-height:1.5;color:rgba(255,255,255,.92)">
-          <strong style="color:var(--yellow)">140,000 visas anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong> para un ciudadano indio en EB-2 mientras otros países ni agotan su cuota.
+          <strong style="color:var(--yellow)">140,000 green cards anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong> para un ciudadano indio en EB-2 mientras otros países ni agotan su cuota.
         </div>
       </div>
     </div>
@@ -788,11 +799,11 @@ function showSlide(i){slides.forEach((s,idx)=>s.classList.toggle('active',idx===
 function navigate(d){current=Math.max(0,Math.min(slides.length-1,current+d));showSlide(current)}
 function updateNotes(i){const n=slides[i].getAttribute('data-notes');if(n&&notesVisible){const p=n.split('— PREGUNTA');let h='<h4>Notas del Presentador</h4><p>'+p[0].replace(/\. /g,'.</p><p>')+'</p>';if(p[1])h+='<div class="notes-q"><h4>Pregunta Probable</h4><p>'+p[1].replace(':',':</p><p>').replace(' R: ','</p><p><strong>R:</strong> ')+'</p></div>';notesPanel.innerHTML=h;notesPanel.classList.add('visible')}else notesPanel.classList.remove('visible')}
 function toggleNotes(){notesVisible=!notesVisible;document.getElementById('notesBtn').textContent=notesVisible?'Ocultar':'N · Notas';updateNotes(current)}
-function toggleFullscreen(){if(!document.fullscreenElement&&!document.webkitFullscreenElement){const el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen();else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Salir'}else{if(document.exitFullscreen)document.exitFullscreen();else if(document.webkitExitFullscreen)document.webkitExitFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Fullscreen'}}
-document.addEventListener('fullscreenchange',()=>{document.getElementById('fsBtn').innerHTML=document.fullscreenElement?'&#9974; Salir':'&#9974; Fullscreen'});
+function toggleFullscreen(){if(!document.fullscreenElement&&!document.webkitFullscreenElement){const el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen();else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Salir'}else{if(document.exitFullscreen)document.exitFullscreen();else if(document.webkitExitFullscreen)document.webkitExitFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Fullscreen'}setTimeout(scalePresentation,150);setTimeout(scalePresentation,400)}
+document.addEventListener('fullscreenchange',()=>{document.getElementById('fsBtn').innerHTML=document.fullscreenElement?'&#9974; Salir':'&#9974; Fullscreen';setTimeout(scalePresentation,100);setTimeout(scalePresentation,350)});
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();navigate(1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();navigate(-1)}if(e.key==='Home'){e.preventDefault();current=0;showSlide(0)}if(e.key==='End'){e.preventDefault();current=slides.length-1;showSlide(current)}if(e.key==='n'||e.key==='N')toggleNotes();if(e.key==='f'||e.key==='F')toggleFullscreen()});
 let tx=0;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX});document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)navigate(d>0?1:-1)});
-function scalePresentation(){const dk=document.getElementById('deck');const s=Math.min(window.innerWidth/1280,window.innerHeight/720,1)*.92;dk.style.transform=`scale(${s})`;dk.style.transformOrigin='center center'}
+function scalePresentation(){const dk=document.getElementById('deck');const fs=!!(document.fullscreenElement||document.webkitFullscreenElement);const w=window.innerWidth,h=window.innerHeight;const factor=fs?1.0:0.92;const s=Math.min(w/1280,h/720)*factor;dk.style.transform=`scale(${s})`;dk.style.transformOrigin='center center'}
 window.addEventListener('resize',scalePresentation);document.addEventListener('fullscreenchange',scalePresentation);scalePresentation();showSlide(0);
 </script>
 </body>
