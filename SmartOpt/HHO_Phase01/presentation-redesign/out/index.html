@@ -221,78 +221,113 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 3 — METAHEURÍSTICAS ═══════════ -->
-<div class="slide" style="padding:32px 50px 28px" data-notes="CONTEXTO: sabemos DÓNDE encaja HHO. (1) Lineal: Simplex, óptimo exacto, pero solo con restricciones lineales. (2) No lineal: gradiente, Newton, Lagrange; manejan curvas pero se atoran en óptimos locales, requieren derivadas, no manejan enteros. (3) Metaheurísticas: búsqueda inteligente inspirada en la naturaleza, balancean exploración/explotación, escalan a NP-Difícil. Nuestro problema tiene restricciones enteras, discontinuas, no convexas, 10K+ dimensiones. ¿Qué es una metaheurística? Es un algoritmo de búsqueda inteligente que imita procesos de la naturaleza para encontrar buenas soluciones donde los métodos exactos fallan. — PREGUNTA: ¿Diferencia entre heurística y metaheurística? R: Heurística = regla específica para UN problema. Metaheurística = framework general aplicable a múltiples problemas.">
-  <!-- Z-order: Title → Subtitle → "La clave" → Cards+Arrows → Footer -->
+<div class="slide" style="padding:30px 50px 28px" data-notes="CONTEXTO: sabemos DÓNDE encaja HHO. (1) Lineal: Simplex, óptimo exacto, pero solo con restricciones lineales. (2) No lineal: gradiente, Newton, Lagrange; manejan curvas pero se atoran en óptimos locales, requieren derivadas, no manejan enteros. (3) Metaheurísticas: búsqueda inteligente inspirada en la naturaleza, balancean exploración/explotación, escalan a NP-Difícil. Nuestro problema tiene restricciones enteras, discontinuas, no convexas, 10K+ dimensiones. ¿Qué es una metaheurística? Es un algoritmo de búsqueda inteligente que imita procesos de la naturaleza para encontrar buenas soluciones donde los métodos exactos fallan. — PREGUNTA: ¿Diferencia entre heurística y metaheurística? R: Heurística = regla específica para UN problema. Metaheurística = framework general aplicable a múltiples problemas.">
   <h2 class="slide-title anim" style="margin-bottom:2px">¿Qué Son las Metaheurísticas?</h2>
   <div class="slide-subtitle anim" style="margin-bottom:8px">De los métodos exactos a la búsqueda inteligente inspirada en la naturaleza</div>
-  <!-- "La clave" bar — moved to top, just below subtitle -->
-  <div class="anim" style="display:flex;align-items:center;gap:14px;margin-bottom:14px;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:12px 20px">
-    <div style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:rgba(255,214,0,.15);display:flex;align-items:center;justify-content:center">
-      <svg width="18" height="18" style="color:var(--yellow)"><use href="#ico-bolt"/></svg>
+  <!-- "La clave" bar — compact -->
+  <div class="anim" style="display:flex;align-items:center;gap:12px;margin-bottom:12px;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:10px 18px">
+    <div style="flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:rgba(255,214,0,.15);display:flex;align-items:center;justify-content:center">
+      <svg width="15" height="15" style="color:var(--yellow)"><use href="#ico-bolt"/></svg>
     </div>
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.45;color:rgba(255,255,255,.92)">
-      <strong style="color:var(--yellow)">La clave:</strong> toda metaheurística balancea <strong style="color:var(--yellow)">exploración</strong> (diversificar la búsqueda) y <strong style="color:var(--yellow)">explotación</strong> (refinar zonas prometedoras). Nuestro problema tiene restricciones enteras, no convexas, con <strong style="color:#FF6B6B">+10,000 dimensiones</strong>.
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:rgba(255,255,255,.92)">
+      <strong style="color:var(--yellow)">La clave:</strong> toda metaheurística balancea <strong style="color:var(--yellow)">exploración</strong> (diversificar la búsqueda) y <strong style="color:var(--yellow)">explotación</strong> (refinar zonas prometedoras).
     </div>
   </div>
-  <!-- Three-column cards with connecting arrows — below "La clave" -->
-  <div style="display:flex;gap:0;flex:1;align-items:stretch;position:relative" class="anim">
+  <!-- Three compact cards — NO flex:1, height driven by content -->
+  <div style="display:flex;gap:0;align-items:stretch" class="anim">
     <!-- Card 1: Lineal -->
-    <div style="flex:1;border-radius:14px;padding:16px 18px;background:linear-gradient(180deg,#E8F5E9,#fff);border:2px solid #C8E6C9;display:flex;flex-direction:column;position:relative;z-index:1">
-      <div style="text-align:center;margin-bottom:6px">
-        <div style="width:48px;height:48px;border-radius:50%;background:#C8E6C9;display:inline-flex;align-items:center;justify-content:center;margin-bottom:4px">
-          <svg width="26" height="26" style="color:var(--green)"><use href="#ico-scale"/></svg>
+    <div style="flex:1;border-radius:12px;padding:14px 16px 10px;background:linear-gradient(180deg,#E8F5E9,#fff);border:2px solid #C8E6C9;display:flex;flex-direction:column">
+      <div style="text-align:center;margin-bottom:4px">
+        <div style="width:40px;height:40px;border-radius:50%;background:#C8E6C9;display:inline-flex;align-items:center;justify-content:center;margin-bottom:4px">
+          <svg width="22" height="22" style="color:var(--green)"><use href="#ico-scale"/></svg>
         </div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--green)">Optimización Lineal</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">Simplex · Interior Point</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--green)">Optimización Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#888;margin-top:1px">Simplex · Interior Point</div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;line-height:1.45;flex:1">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;line-height:1.4;flex:1">
         Variables continuas, restricciones en línea recta.<br>
         <span style="color:var(--green);font-weight:600">&#10003; Óptimo global garantizado</span><br>
         <span style="color:var(--green);font-weight:600">&#10003; Rápido y eficiente</span>
       </div>
-      <div style="background:#C8E6C9;border-radius:8px;padding:6px 10px;margin-top:auto;font-family:'Source Sans 3',sans-serif;font-size:.8rem;text-align:center"><strong>Límite:</strong> Solo si TODO es lineal</div>
+      <div style="background:#C8E6C9;border-radius:6px;padding:5px 8px;margin-top:6px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center"><strong>Límite:</strong> Solo si TODO es lineal</div>
     </div>
     <!-- Arrow 1→2 -->
-    <div style="flex:0 0 32px;display:flex;align-items:center;justify-content:center;z-index:2">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </div>
     <!-- Card 2: No Lineal -->
-    <div style="flex:1;border-radius:14px;padding:16px 18px;background:linear-gradient(180deg,var(--orange-bg),#fff);border:2px solid #FFE0B2;display:flex;flex-direction:column;position:relative;z-index:1">
-      <div style="text-align:center;margin-bottom:6px">
-        <div style="width:48px;height:48px;border-radius:50%;background:#FFE0B2;display:inline-flex;align-items:center;justify-content:center;margin-bottom:4px">
-          <svg width="26" height="26" style="color:var(--orange)"><use href="#ico-chart"/></svg>
+    <div style="flex:1;border-radius:12px;padding:14px 16px 10px;background:linear-gradient(180deg,var(--orange-bg),#fff);border:2px solid #FFE0B2;display:flex;flex-direction:column">
+      <div style="text-align:center;margin-bottom:4px">
+        <div style="width:40px;height:40px;border-radius:50%;background:#FFE0B2;display:inline-flex;align-items:center;justify-content:center;margin-bottom:4px">
+          <svg width="22" height="22" style="color:var(--orange)"><use href="#ico-chart"/></svg>
         </div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--orange)">No Lineal</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">Gradiente · Newton · Lagrange</div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--orange)">No Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#888;margin-top:1px">Gradiente · Newton · Lagrange</div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;line-height:1.45;flex:1">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;line-height:1.4;flex:1">
         Funciones curvas, buscan pendiente cero.<br>
         <span style="color:var(--orange);font-weight:600">&#10003; Maneja funciones curvas</span><br>
         <span style="color:var(--red);font-weight:600">&#10007; Óptimos locales</span><br>
         <span style="color:var(--red);font-weight:600">&#10007; Requiere derivadas</span>
       </div>
-      <div style="background:#FFE0B2;border-radius:8px;padding:6px 10px;margin-top:auto;font-family:'Source Sans 3',sans-serif;font-size:.8rem;text-align:center"><strong>Límite:</strong> No maneja enteros</div>
+      <div style="background:#FFE0B2;border-radius:6px;padding:5px 8px;margin-top:6px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center"><strong>Límite:</strong> No maneja enteros</div>
     </div>
     <!-- Arrow 2→3 -->
-    <div style="flex:0 0 32px;display:flex;align-items:center;justify-content:center;z-index:2">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </div>
     <!-- Card 3: Metaheurísticas (highlighted) -->
-    <div style="flex:1.15;border-radius:14px;padding:16px 18px;background:linear-gradient(180deg,var(--blue-light),#fff);border:2px solid var(--blue);display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(0,60,166,.18);position:relative;z-index:1">
-      <div style="text-align:center;margin-bottom:6px">
-        <div style="width:48px;height:48px;border-radius:50%;background:#BBDEFB;display:inline-flex;align-items:center;justify-content:center;margin-bottom:4px">
-          <svg width="26" height="26" style="color:var(--blue)"><use href="#ico-hawk"/></svg>
+    <div style="flex:1.12;border-radius:12px;padding:14px 16px 10px;background:linear-gradient(180deg,var(--blue-light),#fff);border:2px solid var(--blue);display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,60,166,.18)">
+      <div style="text-align:center;margin-bottom:4px">
+        <div style="width:40px;height:40px;border-radius:50%;background:#BBDEFB;display:inline-flex;align-items:center;justify-content:center;margin-bottom:4px">
+          <svg width="22" height="22" style="color:var(--blue)"><use href="#ico-hawk"/></svg>
         </div>
-        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--blue)">Metaheurísticas</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">GA · PSO · ACO · <strong style="color:var(--blue)">HHO</strong></div>
+        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--blue)">Metaheurísticas</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#888;margin-top:1px">GA · PSO · ACO · <strong style="color:var(--blue)">HHO</strong></div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;line-height:1.45;flex:1">
-        Algoritmos que imitan procesos naturales (evolución, enjambres, cacería) para encontrar soluciones cercanas al óptimo en problemas donde los métodos exactos fallan.<br>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;line-height:1.4;flex:1">
+        Algoritmos que imitan procesos naturales (evolución, enjambres, cacería) para encontrar soluciones cercanas al óptimo donde los métodos exactos fallan.<br>
         <span style="color:var(--blue);font-weight:600">&#10003; Sin derivadas ni linealidad</span><br>
         <span style="color:var(--blue);font-weight:600">&#10003; Escala a miles de variables</span><br>
-        <span style="color:var(--blue);font-weight:600">&#10003; Enteros y discontinuidades</span>
+        <span style="color:var(--blue);font-weight:600">&#10003; Maneja enteros y discontinuidades</span>
       </div>
-      <div style="background:#BBDEFB;border-radius:8px;padding:6px 10px;margin-top:auto;font-family:'Source Sans 3',sans-serif;font-size:.8rem;text-align:center"><strong>Trade-off:</strong> Soluciones muy buenas, no exactas</div>
+      <div style="background:#BBDEFB;border-radius:6px;padding:5px 8px;margin-top:6px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center"><strong>Trade-off:</strong> Soluciones muy buenas, no exactas</div>
+    </div>
+  </div>
+  <!-- Pipeline: Problem → Why metaheuristic → HHO -->
+  <div class="anim" style="display:flex;align-items:center;gap:0;margin-top:auto;background:#f8f9fa;border-radius:10px;border:1.5px solid #e0e0e0;padding:0;overflow:hidden">
+    <!-- Step 1: Problem -->
+    <div style="flex:1;padding:12px 14px;text-align:center;background:linear-gradient(135deg,#FFF0F0,#fff)">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Nuestro problema</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;line-height:1.35;color:#444">Restricciones <strong>enteras</strong>,<br>no convexas, <strong style="color:var(--red)">+10K dim</strong></div>
+    </div>
+    <!-- Arrow -->
+    <div style="flex:0 0 24px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#FFF0F0,#FFFDE7)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <!-- Step 2: Exact fail -->
+    <div style="flex:1;padding:12px 14px;text-align:center;background:linear-gradient(135deg,#FFFDE7,#fff)">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:#7c6a00;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Métodos exactos</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;line-height:1.35;color:#444">Simplex y gradiente <strong style="color:var(--red)">no aplican</strong>:<br>enteros + no derivable</div>
+    </div>
+    <!-- Arrow -->
+    <div style="flex:0 0 24px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#FFFDE7,#E8F5E9)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <!-- Step 3: Metaheuristic -->
+    <div style="flex:1;padding:12px 14px;text-align:center;background:linear-gradient(135deg,#E8F5E9,#fff)">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Solución</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;line-height:1.35;color:#444">Metaheurística:<br><strong>búsqueda inteligente</strong></div>
+    </div>
+    <!-- Arrow -->
+    <div style="flex:0 0 24px;display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#E8F5E9,#EAF2FF)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <!-- Step 4: HHO -->
+    <div style="flex:1;padding:12px 14px;text-align:center;background:linear-gradient(135deg,#EAF2FF,#BBDEFB)">
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Elegimos</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;color:var(--blue);line-height:1.2">HHO</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#666;margin-top:1px">6 operadores · 2 parámetros</div>
     </div>
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
