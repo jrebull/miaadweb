@@ -134,7 +134,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 
 <!-- ═══════════ SLIDE 1 — PORTADA ═══════════ -->
 <div class="slide slide--cover active" style="position:absolute;inset:0;width:1280px;height:720px">
-  <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.9);box-shadow:0 8px 32px rgba(0,0,0,.3);margin-bottom:18px;flex-shrink:0;position:relative;z-index:1;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)">
+  <div style="width:184px;height:184px;border-radius:50%;overflow:hidden;border:4px solid rgba(255,255,255,.9);box-shadow:0 8px 32px rgba(0,0,0,.3);margin-bottom:18px;flex-shrink:0;position:relative;z-index:1;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)">
     <img src="./LogoSInFondoMIAAD.png" alt="MIAAD Logo" style="position:absolute;width:92%;height:92%;object-fit:contain;top:50%;left:50%;transform:translate(-50%,-50%)" onerror="this.style.display='none'">
   </div>
   <div class="cover-inst">Universidad Autónoma de Ciudad Juárez</div>
@@ -163,35 +163,46 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
       <strong style="color:var(--yellow)">La clave:</strong> toda metaheurística balancea <strong style="color:var(--yellow)">exploración</strong> (diversificar la búsqueda) y <strong style="color:var(--yellow)">explotación</strong> (refinar zonas prometedoras). Nuestro problema tiene restricciones enteras, no convexas, con <strong style="color:var(--yellow)">+10,000 dimensiones</strong> — por eso necesitamos una metaheurística.
     </div>
   </div>
-  <div class="anim" style="display:flex;align-items:stretch;justify-content:center;gap:0;flex:1;min-height:0">
-    <div style="flex:1;max-width:320px;border-radius:14px;padding:20px;background:linear-gradient(180deg,#E8F5E9 0%,#fff 100%);border:2px solid #C8E6C9;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.06)">
-      <div style="text-align:center;margin-bottom:8px">
-        <div style="width:42px;height:42px;border-radius:50%;background:#C8E6C9;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="22" height="22" style="color:var(--green)"><use href="#ico-scale"/></svg></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--green)">Optimización Lineal</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">Simplex · Interior Point</div>
+  <div class="anim" style="display:flex;align-items:center;justify-content:center;gap:16px;flex:1;min-height:0">
+    <div style="width:280px;border-radius:12px;padding:18px 20px;background:#fff;border:1.5px solid #C8E6C9;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.04)">
+      <div style="text-align:center;margin-bottom:10px">
+        <div style="width:36px;height:36px;border-radius:50%;background:#C8E6C9;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="18" height="18" style="color:var(--green)"><use href="#ico-scale"/></svg></div>
+        <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--green)">Optimización Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#aaa;margin-top:2px">Simplex · Interior Point</div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333;flex:1">Variables continuas, restricciones en línea recta.<br><span style="color:var(--green);font-weight:600">&#10003; Óptimo global garantizado</span><br><span style="color:var(--green);font-weight:600">&#10003; Rápido y eficiente</span></div>
-      <div style="background:#C8E6C9;border-radius:8px;padding:6px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center;color:#2e7d32"><strong>Límite:</strong> Solo si TODO es lineal</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;line-height:1.45;color:#555">
+        <span style="color:var(--green);font-weight:600">&#10003;</span> Óptimo global garantizado<br>
+        <span style="color:var(--green);font-weight:600">&#10003;</span> Rápido y eficiente
+      </div>
+      <div style="background:#E8F5E9;border-radius:6px;padding:5px 8px;margin-top:10px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;text-align:center;color:#2e7d32"><strong>Límite:</strong> Solo si TODO es lineal</div>
     </div>
-    <div style="flex:0 0 30px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-    <div style="flex:1;max-width:320px;border-radius:14px;padding:20px;background:linear-gradient(180deg,var(--orange-bg) 0%,#fff 100%);border:2px solid #FFE0B2;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,.06)">
-      <div style="text-align:center;margin-bottom:8px">
-        <div style="width:42px;height:42px;border-radius:50%;background:#FFE0B2;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="22" height="22" style="color:var(--orange)"><use href="#ico-chart"/></svg></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--orange)">No Lineal</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">Gradiente · Newton · Lagrange</div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <div style="width:280px;border-radius:12px;padding:18px 20px;background:#fff;border:1.5px solid #FFE0B2;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.04)">
+      <div style="text-align:center;margin-bottom:10px">
+        <div style="width:36px;height:36px;border-radius:50%;background:#FFE0B2;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="18" height="18" style="color:var(--orange)"><use href="#ico-chart"/></svg></div>
+        <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--orange)">No Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#aaa;margin-top:2px">Gradiente · Newton · Lagrange</div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333;flex:1">Funciones curvas, buscan pendiente cero.<br><span style="color:var(--orange);font-weight:600">&#10003; Maneja funciones curvas</span><br><span style="color:var(--red);font-weight:600">&#10007; Óptimos locales</span><br><span style="color:var(--red);font-weight:600">&#10007; Requiere derivadas</span></div>
-      <div style="background:#FFE0B2;border-radius:8px;padding:6px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center;color:#e65100"><strong>Límite:</strong> No maneja enteros</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;line-height:1.45;color:#555">
+        <span style="color:var(--orange);font-weight:600">&#10003;</span> Maneja funciones curvas<br>
+        <span style="color:var(--red);font-weight:600">&#10007;</span> Óptimos locales<br>
+        <span style="color:var(--red);font-weight:600">&#10007;</span> Requiere derivadas
+      </div>
+      <div style="background:#FFF3E0;border-radius:6px;padding:5px 8px;margin-top:10px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;text-align:center;color:#e65100"><strong>Límite:</strong> No maneja enteros</div>
     </div>
-    <div style="flex:0 0 30px;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
-    <div style="flex:1.15;max-width:340px;border-radius:14px;padding:20px;background:linear-gradient(180deg,var(--blue-light) 0%,#fff 100%);border:2px solid var(--blue);display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,60,166,.15)">
-      <div style="text-align:center;margin-bottom:8px">
-        <div style="width:42px;height:42px;border-radius:50%;background:#BBDEFB;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="22" height="22" style="color:var(--blue)"><use href="#ico-hawk"/></svg></div>
-        <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--blue)">Metaheurísticas</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#888;margin-top:2px">GA · PSO · ACO · <strong style="color:var(--blue)">HHO</strong></div>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    <div style="width:300px;border-radius:12px;padding:18px 20px;background:#fff;border:2px solid var(--blue);display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(0,60,166,.1)">
+      <div style="text-align:center;margin-bottom:10px">
+        <div style="width:36px;height:36px;border-radius:50%;background:#BBDEFB;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px"><svg width="18" height="18" style="color:var(--blue)"><use href="#ico-hawk"/></svg></div>
+        <div style="font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--blue)">Metaheurísticas</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:#aaa;margin-top:2px">GA · PSO · ACO · <strong style="color:var(--blue)">HHO</strong></div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.4;color:#333;flex:1">Algoritmos inspirados en la naturaleza que encuentran soluciones cercanas al óptimo donde los métodos exactos fallan.<br><span style="color:var(--blue);font-weight:600">&#10003; Sin derivadas ni linealidad</span><br><span style="color:var(--blue);font-weight:600">&#10003; Escala a miles de variables</span><br><span style="color:var(--blue);font-weight:600">&#10003; Maneja enteros y discontinuidades</span></div>
-      <div style="background:#BBDEFB;border-radius:8px;padding:6px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;text-align:center;color:#0d47a1"><strong>Trade-off:</strong> Soluciones muy buenas, no exactas</div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.78rem;line-height:1.45;color:#555">
+        <span style="color:var(--blue);font-weight:600">&#10003;</span> Sin derivadas ni linealidad<br>
+        <span style="color:var(--blue);font-weight:600">&#10003;</span> Escala a miles de variables<br>
+        <span style="color:var(--blue);font-weight:600">&#10003;</span> Maneja enteros y discontinuidades
+      </div>
+      <div style="background:#E3F0FF;border-radius:6px;padding:5px 8px;margin-top:10px;font-family:'Source Sans 3',sans-serif;font-size:.7rem;text-align:center;color:#0d47a1"><strong>Trade-off:</strong> Soluciones muy buenas, no exactas</div>
     </div>
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
