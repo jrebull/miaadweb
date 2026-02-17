@@ -845,45 +845,80 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 </div>
 
 <!-- ═══════════ SLIDE 23 — CONCLUSIONES Y TRABAJO FUTURO ═══════════ -->
-<div class="slide" style="padding:44px 50px 40px" data-notes="Conclusiones: HHO es prometedor por sus 6 operadores adaptativos y transición exploración/explotación. El problema de Green Cards es NP-difícil, multiobjetivo, con restricciones no lineales e impacto social directo. Fase 02: modelo formal con datos reales. Fase Final: implementación Python, frente de Pareto, comparación vs NSGA-II.">
-  <h2 class="slide-title anim">Conclusiones y Trabajo Futuro</h2>
-  <div class="slide-subtitle anim">Hallazgos de la Fase 01 y siguientes pasos del proyecto</div>
-  <div style="display:flex;gap:20px;flex:1;min-height:0">
-    <!-- LEFT: Conclusions + Future phases -->
-    <div style="flex:1;display:flex;flex-direction:column;gap:12px">
-      <!-- Conclusions box -->
-      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:14px;padding:18px 22px;color:white;flex:0 0 auto">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">
-          <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-check"/></svg>
-          Conclusiones de la Fase 01
+<div class="slide" style="padding:0;overflow:hidden" data-notes="Conclusiones: HHO es prometedor por sus 6 operadores adaptativos y transición exploración/explotación. El problema de Green Cards es NP-difícil, multiobjetivo, con restricciones no lineales e impacto social directo. Fase 02: modelo formal con datos reales. Fase Final: implementación Python, frente de Pareto, comparación vs NSGA-II.">
+  <div style="display:flex;height:100%;width:100%">
+    <!-- LEFT: Hawk image as dramatic side panel (~38%) -->
+    <div style="flex:0 0 38%;position:relative;overflow:hidden;background:#0a1628">
+      <img src="harris.png" alt="Harris's hawk" style="width:100%;height:100%;object-fit:cover;object-position:center;opacity:.7;filter:contrast(1.1) brightness(.9)" onerror="this.style.display='none'">
+      <!-- Dark gradient overlay -->
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,36,112,.55) 0%,rgba(0,20,60,.8) 100%)"></div>
+      <!-- Overlay content: title + decorative -->
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:40px 32px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Fase 01 · Cierre</div>
+        <h2 style="font-family:'Playfair Display',Palatino,Georgia,serif;font-size:2.2rem;font-weight:900;color:white;line-height:1.15;margin-bottom:14px">Conclusiones<br>y Trabajo<br><span style="color:var(--yellow)">Futuro</span></h2>
+        <div style="width:50px;height:4px;background:var(--yellow);border-radius:2px;margin-bottom:18px"></div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;color:rgba(255,255,255,.7);line-height:1.55">Hallazgos principales de esta fase y la ruta hacia la implementación completa del modelo MOHHO.</div>
+      </div>
+      <!-- Footnote citation -->
+      <div style="position:absolute;bottom:10px;left:16px;right:16px;font-family:'Source Sans 3',sans-serif;font-size:.58rem;color:rgba(255,255,255,.35);line-height:1.3">Fig. Harris's hawk. Heidari, A. A., et al. (2019). <em>Future Gen. Comput. Syst., 97</em>, 849-872.</div>
+    </div>
+    <!-- RIGHT: Content (~62%) -->
+    <div style="flex:1;display:flex;flex-direction:column;padding:44px 44px 36px;background:var(--white);overflow:hidden">
+      <!-- CONCLUSIONS — main block -->
+      <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:14px;padding:22px 26px;color:white;margin-bottom:16px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <svg width="18" height="18" style="color:var(--yellow)"><use href="#ico-check"/></svg>
+          <span style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em">Conclusiones de la Fase 01</span>
         </div>
-        <ul style="font-family:'Source Sans 3',sans-serif;font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.88);list-style:none;padding:0;margin:0">
-          <li style="padding-left:16px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--yellow);border-radius:50%"></span>HHO es un candidato prometedor gracias a sus <strong style="color:var(--yellow)">6 operadores adaptativos</strong> y transición estocástica exploración/explotación.</li>
-          <li style="padding-left:16px;position:relative;margin-bottom:6px"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;background:var(--yellow);border-radius:50%"></span>El problema de Green Cards es <strong style="color:rgba(255,255,255,.95)">NP-difícil, multiobjetivo, con restricciones no lineales</strong>: ideal para metaheurísticas.</li>
-          <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0;top:8px;width:6px;height:6px;background:#FF6B6B;border-radius:50%"></span>El <strong style="color:#FF6B6B">impacto social directo</strong> (1.8M personas en espera) justifica y motiva la investigación.</li>
+        <ul style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;line-height:1.65;color:rgba(255,255,255,.9);list-style:none;padding:0;margin:0">
+          <li style="padding-left:20px;position:relative;margin-bottom:8px">
+            <span style="position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--yellow);border-radius:2px;transform:rotate(45deg)"></span>
+            HHO es un candidato prometedor gracias a sus <strong style="color:var(--yellow)">6 operadores adaptativos</strong> y su transición estocástica entre exploración y explotación.
+          </li>
+          <li style="padding-left:20px;position:relative;margin-bottom:8px">
+            <span style="position:absolute;left:0;top:9px;width:8px;height:8px;background:var(--yellow);border-radius:2px;transform:rotate(45deg)"></span>
+            El problema de Green Cards es <strong style="color:rgba(255,255,255,.95)">NP-difícil, multiobjetivo, con restricciones no lineales</strong>: ideal para metaheurísticas.
+          </li>
+          <li style="padding-left:20px;position:relative">
+            <span style="position:absolute;left:0;top:9px;width:8px;height:8px;background:#FF6B6B;border-radius:2px;transform:rotate(45deg)"></span>
+            El <strong style="color:#FF6B6B">impacto social directo</strong> — 1.8 millones de personas en espera — justifica y motiva esta línea de investigación.
+          </li>
         </ul>
       </div>
-      <!-- Future phases -->
-      <div style="display:flex;gap:12px;flex:1;min-height:0" class="anim">
-        <div style="flex:1;background:var(--blue-light);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span class="tag tag--blue" style="font-size:.82rem;padding:3px 12px">FASE 02</span></div>
-          <ul class="bullet-list" style="font-size:.88rem"><li>Modelo matemático completo con datos reales del Visa Bulletin</li><li>Formulación formal de restricciones con spillover dinámico</li><li>Estrategia de integración del modelo con MOHHO</li></ul>
+      <!-- FUTURE PHASES — two equal columns -->
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px" class="anim">
+        <svg width="14" height="14" style="color:var(--blue);vertical-align:middle;margin-right:4px"><use href="#ico-target"/></svg>
+        Trabajo Futuro
+      </div>
+      <div style="display:flex;gap:14px;flex:1;min-height:0" class="anim">
+        <!-- Phase 02 -->
+        <div style="flex:1;background:var(--blue-light);border-radius:12px;padding:18px 20px;border-top:4px solid var(--blue);display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+            <span style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;font-weight:700;color:var(--blue)">Fase 02</span>
+            <span style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:var(--gray-light)">2do parcial</span>
+          </div>
+          <ul class="bullet-list" style="font-size:.88rem;flex:1">
+            <li>Modelo matemático completo con <strong>datos reales</strong> del Visa Bulletin</li>
+            <li>Formulación formal de restricciones con <strong>spillover dinámico</strong></li>
+            <li>Estrategia de integración del modelo con MOHHO</li>
+          </ul>
         </div>
-        <div style="flex:1;background:var(--green-bg);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px"><span class="tag tag--green" style="font-size:.82rem;padding:3px 12px">FASE FINAL</span></div>
-          <ul class="bullet-list" style="font-size:.88rem"><li>Implementación MOHHO en Python (Google Colab)</li><li>Análisis del frente de Pareto resultante</li><li>Comparación vs. asignación actual y vs. NSGA-II</li></ul>
+        <!-- Phase Final -->
+        <div style="flex:1;background:var(--green-bg);border-radius:12px;padding:18px 20px;border-top:4px solid var(--green);display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+            <span style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;font-weight:700;color:var(--green)">Fase Final</span>
+            <span style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:var(--gray-light)">Evaluación final</span>
+          </div>
+          <ul class="bullet-list" style="font-size:.88rem;flex:1">
+            <li>Implementación <strong>MOHHO en Python</strong> (Google Colab)</li>
+            <li>Análisis del <strong>frente de Pareto</strong> resultante</li>
+            <li>Comparación vs. asignación actual y vs. <strong>NSGA-II</strong></li>
+          </ul>
         </div>
       </div>
-    </div>
-    <!-- RIGHT: Hawk image -->
-    <div class="anim" style="flex:0 0 300px;display:flex;flex-direction:column;gap:6px;min-height:0">
-      <div style="flex:1;border-radius:14px;overflow:hidden;border:2px solid rgba(0,60,166,.1);background:var(--off-white);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(0,0,0,.06)">
-        <img src="harris.png" alt="Harris's hawk" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:40px;font-family:Source+Sans+3,sans-serif><svg width=56 height=56 style=color:#003CA6;opacity:.3><use href=#ico-hawk/></svg><div style=font-size:.85rem;color:#999;margin-top:10px>harris.png</div></div>'">
-      </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;color:var(--gray-light);text-align:center;line-height:1.4">Fig. Harris's hawk. Fuente: Heidari, A. A., et al. (2019).<br><em>Future Generation Computer Systems, 97</em>, 849-872.</div>
+      <div style="display:flex;justify-content:space-between;font-family:'Source Sans 3',sans-serif;font-size:.68rem;color:#bbb;margin-top:10px"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
     </div>
   </div>
-  <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
 </div>
 
 <!-- ═══════════ SLIDE 24 — REFLEXIONES ═══════════ -->
