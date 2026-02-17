@@ -1,3 +1,0 @@
-:HL["/smartopt/hho_phase01/presentation-redesign/out/_next/static/chunks/0326a1b7d921fbc4.css","style"]
-:HL["/smartopt/hho_phase01/presentation-redesign/out/_next/static/chunks/98c290fb7e7009fc.css","style"]
-0:{"buildId":"F7-4VqqX4_G-R4PYtmwZs","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
