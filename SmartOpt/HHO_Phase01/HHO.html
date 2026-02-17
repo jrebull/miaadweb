@@ -127,7 +127,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 
 <!-- ═══════════ SLIDE 1 — PORTADA ═══════════ -->
 <div class="slide slide--cover active" data-notes="Saludo: 'Buenos días, profesor Porras, compañeros.' Presentarnos: Yazmín y Javier. 'Vamos a presentar una metaheurística moderna aplicada a un problema que vivimos en carne propia.' ~30 seg.">
-  <div class="cover-logo"><img src="logo_miaad.png" alt="MIAAD" onerror="this.style.display='none'"></div>
+  <div class="cover-logo"><img src="LogoSInFondoMIAAD.png" alt="MIAAD" onerror="this.style.display='none'"></div>
   <div class="cover-inst">Universidad Autónoma de Ciudad Juárez</div>
   <div class="cover-program">Maestría en Inteligencia Artificial y Analítica de Datos</div>
   <div class="cover-phase">Proyecto Final · Fase 01</div>
@@ -144,7 +144,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
     <div style="flex:0 0 42%;position:relative;overflow:hidden;background:#111">
       <img src="DonaldTrump.png" alt="Donald J. Trump" style="width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(30%) contrast(1.1);opacity:.85">
       <div style="position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,rgba(0,0,0,.85))"></div>
-      <div style="position:absolute;bottom:16px;left:20px;right:20px;font-family:'Source Sans 3',sans-serif;font-size:.8rem;color:rgba(255,255,255,.5)">16 de junio de 2015 · Anuncio de candidatura presidencial</div>
+      <div style="position:absolute;bottom:16px;left:20px;right:20px;font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:rgba(255,255,255,.45)">Fig. 1: El presidente Trump anuncia una pausa migratoria desde Mar-a-Lago, noviembre de 2025. Fuente: CNBC.</div>
     </div>
     <!-- Right: Quote + stats -->
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:50px 56px;background:linear-gradient(135deg,#1a1a2e 0%,#2C3E50 100%)">
@@ -218,12 +218,13 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
 </div>
 
 <!-- ═══════════ SLIDE 5 — SISTEMA EB ═══════════ -->
-<div class="slide" data-notes="140K visas anuales. 5 categorías. Tope 7% por país (~25,620). FIFO. 1.8M en cola. — PREGUNTA: ¿De dónde sale el 7%? R: INA §202(a)(2): 7% del total combinado de visas familiares+empleo (~366K).">
+<div class="slide" data-notes="EXPLICAR CON CALMA: 'El gobierno de EE.UU. otorga 140,000 Green Cards por empleo al año, divididas en 5 categorías. Pero hay una restricción clave: NINGÚN país puede recibir más del 7% del total. Esto parece equitativo, pero crea una distorsión brutal: India, con millones de profesionistas de tech, tiene el mismo tope que Luxemburgo. El resultado: 1.8 millones de personas esperando, y la cola de India puede superar los 134 años. A la derecha ven el Visa Bulletin de febrero 2026: el documento oficial del Departamento de Estado que publica mensualmente qué fechas de prioridad están siendo procesadas.' — PREGUNTA: ¿De dónde sale el 7%? R: INA §202(a)(2): 7% del total combinado de visas familiares+empleo (~366K), resultando en ~25,620 por país.">
   <h2 class="slide-title anim">El Sistema EB en 60 Segundos</h2>
   <div class="slide-subtitle anim">Immigration and Nationality Act (INA), diseñado en 1990</div>
-  <div class="cols">
-    <div class="col anim">
-      <table class="styled-table"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>Visas</th></tr></thead>
+  <div class="cols" style="gap:24px">
+    <!-- Left column: table + problem box -->
+    <div class="col anim" style="gap:14px">
+      <table class="styled-table" style="font-size:.88rem"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>Visas/año</th></tr></thead>
         <tbody>
           <tr><td><strong>EB-1</strong></td><td>Trabajadores prioritarios</td><td>28.6%</td><td>~40,040</td></tr>
           <tr><td><strong>EB-2</strong></td><td>Grado avanzado</td><td>28.6%</td><td>~40,040</td></tr>
@@ -231,17 +232,28 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
           <tr><td><strong>EB-4</strong></td><td>Inmigrantes especiales</td><td>7.1%</td><td>~9,940</td></tr>
           <tr><td><strong>EB-5</strong></td><td>Inversionistas</td><td>7.1%</td><td>~9,940</td></tr>
         </tbody></table>
-      <div style="display:flex;gap:20px;margin-top:18px">
-        <div class="stat"><div class="stat-number" style="font-size:2.2rem">140K</div><div class="stat-label">visas/año base</div></div>
-        <div class="stat"><div class="stat-number stat-number--red" style="font-size:2.2rem">7%</div><div class="stat-label">tope por país</div></div>
-        <div class="stat"><div class="stat-number stat-number--yellow" style="font-size:2.2rem">FIFO</div><div class="stat-label">orden de proceso</div></div>
+      <div style="display:flex;gap:16px">
+        <div class="stat"><div class="stat-number" style="font-size:2rem">140K</div><div class="stat-label">visas/año base</div></div>
+        <div class="stat"><div class="stat-number stat-number--red" style="font-size:2rem">7%</div><div class="stat-label">tope por país</div></div>
+        <div class="stat"><div class="stat-number stat-number--yellow" style="font-size:2rem">FIFO</div><div class="stat-label">orden de proceso</div></div>
+      </div>
+      <!-- PROBLEM SUMMARY BOX -->
+      <div style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:16px 20px;color:white;margin-top:2px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.8rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">
+          <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-bolt"/></svg>
+          La problemática en una oración
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:1.05rem;line-height:1.5;color:rgba(255,255,255,.92)">
+          <strong style="color:var(--yellow)">140,000 visas anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong> para un ciudadano indio en EB-2 mientras otros países ni agotan su cuota.
+        </div>
       </div>
     </div>
-    <div class="col col--40 anim" style="gap:12px">
-      <div class="alert-box" style="font-size:1rem"><strong>La disparidad:</strong> Un ciudadano indio en EB-2 podría esperar <strong>134 años</strong>. Un mexicano en la misma categoría: ~1 a 2 años.</div>
-      <div style="flex:1;min-height:170px;border-radius:8px;overflow:hidden;border:1px solid #ddd;display:flex;align-items:center;justify-content:center;background:var(--off-white)">
-        <img src="visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:contain" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:20px;font-family:Source+Sans+3,sans-serif;font-size:.85rem;color:#999>visa_bulletin.png<br>Coloca la imagen en la misma carpeta</div>'">
+    <!-- Right column: Visa Bulletin image LARGE -->
+    <div class="col anim" style="gap:10px">
+      <div style="flex:1;border-radius:10px;overflow:hidden;border:2px solid #ddd;background:#f5f5f5;display:flex;align-items:center;justify-content:center;min-height:340px">
+        <img src="visa_bulletin.png" alt="Visa Bulletin Febrero 2026" style="width:100%;height:100%;object-fit:contain;padding:4px" onerror="this.parentElement.innerHTML='<div style=text-align:center;padding:30px;font-family:Source+Sans+3,sans-serif><svg width=40 height=40 style=color:#003CA6;opacity:.3><use href=#ico-clipboard/></svg><div style=font-size:.9rem;color:#999;margin-top:8px>visa_bulletin.png</div><div style=font-size:.75rem;color:#bbb>Coloca la imagen en la misma carpeta</div></div>'">
       </div>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.75rem;color:var(--gray-light);text-align:center">Visa Bulletin, febrero 2026 — U.S. Department of State</div>
     </div>
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
@@ -767,6 +779,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#1a1a2e;co
   <span class="nav-counter" id="counter">1 / 25</span>
   <button class="nav-btn" onclick="navigate(1)" title="→">&#9654;</button>
   <button class="nav-notes-btn" id="notesBtn" onclick="toggleNotes()">N · Notas</button>
+  <button class="nav-notes-btn" id="fsBtn" onclick="toggleFullscreen()" title="Pantalla completa (F)">&#9974; Fullscreen</button>
 </div>
 
 <script>
@@ -775,10 +788,12 @@ function showSlide(i){slides.forEach((s,idx)=>s.classList.toggle('active',idx===
 function navigate(d){current=Math.max(0,Math.min(slides.length-1,current+d));showSlide(current)}
 function updateNotes(i){const n=slides[i].getAttribute('data-notes');if(n&&notesVisible){const p=n.split('— PREGUNTA');let h='<h4>Notas del Presentador</h4><p>'+p[0].replace(/\. /g,'.</p><p>')+'</p>';if(p[1])h+='<div class="notes-q"><h4>Pregunta Probable</h4><p>'+p[1].replace(':',':</p><p>').replace(' R: ','</p><p><strong>R:</strong> ')+'</p></div>';notesPanel.innerHTML=h;notesPanel.classList.add('visible')}else notesPanel.classList.remove('visible')}
 function toggleNotes(){notesVisible=!notesVisible;document.getElementById('notesBtn').textContent=notesVisible?'Ocultar':'N · Notas';updateNotes(current)}
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();navigate(1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();navigate(-1)}if(e.key==='Home'){e.preventDefault();current=0;showSlide(0)}if(e.key==='End'){e.preventDefault();current=slides.length-1;showSlide(current)}if(e.key==='n'||e.key==='N')toggleNotes()});
+function toggleFullscreen(){if(!document.fullscreenElement&&!document.webkitFullscreenElement){const el=document.documentElement;if(el.requestFullscreen)el.requestFullscreen();else if(el.webkitRequestFullscreen)el.webkitRequestFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Salir'}else{if(document.exitFullscreen)document.exitFullscreen();else if(document.webkitExitFullscreen)document.webkitExitFullscreen();document.getElementById('fsBtn').innerHTML='&#9974; Fullscreen'}}
+document.addEventListener('fullscreenchange',()=>{document.getElementById('fsBtn').innerHTML=document.fullscreenElement?'&#9974; Salir':'&#9974; Fullscreen'});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();navigate(1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();navigate(-1)}if(e.key==='Home'){e.preventDefault();current=0;showSlide(0)}if(e.key==='End'){e.preventDefault();current=slides.length-1;showSlide(current)}if(e.key==='n'||e.key==='N')toggleNotes();if(e.key==='f'||e.key==='F')toggleFullscreen()});
 let tx=0;document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX});document.addEventListener('touchend',e=>{const d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)navigate(d>0?1:-1)});
 function scalePresentation(){const dk=document.getElementById('deck');const s=Math.min(window.innerWidth/1280,window.innerHeight/720,1)*.92;dk.style.transform=`scale(${s})`;dk.style.transformOrigin='center center'}
-window.addEventListener('resize',scalePresentation);scalePresentation();showSlide(0);
+window.addEventListener('resize',scalePresentation);document.addEventListener('fullscreenchange',scalePresentation);scalePresentation();showSlide(0);
 </script>
 </body>
 </html>
