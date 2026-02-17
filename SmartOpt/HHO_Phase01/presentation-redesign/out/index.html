@@ -221,57 +221,77 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 3 — METAHEURÍSTICAS ═══════════ -->
-<div class="slide" data-notes="CONTEXTO: sabemos DÓNDE encaja HHO. (1) Lineal: Simplex, óptimo exacto, pero solo con restricciones lineales. (2) No lineal: gradiente, Newton, Lagrange; manejan curvas pero se atoran en óptimos locales, requieren derivadas, no manejan enteros. (3) Metaheurísticas: búsqueda inteligente inspirada en la naturaleza, balancean exploración/explotación, escalan a NP-Difícil. Nuestro problema tiene restricciones enteras, discontinuas, no convexas, 10K+ dimensiones. — PREGUNTA: ¿Diferencia entre heurística y metaheurística? R: Heurística = regla específica para UN problema. Metaheurística = framework general aplicable a múltiples problemas.">
-  <h2 class="slide-title anim">¿Qué Son las Metaheurísticas?</h2>
-  <div class="slide-subtitle anim">De los métodos exactos a la búsqueda inteligente inspirada en la naturaleza</div>
-  <div style="display:flex;gap:18px;flex:1;align-items:stretch" class="anim">
-    <div style="flex:1;border-radius:14px;padding:20px 22px;background:linear-gradient(180deg,#E8F5E9,#fff);border:2px solid #C8E6C9;display:flex;flex-direction:column">
-      <div style="text-align:center;margin-bottom:10px">
-        <svg width="36" height="36" style="color:var(--green)"><use href="#ico-scale"/></svg>
-        <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--green)">Optimización Lineal</div>
+<div class="slide" style="padding:32px 50px 28px" data-notes="CONTEXTO: sabemos DÓNDE encaja HHO. (1) Lineal: Simplex, óptimo exacto, pero solo con restricciones lineales. (2) No lineal: gradiente, Newton, Lagrange; manejan curvas pero se atoran en óptimos locales, requieren derivadas, no manejan enteros. (3) Metaheurísticas: búsqueda inteligente inspirada en la naturaleza, balancean exploración/explotación, escalan a NP-Difícil. Nuestro problema tiene restricciones enteras, discontinuas, no convexas, 10K+ dimensiones. ¿Qué es una metaheurística? Es un algoritmo de búsqueda inteligente que imita procesos de la naturaleza para encontrar buenas soluciones donde los métodos exactos fallan. — PREGUNTA: ¿Diferencia entre heurística y metaheurística? R: Heurística = regla específica para UN problema. Metaheurística = framework general aplicable a múltiples problemas.">
+  <h2 class="slide-title anim" style="margin-bottom:2px">¿Qué Son las Metaheurísticas?</h2>
+  <div class="slide-subtitle anim" style="margin-bottom:10px">De los métodos exactos a la búsqueda inteligente inspirada en la naturaleza</div>
+  <!-- Three-column cards with connecting arrows -->
+  <div style="display:flex;gap:0;flex:1;align-items:stretch;position:relative" class="anim">
+    <!-- Card 1: Lineal -->
+    <div style="flex:1;border-radius:14px;padding:18px 20px;background:linear-gradient(180deg,#E8F5E9,#fff);border:2px solid #C8E6C9;display:flex;flex-direction:column;position:relative;z-index:1">
+      <div style="text-align:center;margin-bottom:8px">
+        <div style="width:52px;height:52px;border-radius:50%;background:#C8E6C9;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px">
+          <svg width="28" height="28" style="color:var(--green)"><use href="#ico-scale"/></svg>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--green)">Optimización Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#888;margin-top:2px">Simplex · Interior Point</div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.55;flex:1">
-        Variables continuas, restricciones en línea recta. El método <strong>Simplex</strong> encuentra el óptimo exacto.<br><br>
-        <span style="color:var(--green);font-weight:600">&#10003; Garantiza el óptimo global</span><br>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.5;flex:1">
+        Variables continuas, restricciones en línea recta.<br>
+        <span style="color:var(--green);font-weight:600">&#10003; Óptimo global garantizado</span><br>
         <span style="color:var(--green);font-weight:600">&#10003; Rápido y eficiente</span>
       </div>
-      <div style="background:#C8E6C9;border-radius:8px;padding:8px 12px;margin-top:10px;font-family:'Source Sans 3',sans-serif;font-size:.85rem;text-align:center"><strong>Límite:</strong> Solo funciona si TODO es lineal</div>
+      <div style="background:#C8E6C9;border-radius:8px;padding:7px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;text-align:center"><strong>Límite:</strong> Solo si TODO es lineal</div>
     </div>
-    <div style="flex:1;border-radius:14px;padding:20px 22px;background:linear-gradient(180deg,var(--orange-bg),#fff);border:2px solid #FFE0B2;display:flex;flex-direction:column">
-      <div style="text-align:center;margin-bottom:10px">
-        <svg width="36" height="36" style="color:var(--orange)"><use href="#ico-chart"/></svg>
-        <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--orange)">Optimización No Lineal</div>
+    <!-- Arrow 1→2 -->
+    <div style="flex:0 0 36px;display:flex;align-items:center;justify-content:center;z-index:2">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <!-- Card 2: No Lineal -->
+    <div style="flex:1;border-radius:14px;padding:18px 20px;background:linear-gradient(180deg,var(--orange-bg),#fff);border:2px solid #FFE0B2;display:flex;flex-direction:column;position:relative;z-index:1">
+      <div style="text-align:center;margin-bottom:8px">
+        <div style="width:52px;height:52px;border-radius:50%;background:#FFE0B2;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px">
+          <svg width="28" height="28" style="color:var(--orange)"><use href="#ico-chart"/></svg>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--orange)">No Lineal</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#888;margin-top:2px">Gradiente · Newton · Lagrange</div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.55;flex:1">
-        Funciones curvas. Métodos de <strong>gradiente, Newton, Lagrange</strong> buscan puntos donde la pendiente es cero.<br><br>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.5;flex:1">
+        Funciones curvas, buscan pendiente cero.<br>
         <span style="color:var(--orange);font-weight:600">&#10003; Maneja funciones curvas</span><br>
-        <span style="color:var(--red);font-weight:600">&#10007; Se atora en óptimos locales</span><br>
-        <span style="color:var(--red);font-weight:600">&#10007; Requiere funciones derivables</span>
+        <span style="color:var(--red);font-weight:600">&#10007; Óptimos locales</span><br>
+        <span style="color:var(--red);font-weight:600">&#10007; Requiere derivadas</span>
       </div>
-      <div style="background:#FFE0B2;border-radius:8px;padding:8px 12px;margin-top:10px;font-family:'Source Sans 3',sans-serif;font-size:.85rem;text-align:center"><strong>Límite:</strong> No maneja variables enteras ni discontinuidades</div>
+      <div style="background:#FFE0B2;border-radius:8px;padding:7px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;text-align:center"><strong>Límite:</strong> No maneja enteros</div>
     </div>
-    <div style="flex:1;border-radius:14px;padding:20px 22px;background:linear-gradient(180deg,var(--blue-light),#fff);border:2px solid var(--blue);display:flex;flex-direction:column;box-shadow:0 4px 20px rgba(0,60,166,.15)">
-      <div style="text-align:center;margin-bottom:10px">
-        <svg width="36" height="36" style="color:var(--blue)"><use href="#ico-hawk"/></svg>
-        <div style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--blue)">Metaheurísticas</div>
+    <!-- Arrow 2→3 -->
+    <div style="flex:0 0 36px;display:flex;align-items:center;justify-content:center;z-index:2">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </div>
+    <!-- Card 3: Metaheurísticas (highlighted) -->
+    <div style="flex:1.15;border-radius:14px;padding:18px 20px;background:linear-gradient(180deg,var(--blue-light),#fff);border:2px solid var(--blue);display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(0,60,166,.18);position:relative;z-index:1">
+      <div style="text-align:center;margin-bottom:8px">
+        <div style="width:52px;height:52px;border-radius:50%;background:#BBDEFB;display:inline-flex;align-items:center;justify-content:center;margin-bottom:6px">
+          <svg width="28" height="28" style="color:var(--blue)"><use href="#ico-hawk"/></svg>
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--blue)">Metaheurísticas</div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;color:#888;margin-top:2px">GA · PSO · ACO · <strong style="color:var(--blue)">HHO</strong></div>
       </div>
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.55;flex:1">
-        Estrategias de <strong>búsqueda inteligente</strong> inspiradas en la naturaleza (evolución, enjambres, cacería).<br><br>
-        <span style="color:var(--blue);font-weight:600">&#10003; No requiere derivadas ni linealidad</span><br>
-        <span style="color:var(--blue);font-weight:600">&#10003; Escala a problemas enormes</span><br>
-        <span style="color:var(--blue);font-weight:600">&#10003; Variables enteras y discontinuidades</span>
+      <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.5;flex:1">
+        Búsqueda inteligente inspirada en la naturaleza.<br>
+        <span style="color:var(--blue);font-weight:600">&#10003; Sin derivadas ni linealidad</span><br>
+        <span style="color:var(--blue);font-weight:600">&#10003; Escala a miles de variables</span><br>
+        <span style="color:var(--blue);font-weight:600">&#10003; Enteros y discontinuidades</span>
       </div>
-      <div style="background:#BBDEFB;border-radius:8px;padding:8px 12px;margin-top:10px;font-family:'Source Sans 3',sans-serif;font-size:.85rem;text-align:center"><strong>Trade-off:</strong> No garantiza el óptimo, pero encuentra soluciones muy buenas</div>
+      <div style="background:#BBDEFB;border-radius:8px;padding:7px 10px;margin-top:8px;font-family:'Source Sans 3',sans-serif;font-size:.82rem;text-align:center"><strong>Trade-off:</strong> Soluciones muy buenas, no exactas</div>
     </div>
   </div>
-  <!-- Presenter guide: qué es una metaheurística -->
-  <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:14px 20px;margin-top:12px;color:white;display:flex;gap:18px;align-items:center">
-    <div style="flex:0 0 auto">
-      <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-bolt"/></svg>
-      <span style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em">Guía del presentador</span>
+  <!-- Key insight bar -->
+  <div class="anim" style="display:flex;align-items:center;gap:14px;margin-top:12px;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:12px 20px">
+    <div style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:rgba(255,214,0,.15);display:flex;align-items:center;justify-content:center">
+      <svg width="18" height="18" style="color:var(--yellow)"><use href="#ico-bolt"/></svg>
     </div>
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.5;color:rgba(255,255,255,.92)">
-      <strong style="color:var(--yellow)">¿Qué es una metaheurística?</strong> — Es un algoritmo de búsqueda inteligente que imita procesos de la naturaleza (evolución, enjambres, cacería) para encontrar buenas soluciones a problemas donde los métodos exactos fallan. No garantiza la respuesta perfecta, pero encuentra soluciones cercanas al óptimo en tiempo razonable, incluso con miles de variables.
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.88rem;line-height:1.45;color:rgba(255,255,255,.92)">
+      <strong style="color:var(--yellow)">La clave:</strong> toda metaheurística balancea <strong style="color:var(--yellow)">exploración</strong> (diversificar la búsqueda) y <strong style="color:var(--yellow)">explotación</strong> (refinar zonas prometedoras). Nuestro problema tiene restricciones enteras, no convexas, con <strong style="color:#FF6B6B">+10,000 dimensiones</strong>.
     </div>
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
@@ -330,87 +350,73 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 6 — SPILLOVER (SVG) ═══════════ -->
-<div class="slide" data-notes="EB-4/EB-5 sobrantes 'caen hacia arriba' a EB-1. Sobrantes de EB-1 'caen hacia abajo' a EB-2. De EB-2 a EB-3. Visas familiares no usadas incrementan pool EB siguiente año. COVID: 281,507 visas en FY2022. Hace que las variables sean dependientes, no constantes. — PREGUNTA: ¿Beneficia a India? R: Parcialmente. El tope del 7% SIGUE aplicando, limitando el beneficio.">
-  <h2 class="slide-title anim">Reglas de Spillover</h2>
-  <div class="slide-subtitle anim">Las green cards no utilizadas se redistribuyen de forma condicional</div>
-  <div style="display:flex;gap:20px;flex:1;min-height:0">
-    <!-- LEFT: Guide -->
-    <div class="anim" style="flex:0 0 260px;display:flex;flex-direction:column;gap:8px">
-      <div style="background:var(--green-bg);border-radius:10px;padding:11px 14px;border-left:4px solid var(--green)">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Paso 1 — Sobrantes suben</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;line-height:1.4;color:var(--gray)">Si EB-4 y EB-5 no usan todas sus green cards, el <strong>excedente sube a EB-1</strong>.</div>
-      </div>
-      <div style="background:var(--blue-light);border-radius:10px;padding:11px 14px;border-left:4px solid var(--blue)">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Paso 2 — Sobrantes bajan</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;line-height:1.4;color:var(--gray)">Lo que EB-1 no usa <strong>baja a EB-2</strong>. Lo que EB-2 no usa <strong>baja a EB-3</strong>.</div>
-      </div>
-      <div style="background:var(--yellow-soft);border-radius:10px;padding:11px 14px;border-left:4px solid var(--yellow)">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:#7c6a00;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Extra — Visas familiares</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;line-height:1.4;color:var(--gray)">Visas familiares no usadas del año anterior <strong>incrementan el pool EB</strong>.</div>
-      </div>
-      <div style="background:var(--red-bg);border-radius:10px;padding:11px 14px;border-left:4px solid var(--red)">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px">Anomalía COVID</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;line-height:1.4;color:var(--gray)">FY 2022: <strong>281,507</strong> visas procesadas (el doble de lo normal).</div>
-      </div>
-      <div style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:11px 14px;flex:1;display:flex;flex-direction:column;justify-content:center">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">
-          <svg width="12" height="12" style="color:var(--yellow);vertical-align:middle;margin-right:3px"><use href="#ico-bolt"/></svg> Impacto en el modelo</div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.86rem;line-height:1.4;color:rgba(255,255,255,.85)">Green cards por categoría = <strong style="color:var(--yellow)">variable dependiente</strong>. Restricciones <strong style="color:#FF6B6B">condicionales no lineales</strong>.</div>
-      </div>
+<div class="slide" style="padding:32px 44px 28px" data-notes="EB-4/EB-5 sobrantes 'caen hacia arriba' a EB-1. Sobrantes de EB-1 'caen hacia abajo' a EB-2. De EB-2 a EB-3. Visas familiares no usadas incrementan pool EB siguiente año. COVID: 281,507 visas en FY2022. Hace que las variables sean dependientes, no constantes. — PREGUNTA: ¿Beneficia a India? R: Parcialmente. El tope del 7% SIGUE aplicando, limitando el beneficio.">
+  <h2 class="slide-title anim" style="margin-bottom:2px">Reglas de Spillover</h2>
+  <div class="slide-subtitle anim" style="margin-bottom:8px">Las green cards no utilizadas se redistribuyen de forma condicional</div>
+  <!-- Main: large SVG diagram -->
+  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0">
+    <svg viewBox="0 0 720 420" style="width:100%;max-height:400px" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="spD" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#003CA6"/></marker>
+        <marker id="spU" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#27AE60"/></marker>
+        <marker id="spY" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#B8860B"/></marker>
+        <filter id="sh1"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-opacity=".1"/></filter>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#EAF2FF"/><stop offset="100%" stop-color="#BBDEFB"/></linearGradient>
+      </defs>
+      <!-- EB-4 -->
+      <rect x="60" y="8" width="150" height="56" rx="12" fill="#FFF8E1" stroke="#FF9800" stroke-width="2" filter="url(#sh1)"/>
+      <text x="135" y="32" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="20" font-weight="800" fill="#E65100">EB-4</text>
+      <text x="135" y="53" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#999">7.1% · ~9,940</text>
+      <!-- EB-5 -->
+      <rect x="240" y="8" width="150" height="56" rx="12" fill="#FFF8E1" stroke="#FF9800" stroke-width="2" filter="url(#sh1)"/>
+      <text x="315" y="32" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="20" font-weight="800" fill="#E65100">EB-5</text>
+      <text x="315" y="53" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#999">7.1% · ~9,940</text>
+      <!-- Green arrows merging up to EB-1 -->
+      <path d="M135,64 L135,82 C135,95 225,95 225,108" fill="none" stroke="#27AE60" stroke-width="3" stroke-dasharray="7,4"/>
+      <path d="M315,64 L315,82 C315,95 225,95 225,108" fill="none" stroke="#27AE60" stroke-width="3" stroke-dasharray="7,4"/>
+      <line x1="225" y1="108" x2="225" y2="130" stroke="#27AE60" stroke-width="3" marker-end="url(#spU)"/>
+      <!-- Label: sobrantes suben -->
+      <rect x="358" y="72" width="145" height="28" rx="14" fill="#E8F5E9" stroke="#27AE60" stroke-width="1"/>
+      <text x="430" y="91" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" font-weight="700" fill="#27AE60">&#9650; sobrantes suben</text>
+      <!-- EB-1 -->
+      <rect x="120" y="135" width="210" height="62" rx="14" fill="url(#g1)" stroke="#003CA6" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="225" y="163" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="24" font-weight="800" fill="#003CA6">EB-1</text>
+      <text x="225" y="185" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" fill="#555">28.6% · ~40,040</text>
+      <!-- Arrow down to EB-2 -->
+      <line x1="225" y1="197" x2="225" y2="240" stroke="#003CA6" stroke-width="3" marker-end="url(#spD)"/>
+      <!-- Label: sobrantes bajan -->
+      <rect x="248" y="207" width="145" height="28" rx="14" fill="#EAF2FF" stroke="#003CA6" stroke-width="1"/>
+      <text x="320" y="226" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" font-weight="700" fill="#003CA6">&#9660; sobrantes bajan</text>
+      <!-- EB-2 -->
+      <rect x="120" y="245" width="210" height="62" rx="14" fill="url(#g1)" stroke="#003CA6" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="225" y="273" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="24" font-weight="800" fill="#003CA6">EB-2</text>
+      <text x="225" y="295" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" fill="#555">28.6% · ~40,040</text>
+      <!-- Arrow down to EB-3 -->
+      <line x1="225" y1="307" x2="225" y2="350" stroke="#003CA6" stroke-width="3" marker-end="url(#spD)"/>
+      <!-- EB-3 -->
+      <rect x="120" y="355" width="210" height="62" rx="14" fill="url(#g1)" stroke="#003CA6" stroke-width="2.5" filter="url(#sh1)"/>
+      <text x="225" y="383" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="24" font-weight="800" fill="#003CA6">EB-3</text>
+      <text x="225" y="405" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" fill="#555">28.6% · ~40,040</text>
+      <!-- Family visas box -->
+      <rect x="480" y="135" width="210" height="70" rx="12" fill="#FFFDE7" stroke="#FFD600" stroke-width="2" filter="url(#sh1)"/>
+      <text x="585" y="162" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="16" font-weight="700" fill="#7c6a00">Visas Familiares</text>
+      <text x="585" y="182" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#888">no usadas del año anterior</text>
+      <text x="585" y="197" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" fill="#B8860B">incrementan pool EB</text>
+      <path d="M480,170 L340,166" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#spY)"/>
+      <!-- COVID anomaly box -->
+      <rect x="480" y="340" width="210" height="77" rx="12" fill="#FFF0F0" stroke="#D32F2F" stroke-width="2" filter="url(#sh1)"/>
+      <text x="585" y="366" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="15" font-weight="700" fill="#C62828">Anomalía COVID</text>
+      <text x="585" y="390" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="22" font-weight="800" fill="#C62828">281,507 GC</text>
+      <text x="585" y="408" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="11" fill="#999">FY 2022 — el doble de lo normal</text>
+    </svg>
+  </div>
+  <!-- Context box -->
+  <div class="anim" style="display:flex;align-items:center;gap:14px;margin-top:6px;background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:10px;padding:11px 20px">
+    <div style="flex:0 0 auto;width:32px;height:32px;border-radius:50%;background:rgba(255,214,0,.15);display:flex;align-items:center;justify-content:center">
+      <svg width="16" height="16" style="color:var(--yellow)"><use href="#ico-bolt"/></svg>
     </div>
-    <!-- RIGHT: Clean SVG -->
-    <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center">
-      <svg viewBox="0 0 560 470" style="width:100%;max-height:455px" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <marker id="spD" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#003CA6"/></marker>
-          <marker id="spU" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#27AE60"/></marker>
-          <marker id="spY" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#B8860B"/></marker>
-          <filter id="sh1"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity=".08"/></filter>
-          <linearGradient id="g1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#EAF2FF"/><stop offset="100%" stop-color="#BBDEFB"/></linearGradient>
-        </defs>
-        <!-- EB-4 -->
-        <rect x="50" y="10" width="120" height="48" rx="10" fill="#FFF8E1" stroke="#FF9800" stroke-width="1.5" filter="url(#sh1)"/>
-        <text x="110" y="31" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="16" font-weight="800" fill="#E65100">EB-4</text>
-        <text x="110" y="49" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#999">7.1% · ~9,940</text>
-        <!-- EB-5 -->
-        <rect x="200" y="10" width="120" height="48" rx="10" fill="#FFF8E1" stroke="#FF9800" stroke-width="1.5" filter="url(#sh1)"/>
-        <text x="260" y="31" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="16" font-weight="800" fill="#E65100">EB-5</text>
-        <text x="260" y="49" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#999">7.1% · ~9,940</text>
-        <!-- Green arrows merging -->
-        <path d="M110,58 L110,75 C110,85 185,85 185,95" fill="none" stroke="#27AE60" stroke-width="2.5" stroke-dasharray="6,3"/>
-        <path d="M260,58 L260,75 C260,85 185,85 185,95" fill="none" stroke="#27AE60" stroke-width="2.5" stroke-dasharray="6,3"/>
-        <line x1="185" y1="95" x2="185" y2="115" stroke="#27AE60" stroke-width="2.5" marker-end="url(#spU)"/>
-        <text x="310" y="86" font-family="Source Sans 3,sans-serif" font-size="11" font-weight="700" fill="#27AE60">sobrantes suben</text>
-        <!-- EB-1 -->
-        <rect x="95" y="120" width="180" height="56" rx="12" fill="url(#g1)" stroke="#003CA6" stroke-width="2" filter="url(#sh1)"/>
-        <text x="185" y="145" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="20" font-weight="800" fill="#003CA6">EB-1</text>
-        <text x="185" y="165" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#555">28.6% · ~40,040</text>
-        <!-- Arrow down -->
-        <line x1="185" y1="176" x2="185" y2="225" stroke="#003CA6" stroke-width="2.5" marker-end="url(#spD)"/>
-        <text x="220" y="206" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="#003CA6">sobrantes bajan</text>
-        <!-- EB-2 -->
-        <rect x="95" y="230" width="180" height="56" rx="12" fill="url(#g1)" stroke="#003CA6" stroke-width="2" filter="url(#sh1)"/>
-        <text x="185" y="255" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="20" font-weight="800" fill="#003CA6">EB-2</text>
-        <text x="185" y="275" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#555">28.6% · ~40,040</text>
-        <!-- Arrow down -->
-        <line x1="185" y1="286" x2="185" y2="335" stroke="#003CA6" stroke-width="2.5" marker-end="url(#spD)"/>
-        <text x="220" y="316" font-family="Source Sans 3,sans-serif" font-size="10" font-weight="700" fill="#003CA6">sobrantes bajan</text>
-        <!-- EB-3 -->
-        <rect x="95" y="340" width="180" height="56" rx="12" fill="url(#g1)" stroke="#003CA6" stroke-width="2" filter="url(#sh1)"/>
-        <text x="185" y="365" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="20" font-weight="800" fill="#003CA6">EB-3</text>
-        <text x="185" y="385" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="12" fill="#555">28.6% · ~40,040</text>
-        <!-- Family visas -->
-        <rect x="360" y="125" width="170" height="60" rx="10" fill="#FFFDE7" stroke="#FFD600" stroke-width="1.5" filter="url(#sh1)"/>
-        <text x="445" y="150" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#7c6a00">Visas Familiares</text>
-        <text x="445" y="170" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#888">no usadas → pool EB</text>
-        <path d="M360,155 L283,148" fill="none" stroke="#B8860B" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#spY)"/>
-        <!-- COVID -->
-        <rect x="360" y="340" width="170" height="60" rx="10" fill="#FFF0F0" stroke="#D32F2F" stroke-width="1.5" filter="url(#sh1)"/>
-        <text x="445" y="363" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="13" font-weight="700" fill="#C62828">Anomalía COVID</text>
-        <text x="445" y="385" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="14" font-weight="800" fill="#C62828">281,507 GC</text>
-        <!-- Subtle legend -->
-        <text x="185" y="425" text-anchor="middle" font-family="Source Sans 3,sans-serif" font-size="10" fill="#bbb">Las cantidades por categoría son variables dependientes, no constantes</text>
-      </svg>
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.85rem;line-height:1.45;color:rgba(255,255,255,.92)">
+      <strong style="color:var(--yellow)">¿Cómo funciona?</strong> — Cuando una categoría EB no agota su cuota, las visas sobrantes se redistribuyen: primero suben (EB-4/5 → EB-1), luego bajan en cascada (EB-1 → EB-2 → EB-3). Esto convierte las green cards por categoría en <strong style="color:var(--yellow)">variables dependientes</strong> con <strong style="color:#FF6B6B">restricciones condicionales no lineales</strong>.
     </div>
   </div>
   <div class="slide-footer"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
