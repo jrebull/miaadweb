@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import type { SlideInfo } from "./slides-data"
+// Sidebar navigation panel
 
 interface SidebarProps {
   slides: SlideInfo[]
