@@ -344,12 +344,42 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 <div class="slide" style="padding:0;overflow:hidden" data-notes="EXPLICAR CON CALMA: 'El gobierno de EE.UU. otorga 140,000 Green Cards por empleo al año, divididas en 5 categorías. Pero hay una restricción clave: NINGÚN país puede recibir más del 7% del total. Esto parece equitativo, pero crea una distorsión brutal: India, con millones de profesionistas de tech, tiene el mismo tope que Luxemburgo. El resultado: 1.8 millones de personas esperando, y la cola de India puede superar los 134 años. A la derecha ven el Visa Bulletin de febrero 2026: el documento oficial del Departamento de Estado que publica mensualmente qué fechas de prioridad están siendo procesadas.' — PREGUNTA: ¿De dónde sale el 7%? R: INA §202(a)(2): 7% del total combinado de visas familiares+empleo (~366K), resultando en ~25,620 por país.">
   <div style="display:flex;height:100%;width:100%">
     <!-- Left: Content panel (58%) -->
-    <div style="flex:0 0 58%;display:flex;flex-direction:column;padding:38px 40px 32px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%)">
-      <h2 class="slide-title anim" style="margin-bottom:2px">El Sistema EB en 60 Segundos</h2>
-      <div class="slide-subtitle anim" style="margin-bottom:14px">Immigration and Nationality Act (INA), diseñado en 1990</div>
-      <!-- EB Table -->
-      <div class="anim">
-        <table class="styled-table" style="font-size:.8rem;width:100%"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>GC/año</th></tr></thead>
+    <div style="flex:0 0 58%;display:flex;flex-direction:column;padding:32px 36px 24px;background:linear-gradient(180deg,#f8f9fa 0%,#ffffff 100%)">
+      <h2 class="slide-title anim" style="margin-bottom:2px">La Problemática</h2>
+      <div class="slide-subtitle anim" style="margin-bottom:12px">El sistema Employment-Based (EB) de Green Cards en EE.UU.</div>
+      <!-- Problem hero box — most prominent element -->
+      <div class="anim" style="background:linear-gradient(135deg,#1a0a0a,#2C1018);border-radius:14px;padding:18px 22px;color:white;border-left:5px solid #FF6B6B;margin-bottom:14px">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:700;color:#FF6B6B;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">
+          <svg width="14" height="14" style="color:#FF6B6B;vertical-align:middle;margin-right:5px"><use href="#ico-bolt"/></svg>
+          La problemática en una oración
+        </div>
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.95)">
+          <strong style="color:var(--yellow)">140,000 green cards anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong> para un ciudadano indio en EB-2 mientras otros países ni agotan su cuota.
+        </div>
+        <!-- Urgency stats inside the hero box -->
+        <div style="display:flex;gap:0;margin-top:12px;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,.12)">
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,107,107,.15)">
+            <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:#FF6B6B;line-height:1">134</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">años de espera</div>
+          </div>
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,214,0,.1)">
+            <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--yellow);line-height:1">140K</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">green cards/año</div>
+          </div>
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,107,107,.1)">
+            <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:#FF6B6B;line-height:1">1.8M</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">en cola</div>
+          </div>
+          <div style="flex:1;padding:8px 10px;text-align:center;background:rgba(255,214,0,.08)">
+            <div style="font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:900;color:var(--yellow);line-height:1">7%</div>
+            <div style="font-family:'Source Sans 3',sans-serif;font-size:.6rem;color:rgba(255,255,255,.6);margin-top:2px">tope por país</div>
+          </div>
+        </div>
+      </div>
+      <!-- EB Table — secondary context -->
+      <div class="anim" style="flex:1;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-family:'Source Sans 3',sans-serif;font-size:.65rem;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Categorías Employment-Based (INA, 1990)</div>
+        <table class="styled-table" style="font-size:.78rem;width:100%"><thead><tr><th>Cat.</th><th>Descripción</th><th>%</th><th>GC/año</th></tr></thead>
           <tbody>
             <tr><td><strong>EB-1</strong></td><td>Trabajadores prioritarios</td><td>28.6%</td><td>~40,040</td></tr>
             <tr><td><strong>EB-2</strong></td><td>Grado avanzado</td><td>28.6%</td><td>~40,040</td></tr>
@@ -358,23 +388,7 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
             <tr><td><strong>EB-5</strong></td><td>Inversionistas</td><td>7.1%</td><td>~9,940</td></tr>
           </tbody></table>
       </div>
-      <!-- Stats row -->
-      <div style="display:flex;gap:10px;margin:12px 0" class="anim">
-        <div class="stat" style="flex:1"><div class="stat-number" style="font-size:1.7rem">140K</div><div class="stat-label">green cards/año</div></div>
-        <div class="stat" style="flex:1"><div class="stat-number stat-number--red" style="font-size:1.7rem">7%</div><div class="stat-label">tope por país</div></div>
-        <div class="stat" style="flex:1"><div class="stat-number stat-number--yellow" style="font-size:1.7rem">FIFO</div><div class="stat-label">orden de proceso</div></div>
-      </div>
-      <!-- Problem summary box -->
-      <div class="anim" style="background:linear-gradient(135deg,#1a1a2e,#2C3E50);border-radius:12px;padding:16px 20px;color:white;flex:1;display:flex;flex-direction:column;justify-content:center">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">
-          <svg width="14" height="14" style="color:var(--yellow);vertical-align:middle;margin-right:4px"><use href="#ico-bolt"/></svg>
-          La problemática en una oración
-        </div>
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:.92rem;line-height:1.5;color:rgba(255,255,255,.92)">
-          <strong style="color:var(--yellow)">140,000 green cards anuales</strong> para <strong style="color:#FF6B6B">1.8 millones de solicitantes</strong>, donde el tope del 7% por país trata igual a India (1,400M hab.) que a Islandia (380K hab.), generando esperas de hasta <strong style="color:#FF6B6B">134 años</strong> para un ciudadano indio en EB-2 mientras otros países ni agotan su cuota.
-        </div>
-      </div>
-      <div class="slide-footer" style="position:relative;padding:8px 0 0;margin-top:auto"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
+      <div class="slide-footer" style="position:relative;padding:6px 0 0;margin-top:auto"><span>Flores · Rebull — MIAAD UACJ</span><span>Optimización Inteligente 2026</span></div>
     </div>
     <!-- Right: Visa Bulletin full-height strip (42%) -->
     <div style="flex:1;position:relative;overflow:hidden;background:#eef1f5">
@@ -1204,7 +1218,7 @@ const slides=document.querySelectorAll('.slide'),counter=document.getElementById
 // Build sidebar
 const slideLabels=[
   'Portada','Contexto','Metaheurísticas',
-  '01 · Problema','Sistema EB','Spillover','NP-Difícil',
+  '01 · Problema','Problemática','Spillover','NP-Difícil',
   '02 · Metaheurística','Paper HHO','¿Por qué HHO?','Biología','Energía E','Diagrama P1','Diagrama P2',
   '03 · Operadores','Ops 1-2','Ops 3-4','Ops 5-6','Tabla Ops',
   '04 · HHO × GC','Tres Objetivos','MOHHO','Mapeo',
