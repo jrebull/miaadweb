@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Source_Sans_3, JetBrains_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import Script from 'next/script'
 import './globals.css'
 
 const playfair = Playfair_Display({ 
@@ -40,9 +38,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <Script
-          id="mathjax-config"
-          strategy="beforeInteractive"
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               window.MathJax = {
@@ -53,14 +49,13 @@ export default function RootLayout({
             `,
           }}
         />
-        <Script
+        <script
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
-          strategy="beforeInteractive"
+          async
         />
       </head>
       <body className={`${playfair.variable} ${sourceSans.variable} ${jetbrains.variable} font-sans antialiased`}>
         {children}
-        <Analytics />
       </body>
     </html>
   )
