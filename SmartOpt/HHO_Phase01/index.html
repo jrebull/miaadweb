@@ -934,57 +934,68 @@ body{font-family:'Playfair Display',Palatino,Georgia,serif;background:#060a14;co
 </div>
 
 <!-- ═══════════ SLIDE 22 — MAPEO HHO → GREEN CARDS ═══════════ -->
-<div class="slide" style="padding:22px 40px 20px">
+<div class="slide" style="padding:22px 40px 18px">
   <h2 class="slide-title anim" style="font-size:1.8rem;margin-bottom:2px">Mapeo: HHO → Green Cards</h2>
-  <div class="slide-subtitle anim" style="margin-bottom:8px">Cada componente del algoritmo se traduce en una acción sobre la distribución de 140,000 visas</div>
-  <div class="anim" style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0">
-    <table style="width:100%;border-collapse:separate;border-spacing:0 6px;font-family:'Source Sans 3',sans-serif">
-      <thead>
-        <tr>
-          <th style="width:38%;background:var(--blue);color:white;padding:10px 16px;font-size:.85rem;font-weight:700;border-radius:8px 0 0 8px;text-align:center">Componente HHO</th>
-          <th style="width:6%;background:#f0f0f0;padding:6px;text-align:center"></th>
-          <th style="width:56%;background:var(--green);color:white;padding:10px 16px;font-size:.85rem;font-weight:700;border-radius:0 8px 8px 0;text-align:center">En el Problema de Green Cards</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="background:#E3F0FF;border:2px solid #BBDEFB;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--blue);font-size:.92rem">Halcón individual</strong><br><span style="font-size:.75rem;color:#777">Solución candidata Xᵢ</span></td>
-          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
-          <td style="background:#D1FAE5;border:2px solid #A5D6A7;border-radius:8px;padding:10px 14px"><strong style="color:#065F46;font-size:.92rem">Distribución completa de 140,000 visas</strong><br><span style="font-size:.75rem;color:#555">Permutación del orden de procesamiento de cohortes</span></td>
-        </tr>
-        <tr>
-          <td style="background:#E3F0FF;border:2px solid #BBDEFB;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--blue);font-size:.92rem">Presa (conejo)</strong><br><span style="font-size:.75rem;color:#777">Mejor solución / líder Pareto</span></td>
-          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
-          <td style="background:#D1FAE5;border:2px solid #A5D6A7;border-radius:8px;padding:10px 14px"><strong style="color:#065F46;font-size:.92rem">Asignación no dominada del archivo Pareto</strong><br><span style="font-size:.75rem;color:#555">Mejor compromiso entre f₁, f₂, f₃</span></td>
-        </tr>
-        <tr>
-          <td style="background:#FFF3E0;border:2px solid #FFE0B2;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:#E65100;font-size:.92rem">Energía de escape E</strong><br><span style="font-size:.75rem;color:#777">E = 2E₀(1 - t/T)</span></td>
-          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
-          <td style="background:#FFF8D6;border:2px solid #FFD600;border-radius:8px;padding:10px 14px"><strong style="color:#7c6a00;font-size:.92rem">Fase de la optimización</strong><br><span style="font-size:.75rem;color:#555">|E|≥1: distribuciones diferentes · |E|&lt;1: ajuste fino</span></td>
-        </tr>
-        <tr>
-          <td style="background:#E3F0FF;border:2px solid #BBDEFB;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--blue);font-size:.92rem">Exploración (Ops 1-2)</strong><br><span style="font-size:.75rem;color:#777">Búsqueda global amplia</span></td>
-          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
-          <td style="background:#D1FAE5;border:2px solid #A5D6A7;border-radius:8px;padding:10px 14px"><strong style="color:#065F46;font-size:.92rem">Probar asignaciones radicalmente diversas</strong><br><span style="font-size:.75rem;color:#555">Redistribuir visas entre países/categorías de formas distintas</span></td>
-        </tr>
-        <tr>
-          <td style="background:#F3E5F5;border:2px solid #CE93D8;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:#6A1B9A;font-size:.92rem">Vuelos de Lévy (Ops 5-6)</strong><br><span style="font-size:.75rem;color:#777">Saltos de largo alcance</span></td>
-          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
-          <td style="background:#EDE7F6;border:2px solid #CE93D8;border-radius:8px;padding:10px 14px"><strong style="color:#6A1B9A;font-size:.92rem">Saltar discontinuidades del tope del 7%</strong><br><span style="font-size:.75rem;color:#555">País recibe 0 vs. 25,620 (máximo legal) — romper el acantilado</span></td>
-        </tr>
-        <tr>
-          <td style="background:#FDE8E8;border:2px solid #FECACA;border-radius:8px;padding:10px 14px;text-align:center"><strong style="color:var(--red);font-size:.92rem">Fitness (captura)</strong></td>
-          <td style="text-align:center;font-size:1.4rem;color:var(--blue);font-weight:700">→</td>
-          <td style="background:#FDE8E8;border:2px solid #FECACA;border-radius:8px;padding:10px 14px"><strong style="color:var(--red);font-size:.92rem">Evaluación de f₁, f₂, f₃ + dominancia Pareto</strong></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="slide-subtitle anim" style="margin-bottom:10px">Cada componente del algoritmo se traduce en una acción sobre la distribución de 140,000 visas</div>
+  <div style="max-width:920px;margin:0 auto;flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px">
+    <div class="anim" style="display:flex;gap:10px;align-items:stretch">
+      <div style="flex:1;background:#E3F0FF;border:2px solid #BBDEFB;border-radius:10px;padding:8px 14px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div><strong style="color:var(--blue);font-size:.88rem">Halcón individual</strong><br><span style="font-size:.72rem;color:#777">Solución candidata Xᵢ</span></div>
+      </div>
+      <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--blue);font-weight:700">→</div>
+      <div style="flex:1.4;background:#D1FAE5;border:2px solid #A5D6A7;border-radius:10px;padding:8px 14px;display:flex;align-items:center">
+        <div><strong style="color:#065F46;font-size:.88rem">Distribución completa de 140,000 visas</strong><br><span style="font-size:.72rem;color:#555">Permutación del orden de procesamiento de cohortes</span></div>
+      </div>
+    </div>
+    <div class="anim" style="display:flex;gap:10px;align-items:stretch">
+      <div style="flex:1;background:#E3F0FF;border:2px solid #BBDEFB;border-radius:10px;padding:8px 14px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div><strong style="color:var(--blue);font-size:.88rem">Presa (conejo)</strong><br><span style="font-size:.72rem;color:#777">Mejor solución / líder Pareto</span></div>
+      </div>
+      <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--blue);font-weight:700">→</div>
+      <div style="flex:1.4;background:#D1FAE5;border:2px solid #A5D6A7;border-radius:10px;padding:8px 14px;display:flex;align-items:center">
+        <div><strong style="color:#065F46;font-size:.88rem">Asignación no dominada del archivo Pareto</strong><br><span style="font-size:.72rem;color:#555">Mejor compromiso entre f₁, f₂, f₃</span></div>
+      </div>
+    </div>
+    <div class="anim" style="display:flex;gap:10px;align-items:stretch">
+      <div style="flex:1;background:#FFF3E0;border:2px solid #FFE0B2;border-radius:10px;padding:8px 14px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div><strong style="color:#E65100;font-size:.88rem">Energía de escape E</strong><br><span style="font-size:.72rem;color:#777">E = 2E₀(1 - t/T)</span></div>
+      </div>
+      <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--blue);font-weight:700">→</div>
+      <div style="flex:1.4;background:#FFF8D6;border:2px solid #FFD600;border-radius:10px;padding:8px 14px;display:flex;align-items:center">
+        <div><strong style="color:#7c6a00;font-size:.88rem">Fase de la optimización</strong><br><span style="font-size:.72rem;color:#555">|E|≥1: distribuciones diferentes · |E|&lt;1: ajuste fino</span></div>
+      </div>
+    </div>
+    <div class="anim" style="display:flex;gap:10px;align-items:stretch">
+      <div style="flex:1;background:#E3F0FF;border:2px solid #BBDEFB;border-radius:10px;padding:8px 14px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div><strong style="color:var(--blue);font-size:.88rem">Exploración (Ops 1-2)</strong><br><span style="font-size:.72rem;color:#777">Búsqueda global amplia</span></div>
+      </div>
+      <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--blue);font-weight:700">→</div>
+      <div style="flex:1.4;background:#D1FAE5;border:2px solid #A5D6A7;border-radius:10px;padding:8px 14px;display:flex;align-items:center">
+        <div><strong style="color:#065F46;font-size:.88rem">Probar asignaciones radicalmente diversas</strong><br><span style="font-size:.72rem;color:#555">Redistribuir visas entre países/categorías</span></div>
+      </div>
+    </div>
+    <div class="anim" style="display:flex;gap:10px;align-items:stretch">
+      <div style="flex:1;background:#F3E5F5;border:2px solid #CE93D8;border-radius:10px;padding:8px 14px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div><strong style="color:#6A1B9A;font-size:.88rem">Vuelos de Lévy (Ops 5-6)</strong><br><span style="font-size:.72rem;color:#777">Saltos de largo alcance</span></div>
+      </div>
+      <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--blue);font-weight:700">→</div>
+      <div style="flex:1.4;background:#EDE7F6;border:2px solid #CE93D8;border-radius:10px;padding:8px 14px;display:flex;align-items:center">
+        <div><strong style="color:#6A1B9A;font-size:.88rem">Saltar discontinuidades del tope del 7%</strong><br><span style="font-size:.72rem;color:#555">0 vs. 25,620 visas (máximo legal) — romper el acantilado</span></div>
+      </div>
+    </div>
+    <div class="anim" style="display:flex;gap:10px;align-items:stretch">
+      <div style="flex:1;background:#FDE8E8;border:2px solid #FECACA;border-radius:10px;padding:8px 14px;display:flex;align-items:center;justify-content:center;text-align:center">
+        <div><strong style="color:var(--red);font-size:.88rem">Fitness (captura)</strong></div>
+      </div>
+      <div style="flex:0 0 28px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:var(--blue);font-weight:700">→</div>
+      <div style="flex:1.4;background:#FDE8E8;border:2px solid #FECACA;border-radius:10px;padding:8px 14px;display:flex;align-items:center">
+        <div><strong style="color:var(--red);font-size:.88rem">Evaluación de f₁, f₂, f₃ + dominancia Pareto</strong></div>
+      </div>
+    </div>
   </div>
-  <div class="anim" style="background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 22px;margin-top:4px;color:white">
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:.7rem;font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Síntesis del mapeo</div>
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.9)">Cada halcón es una <strong style="color:var(--yellow)">propuesta completa</strong> de cómo repartir 140,000 visas entre países y categorías. La "cacería" es el proceso iterativo de optimización. Los <strong style="color:var(--yellow)">vuelos de Lévy</strong> saltan las discontinuidades del tope del 7%, y la <strong style="color:var(--yellow)">dominancia de Pareto</strong> reemplaza al fitness simple.</div>
+  <div class="anim" style="max-width:920px;margin:8px auto 0;background:linear-gradient(135deg,#0d1b3e,#1a2d5a);border-radius:10px;padding:10px 20px;color:white">
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:.82rem;line-height:1.5;color:rgba(255,255,255,.9)"><strong style="color:var(--yellow)">Síntesis:</strong> Cada halcón es una propuesta completa de cómo repartir 140,000 visas. La "cacería" es el proceso iterativo. Los vuelos de Lévy saltan las discontinuidades del 7%, y la dominancia de Pareto reemplaza al fitness simple.</div>
   </div>
-
 </div>
 
 <!-- ═══════════ SLIDE 23 — CONCLUSIONES ═══════════ -->
