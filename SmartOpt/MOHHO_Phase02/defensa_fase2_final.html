@@ -19,7 +19,7 @@ html[data-theme="light"] {
     --bg:#f4f5f8;--bg2:#e8eaef;--surf:rgba(0,0,0,0.03);
     --bdr:rgba(0,0,0,0.10);--text:#1a1a2e;--muted:rgba(0,0,0,0.60);
     --subtle:rgba(0,0,0,0.45);
-    --blue:#003CA6;--bt:#0046c8;--gold:#b89800;--green:#00875f;
+    --blue:#003CA6;--bt:#0046c8;--gold:#7a6200;--green:#00875f;
     --red:#cc2952;--mid:#2563eb;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -93,7 +93,12 @@ h3{font-family:'Outfit';font-weight:700;font-size:1rem;color:var(--text)}
 /* Light-mode scatter override */
 html[data-theme="light"] .scatter3d{background:linear-gradient(160deg,#e8eaef 0%,#dde0e8 50%,#d0d4de 100%)}
 html[data-theme="light"] .dot{opacity:0.9}
-html[data-theme="light"] .progress{background:linear-gradient(90deg,#003CA6,#b89800,#00875f)}
+html[data-theme="light"] .progress{background:linear-gradient(90deg,#003CA6,#7a6200,#00875f)}
+html[data-theme="light"] .dash-mock{background:linear-gradient(135deg,#d8dbe4,#c8ccd8) !important}
+html[data-theme="light"] .dash-mock .dash-bar{background:rgba(0,0,0,0.04) !important}
+html[data-theme="light"] .dash-mock .dash-cell{background:rgba(0,0,0,0.03) !important}
+html[data-theme="light"] .scatter3d svg line{stroke:#333}
+html[data-theme="light"] .dash-resto{background:#b0bec5 !important;color:#263238 !important}
 html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
 /* Theme toggle */
 .theme-toggle{position:fixed;bottom:1.5rem;right:1.5rem;z-index:1000;width:44px;height:44px;
@@ -101,6 +106,7 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
     display:flex;align-items:center;justify-content:center;font-size:1.2rem;
     -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background 0.3s}
 .theme-toggle:hover{background:var(--blue);border-color:var(--gold)}
+.theme-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -312,9 +318,9 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
 <div class="sn">05 / 13</div>
 <h2>Producto Entregable: Dashboard + Tabla de Asignación</h2>
 
-<div style="background:linear-gradient(135deg,#0d1b2a,#1b2838);border:1px solid var(--bdr);
+<div class="dash-mock" style="background:linear-gradient(135deg,#0d1b2a,#1b2838);border:1px solid var(--bdr);
     border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,0.4);margin-bottom:12px">
-    <div style="height:30px;background:rgba(255,255,255,0.03);display:flex;align-items:center;
+    <div class="dash-bar" style="height:30px;background:rgba(255,255,255,0.03);display:flex;align-items:center;
         padding:0 10px;gap:5px;border-bottom:1px solid var(--bdr)">
         <div style="width:9px;height:9px;border-radius:50%;background:#ff5f57"></div>
         <div style="width:9px;height:9px;border-radius:50%;background:#febc2e"></div>
@@ -323,15 +329,15 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
     </div>
     <div style="padding:16px">
         <div class="g3" style="margin-bottom:10px">
-            <div style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
+            <div class="dash-cell" style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
                 <div class="mono" style="font-size:1.3rem;color:var(--gold)">406</div>
                 <div style="font-size:0.6rem;color:var(--muted)">ESCENARIOS PARETO</div>
             </div>
-            <div style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
+            <div class="dash-cell" style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
                 <div class="mono" style="font-size:1.3rem;color:var(--green)">140,000</div>
                 <div style="font-size:0.6rem;color:var(--muted)">VISAS OPTIMIZADAS</div>
             </div>
-            <div style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
+            <div class="dash-cell" style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
                 <div class="mono" style="font-size:1.3rem;color:var(--red)">−81%</div>
                 <div style="font-size:0.6rem;color:var(--muted)">DISPARIDAD vs FIFO</div>
             </div>
@@ -363,7 +369,7 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
             <div style="background:#0d47a1;border-radius:3px;text-align:center;color:#fff;padding:2px">314</div>
             <div style="background:#0d47a1;border-radius:3px;text-align:center;color:#fff;padding:2px">50</div>
             <div style="color:var(--muted);padding:2px 0">🌍 +18 más...</div>
-            <div style="background:#263238;border-radius:3px;text-align:center;color:var(--muted);padding:2px;grid-column:span 5;font-style:italic">
+            <div class="dash-resto" style="background:#263238;border-radius:3px;text-align:center;color:var(--muted);padding:2px;grid-column:span 5;font-style:italic">
                 Tabla completa: 21 filas × 5 columnas = 105 celdas (una por variable de decisión)</div>
         </div>
     </div>
@@ -804,7 +810,7 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
 
 <div class="callout" style="margin-top:10px">
     <strong>&iquest;Qu&eacute; esperamos?</strong> Que el MOHHO genere un frente de Pareto donde ninguna soluci&oacute;n
-    domine a las dem&aacute;s en los 3 objetivos simult&aacute;neamente &mdash; confirmando el conflicto estructural.
+    domine a las dem&aacute;s en los 3 objetivos simult&aacute;neamente &mdash; validando el conflicto estructural.
     La validaci&oacute;n piloto sugiere que es posible encontrar soluciones que mejoren al FIFO
     en espera, equidad <em>y</em> utilizaci&oacute;n de visas al mismo tiempo.
 </div>
@@ -822,11 +828,11 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
         <h3 style="color:var(--green);font-size:0.85rem;text-transform:uppercase;margin-bottom:10px">Conclusiones</h3>
         <div style="font-size:0.85rem;color:var(--muted);line-height:1.8">
             ✓ Modelo triobjetivo formulado con 105 variables, 3 funciones objetivo y 6 restricciones<br>
-            ✓ MOHHO genera 406 soluciones Pareto-óptimas verificadas (0 dominadas)<br>
+            ✓ Las proyecciones del dise&ntilde;o generan un frente de 406 soluciones Pareto-&oacute;ptimas (0 dominadas)<br>
             ✓ FIFO está <strong style="color:var(--red)">estrictamente dominado</strong> en los 3 objetivos<br>
             ✓ Soluciones que logran <strong style="color:var(--green)">f₃=0</strong> — 100% utilización de visas<br>
             ✓ Factibilidad garantizada por construcción (decoder greedy, 0 violaciones)<br>
-            ✓ Reproducible: 30 corridas con semillas, HV σ/μ = 1.6%
+            ✓ Dise&ntilde;o reproducible: 30 corridas planificadas con semillas, HV &sigma;/&mu; proyectado = 1.6%
         </div>
     </div>
     <div class="card" style="border-top:3px solid var(--gold)">
