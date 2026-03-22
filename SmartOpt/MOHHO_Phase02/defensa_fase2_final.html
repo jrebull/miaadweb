@@ -210,7 +210,7 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
     <div class="pipe-arrow">→</div>
     <div class="pipe-step" style="border-top:3px solid var(--gold)">
         <div style="font-size:0.65rem;color:var(--muted);font-weight:700">PARETO</div>
-        <div class="mono" style="font-size:0.72rem;color:var(--gold)">406 soluciones</div>
+        <div class="mono" style="font-size:0.72rem;color:var(--gold)">&gt;400 soluciones</div>
         <div style="font-size:0.62rem;color:var(--subtle)">No dominadas</div>
     </div>
 </div>
@@ -330,7 +330,7 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
     <div style="padding:16px">
         <div class="g3" style="margin-bottom:10px">
             <div class="dash-cell" style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
-                <div class="mono" style="font-size:1.3rem;color:var(--gold)">406</div>
+                <div class="mono" style="font-size:1.3rem;color:var(--gold)">&gt;400</div>
                 <div style="font-size:0.6rem;color:var(--muted)">ESCENARIOS PARETO</div>
             </div>
             <div class="dash-cell" style="text-align:center;padding:8px;background:rgba(255,255,255,0.03);border-radius:8px">
@@ -477,6 +477,14 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
         <div style="font-size:0.65rem;color:var(--subtle)">f&#8321;=7.257 | f&#8322;=9.361</div>
     </div>
 </div>
+
+<div class="info" style="margin-top:10px">
+    <strong>&iquest;Por qu&eacute; &gt;400 soluciones?</strong>
+    Se planifican 30 corridas independientes (semillas distintas), cada una con un archivo Pareto de hasta 100 soluciones.
+    Como cada semilla explora regiones diferentes del espacio &#8477;<sup>105</sup>, al combinar los 30 archivos
+    y filtrar dominancia cruzada, la diversidad entre corridas hace que <strong style="color:var(--green)">&gt;400 soluciones &uacute;nicas</strong>
+    sobrevivan como mutuamente no dominadas.
+</div>
 </section>
 
 <!-- ════════════════════════════════════════════════ -->
@@ -564,6 +572,19 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
 <h2>6 Restricciones — Factibilidad por Construcción</h2>
 <p style="font-size:0.82rem;color:var(--muted);margin-bottom:10px">
     El decoder greedy garantiza R1&ndash;R5 autom&aacute;ticamente. <strong style="color:var(--green)">No se necesitan penalizaciones ni funciones de castigo.</strong> Cualquier permutaci&oacute;n que genere el halc&oacute;n produce una asignaci&oacute;n factible por dise&ntilde;o.</p>
+
+<div class="card" style="border-left:4px solid var(--green);margin-bottom:8px;padding:10px 14px">
+    <div style="font-size:0.82rem;color:var(--muted);line-height:1.7">
+        <strong style="color:var(--green)">&iquest;Qu&eacute; es el decoder greedy?</strong>
+        Recorre los 105 grupos en el orden que dicta la permutaci&oacute;n &pi; (salida del SPV).
+        Para cada grupo <em>g</em> asigna:
+        <span class="mono" style="color:var(--gold);font-size:0.82rem">x<sub>g</sub> = min(n<sub>g</sub>,&nbsp;V<sub>rest</sub>,&nbsp;P<sub>c,rest</sub>,&nbsp;K<sub>j,rest</sub><sup>eff</sup>)</span>
+        &mdash; el <strong>m&iacute;nimo</strong> entre la demanda del grupo, las visas que quedan (R1),
+        el cupo restante del pa&iacute;s (R2) y el cupo restante de la categor&iacute;a (R3).
+        Como siempre toma el m&iacute;nimo de todos los l&iacute;mites,
+        <strong style="color:var(--green)">es matem&aacute;ticamente imposible violar R1&ndash;R5</strong>.
+    </div>
+</div>
 
 <div class="cr"><div class="cr-id">R1</div><div style="font-size:0.82rem"><strong>Presupuesto anual.</strong> No dar m&aacute;s visas de las que existen.
     <div class="cr-eq">&Sigma; x<sub>g</sub> &le; V = 140,000</div>
@@ -828,7 +849,7 @@ html[data-theme="light"] h1{-webkit-text-fill-color:transparent !important}
         <h3 style="color:var(--green);font-size:0.85rem;text-transform:uppercase;margin-bottom:10px">Conclusiones</h3>
         <div style="font-size:0.85rem;color:var(--muted);line-height:1.8">
             ✓ Modelo triobjetivo formulado con 105 variables, 3 funciones objetivo y 6 restricciones<br>
-            ✓ Las proyecciones del dise&ntilde;o generan un frente de 406 soluciones Pareto-&oacute;ptimas (0 dominadas)<br>
+            ✓ Las proyecciones del dise&ntilde;o estiman un frente de &gt;400 soluciones Pareto-&oacute;ptimas (0 dominadas)<br>
             ✓ FIFO está <strong style="color:var(--red)">estrictamente dominado</strong> en los 3 objetivos<br>
             ✓ Soluciones que logran <strong style="color:var(--green)">f₃=0</strong> — 100% utilización de visas<br>
             ✓ Factibilidad garantizada por construcción (decoder greedy, 0 violaciones)<br>
